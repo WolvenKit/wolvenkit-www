@@ -114,7 +114,7 @@ export default {
 
     &::before {
       content: '';
-      height: 8vmin;
+      height: 4em;
     }
   }
 

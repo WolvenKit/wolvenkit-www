@@ -9,10 +9,10 @@
           wolvenkit logo
         </router-link>
         <router-link
-          to="/news"
+          to="/blog"
           class="nav__navItem"
         >
-          News
+          Blog
         </router-link>
         <router-link
           to="/"
