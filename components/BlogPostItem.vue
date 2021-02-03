@@ -3,15 +3,24 @@
     class="blogPostItem"
     :to="post.dir"
   >
+    <!-- TODO: Better handling/design of non image blog posts -->
     <div
+      v-if="thumbnailImage"
       v-lazy-container="{ selector: 'img' }"
       class="blogPostItem__imageContainer"
     >
       <img
-        :data-src="require(`~/content${post.dir}/thumbnail.jpg`)"
-        :data-loading="require(`~/content${post.dir}/thumbnail.jpg?lqip`)"
+        :data-src="thumbnailImage.image"
+        :data-loading="thumbnailImage.placeholder"
       >
     </div>
+    <div
+      v-else
+      class="blogPostItem__imageContainerNone"
+    >
+      <div class="blogPostItem__color" />
+    </div>
+
     <div class="blogPostItem__info">
       <p class="blogPostItem__category">
         {{ post.category ? post.category : 'Uncategorized' }}
@@ -35,18 +44,24 @@ export default {
     post: Object
   },
 
-  methods: {
-    imgSrc (file) {
-      try {
-        return require(`~/content/blog/img/${file}`)
-      } catch (err) {
-        return null
-      }
-    },
+  data () {
+    return {
+      thumbnailImage: null
+    }
+  },
 
-    imgSrcLowRes (file) {
+  created () {
+    // this.thumbnailImage = this.getThumbnailImage()
+    this.thumbnailImage = false
+  },
+
+  methods: {
+    getThumbnailImage () {
       try {
-        return require(`~/content/blog/img/${file}?lqip`)
+        return {
+          image: require(`~/content${this.post.dir}/thumbnail.jpg`),
+          placeholder: require(`~/content${this.post.dir}/thumbnail.jpg?lqip`)
+        }
       } catch (err) {
         return null
       }
@@ -67,7 +82,8 @@ export default {
   text-decoration: none;
   padding: 0 1em 1em;
 
-  &__imageContainer {
+  &__imageContainer,
+  &__imageContainerNone {
     position: relative;
     width: 100%;
     height: max-content;
@@ -103,6 +119,15 @@ export default {
         filter: none;
       }
     }
+  }
+
+  &__color {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: var(--color-primary);
   }
 
   &__info {

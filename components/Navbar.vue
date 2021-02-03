@@ -25,7 +25,7 @@
           Projects
         </nuxt-link>
         <nuxt-link
-          to="/"
+          to="/team"
           class="nav__navItem"
         >
           Team
@@ -67,7 +67,7 @@ export default {
 
   data () {
     return {
-      scrolled: true
+      scrolled: false
     }
   },
 

@@ -3,7 +3,7 @@
     class="pageHeader"
     :style="{ background: color ?
       `linear-gradient(to right, rgb(${color}), var(--color-bg))` :
-      'linear-gradient(to right, var(--color-primary), var(--color-bg))'
+      'linear-gradient(to right, var(--color-primary), var(--color-primary-light))'
     }"
   >
     <div
