@@ -26,14 +26,14 @@ export default {
   },
 
   async asyncData ({ $content, error }) {
-    const posts = await $content('blog')
+    const posts = await $content('blog', { deep: true })
       .only([
         'title',
         'description',
         'image',
         'category',
-        'slug',
-        'createdAt'
+        'createdAt',
+        'dir'
       ])
       .sortBy('createdAt', 'asc')
       .fetch()
@@ -56,10 +56,10 @@ export default {
     padding: 4vmin;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 1em;
+    // grid-gap: 1em;
     grid-auto-flow: dense;
 
-    @media (max-width: 680px) {
+    @media (max-width: 720px) {
       display: flex;
       flex-direction: column;
     }

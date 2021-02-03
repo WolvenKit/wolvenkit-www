@@ -3,7 +3,7 @@ title: Example Blog Post3
 description: A riveting short blog description that is used variously3
 headerImage: https://www.futuregamereleases.com/wp-content/uploads/2020/11/cyberpunk-2077-release-date.jpg
 headerColor: 10, 70, 230
-image: https://ghost.org/blog/content/images/size/w1000/2020/09/after-the-paycheque.png
+image: Cyperpunk_2077.jpg
 ---
 
 # number 3 blog post yeehawww

@@ -34,12 +34,12 @@
       </p>
 
       <div class="index__toolLinks">
-        <router-link
+        <nuxt-link
           :to="page.tools[currentTool].pageLink"
           class="index__toolLink"
         >
           Get Started
-        </router-link>
+        </nuxt-link>
         <a
           class="index__toolLink"
           href="#"

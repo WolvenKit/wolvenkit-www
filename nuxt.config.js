@@ -25,7 +25,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~plugins/formatDate.js'
+    '~plugins/formatDate.js',
+    { src: '~plugins/lazyload.js', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -36,7 +37,8 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/stylelint
-    '@nuxtjs/stylelint-module'
+    '@nuxtjs/stylelint-module',
+    '@aceforth/nuxt-optimized-images'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -46,6 +48,11 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content'
   ],
+
+  optimizedImages: {
+    optimizeImages: true,
+    optimizeImagesInDev: false
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},

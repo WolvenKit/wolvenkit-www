@@ -2,50 +2,50 @@
   <div class="nav">
     <div class="nav__container">
       <div class="nav__navLeft">
-        <router-link
+        <nuxt-link
           to="/"
           class="nav__navLogo"
         >
           wolvenkit logo
-        </router-link>
-        <router-link
+        </nuxt-link>
+        <nuxt-link
           to="/blog"
           class="nav__navItem"
         >
           Blog
-        </router-link>
-        <router-link
+        </nuxt-link>
+        <nuxt-link
           to="/"
           class="nav__navItem"
         >
           Projects
-        </router-link>
-        <router-link
+        </nuxt-link>
+        <nuxt-link
           to="/"
           class="nav__navItem"
         >
           Team
-        </router-link>
-        <router-link
+        </nuxt-link>
+        <nuxt-link
           to="/"
           class="nav__navItem"
         >
           Wiki
-        </router-link>
+        </nuxt-link>
       </div>
       <div class="nav__navRight">
-        <router-link
+        <nuxt-link
           to="/"
           class="nav__navItem"
         >
           <GithubIcon />
-        </router-link>
-        <router-link
+        </nuxt-link>
+        <nuxt-link
           to="/"
           class="nav__navItem"
         >
           <DiscordIcon />
-        </router-link>
+        </nuxt-link>
       </div>
     </div>
   </div>

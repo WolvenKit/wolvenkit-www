@@ -1,5 +1,6 @@
 html {
   --color-primary: rgb(223, 41, 53);
+  --color-primary-light: rgb(206, 88, 95);
   --color-bg: rgb(15, 15, 15);
   --color-bg-alt: rgb(25, 25, 25);
   --color-text: rgb(255, 255, 255);
@@ -10,4 +11,12 @@ html {
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
+}
+
+a {
+  color: var(--color-primary);
+
+  &:visited {
+    color: var(--color-primary-light);
+  }
 }
