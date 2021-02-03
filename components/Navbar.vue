@@ -1,5 +1,9 @@
 <template>
   <div class="nav">
+    <div
+      class="nav__background"
+      :class="{ 'nav__background--scrolled': scrolled }"
+    />
     <div class="nav__container">
       <div class="nav__navLeft">
         <nuxt-link
@@ -59,6 +63,32 @@ export default {
   components: {
     GithubIcon,
     DiscordIcon
+  },
+
+  data () {
+    return {
+      scrolled: true
+    }
+  },
+
+  mounted () {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
+
+  methods: {
+    handleScroll () {
+      const currentPos = window.pageYOffset || document.documentElement.scrollTop
+
+      if (currentPos >= 1) {
+        this.scrolled = true
+      } else {
+        this.scrolled = false
+      }
+    }
   }
 }
 </script>
@@ -69,8 +99,27 @@ export default {
   top: 0;
   width: 100%;
   z-index: 50;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
-  height: 6em;
+  height: 4em;
+  transition: all 0.2s ease;
+
+  &__background {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(#000, 0.8);
+    opacity: 0.5;
+    z-index: -1;
+    transition: all 0.5s ease;
+    pointer-events: none;
+    backdrop-filter: blur(30px);
+
+    &--scrolled {
+      top: 0;
+      opacity: 1;
+    }
+  }
 
   &__container {
     max-width: calc(var(--max-width-lg) + 200px);
