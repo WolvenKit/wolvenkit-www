@@ -1,4 +1,4 @@
-# wolvenkit-static
+# wolvenkit-www
 
 ## Build Setup
 
