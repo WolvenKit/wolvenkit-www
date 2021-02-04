@@ -4,7 +4,7 @@
       title="Projects"
       subtitle="All the projects by the team and community"
     />
-    <div class="projects__container">
+    <PageContainer>
       <h2
         v-if="teamProjects.length > 0"
         class="projects__heading"
@@ -32,7 +32,7 @@
           :project="project"
         />
       </div>
-    </div>
+    </PageContainer>
   </div>
 </template>
 
@@ -110,12 +110,6 @@ export default {
 
 <style lang="scss" scoped>
 .projects {
-  &__container {
-    max-width: var(--max-width-lg);
-    margin: 0 auto;
-    padding: 4vmin;
-  }
-
   &__heading {
     text-align: center;
     font-size: 2em;

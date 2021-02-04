@@ -6,12 +6,12 @@
       :image="post.headerImage"
       :color="post.headerColor"
     />
-    <div class="blogPost__container">
+    <PageContainer>
       <nuxt-content
         class="blogPost__post"
         :document="post"
       />
-    </div>
+    </PageContainer>
   </div>
 </template>
 
@@ -34,12 +34,6 @@ export default {
 
 <style lang="scss" scoped>
 .blogPost {
-  &__container {
-    max-width: var(--max-width-lg);
-    margin: 0 auto;
-    padding: 4vmin;
-  }
-
   ::v-deep &__post {
     h1 {
       margin: 0.5em 0 1em;

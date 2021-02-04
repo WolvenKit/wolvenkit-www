@@ -4,14 +4,14 @@
       title="Blog"
       subtitle="Featured progress, new developments and feature updates"
     />
-    <div class="blogPosts__container">
+    <PageContainer class="blogPosts__container">
       <PostItem
         v-for="(post, index) in posts"
         :key="index"
         :class="{ 'blogPosts__feature': index === 0 }"
         :post="post"
       />
-    </div>
+    </PageContainer>
   </div>
 </template>
 
@@ -49,9 +49,6 @@ export default {
 <style lang="scss" scoped>
 .blogPosts {
   &__container {
-    max-width: var(--max-width-lg);
-    margin: 0 auto;
-    padding: 4vmin;
     display: grid;
     grid-template-columns: 1fr 1fr;
     // grid-gap: 1em;

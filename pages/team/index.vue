@@ -4,7 +4,7 @@
       title="Team"
       subtitle="Showcasing our extensive team who make everything possible"
     />
-    <div class="team__container">
+    <PageContainer>
       <div class="team__list">
         <TeamMember
           v-for="(member, index) in team.members"
@@ -12,7 +12,7 @@
           :member="member"
         />
       </div>
-    </div>
+    </PageContainer>
   </div>
 </template>
 
