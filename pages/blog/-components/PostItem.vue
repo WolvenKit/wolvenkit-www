@@ -61,8 +61,8 @@ export default {
     getThumbnailImage () {
       try {
         return {
-          image: require(`~/content${this.post.dir}/thumbnail.jpg`),
-          placeholder: require(`~/content${this.post.dir}/thumbnail.jpg?lqip`)
+          image: require(`~/content/${this.post.dir.substring(1)}/thumbnail.jpg`),
+          placeholder: require(`~/content/${this.post.dir.substring(1)}/thumbnail.jpg?lqip`)
         }
       } catch (err) {
         return null
