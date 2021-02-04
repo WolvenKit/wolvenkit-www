@@ -16,13 +16,7 @@
 </template>
 
 <script>
-import PageHeader from '@/components/PageHeader'
-
 export default {
-  components: {
-    PageHeader
-  },
-
   async asyncData ({ $content, params, error }) {
     const [post] = await $content('blog', { deep: true })
       .where({ dir: `/blog/${params.slug}` })

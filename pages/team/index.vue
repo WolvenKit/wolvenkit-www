@@ -17,12 +17,10 @@
 </template>
 
 <script>
-import PageHeader from '@/components/PageHeader'
-import TeamMember from '@/components/TeamMember'
+import TeamMember from '@/pages/team/-components/TeamMember'
 
 export default {
   components: {
-    PageHeader,
     TeamMember
   },
 

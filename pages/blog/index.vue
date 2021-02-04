@@ -5,7 +5,7 @@
       subtitle="Featured progress, new developments and feature updates"
     />
     <div class="blogPosts__container">
-      <BlogPostItem
+      <PostItem
         v-for="(post, index) in posts"
         :key="index"
         :class="{ 'blogPosts__feature': index === 0 }"
@@ -16,13 +16,11 @@
 </template>
 
 <script>
-import PageHeader from '@/components/PageHeader'
-import BlogPostItem from '@/components/BlogPostItem'
+import PostItem from '@/pages/blog/-components/PostItem'
 
 export default {
   components: {
-    PageHeader,
-    BlogPostItem
+    PostItem
   },
 
   async asyncData ({ $content, error }) {
