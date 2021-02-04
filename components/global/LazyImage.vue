@@ -37,8 +37,8 @@ export default {
     getImage () {
       try {
         return {
-          image: require(`~/content${this.$route.path}/img/${this.src}`),
-          placeholder: require(`~/content${this.$route.path}/img/${this.src}?lqip&inline`)
+          image: require(`~/content/${this.$route.path.substring(1)}/img/${this.src}`),
+          placeholder: require(`~/content/${this.$route.path.substring(1)}/img/${this.src}?lqip&inline`)
         }
       } catch (err) {
         return null
