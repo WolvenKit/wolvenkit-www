@@ -38,18 +38,18 @@
         </nuxt-link>
       </div>
       <div class="nav__navRight">
-        <nuxt-link
-          to="/"
+        <a
+          href="https://github.com/WolvenKit/"
           class="nav__navItem"
         >
           <GithubIcon />
-        </nuxt-link>
-        <nuxt-link
-          to="/"
+        </a>
+        <a
+          href="https://discord.gg/cp77modding"
           class="nav__navItem"
         >
           <DiscordIcon />
-        </nuxt-link>
+        </a>
       </div>
     </div>
   </div>
