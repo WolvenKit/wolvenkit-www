@@ -19,7 +19,7 @@
           Blog
         </nuxt-link>
         <nuxt-link
-          to="/"
+          to="/projects"
           class="nav__navItem"
         >
           Projects
