@@ -37,8 +37,8 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/stylelint
-    '@nuxtjs/stylelint-module',
-    '@aceforth/nuxt-optimized-images'
+    '@nuxtjs/stylelint-module'
+    // '@aceforth/nuxt-optimized-images'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -61,7 +61,16 @@ export default {
   content: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    cache: true,
+    parallel: true,
+    extend (config, { isDev, isClient }) {
+      config.module.rules.push({
+        test: /\.md$/i,
+        loader: 'ignore-loader'
+      })
+    }
+  },
 
   ignore: [
     '/pages/**/-components/**'
