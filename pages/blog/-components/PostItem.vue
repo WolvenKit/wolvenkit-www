@@ -51,8 +51,7 @@ export default {
   },
 
   created () {
-    // this.thumbnailImage = this.getThumbnailImage()
-    this.thumbnailImage = false
+    this.thumbnailImage = this.getThumbnailImage()
   },
 
   methods: {

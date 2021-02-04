@@ -1,11 +1,13 @@
 ---
-title: Example Blog Post2
+title: Playground
 description: A horribly not so riveting description
 headerImage: https://www.futuregamereleases.com/wp-content/uploads/2020/11/cyberpunk-2077-release-date.jpg
 headerColor: 10, 70, 230
 image: test.jpg
 category: CET
 ---
+
+<lazy-image src="testImage.png"></lazy-image>
 
 # Markdown: Syntax
 
@@ -48,6 +50,8 @@ Markdown's syntax has been influenced by several existing text-to-HTML
 filters -- including [Setext](http://docutils.sourceforge.net/mirror/setext.html), [atx](http://www.aaronsw.com/2002/atx/), [Textile](http://textism.com/tools/textile/), [reStructuredText](http://docutils.sourceforge.net/rst.html),
 [Grutatext](http://www.triptico.com/software/grutatxt.html), and [EtText](http://ettext.taint.org/doc/) -- the single biggest source of
 inspiration for Markdown's syntax is the format of plain text email.
+
+<lazy-image src="testImage2.jpg"></lazy-image>
 
 ## Block Elements
 
