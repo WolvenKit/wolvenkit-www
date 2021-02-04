@@ -26,10 +26,22 @@
 <script>
 export default {
   props: {
-    title: String,
-    subtitle: String,
-    image: String,
-    color: String
+    title: {
+      type: String,
+      required: true
+    },
+    subtitle: {
+      type: String,
+      default: null
+    },
+    image: {
+      type: String,
+      default: null
+    },
+    color: {
+      type: String,
+      default: null
+    }
   }
 }
 </script>

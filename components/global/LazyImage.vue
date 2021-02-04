@@ -17,7 +17,10 @@
 <script>
 export default {
   props: {
-    src: String
+    src: {
+      type: String,
+      required: true
+    }
   },
 
   data () {
@@ -38,7 +41,6 @@ export default {
           placeholder: require(`~/content${this.$route.path}/img/${this.src}?lqip&inline`)
         }
       } catch (err) {
-        console.log(err)
         return null
       }
     }

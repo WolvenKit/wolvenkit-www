@@ -71,7 +71,10 @@ export default {
   },
 
   props: {
-    member: Object
+    member: {
+      type: Object,
+      required: true
+    }
   },
 
   data () {
