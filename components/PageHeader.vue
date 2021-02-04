@@ -43,11 +43,6 @@ export default {
   align-items: center;
   justify-content: center;
 
-  &::before {
-    content: '';
-    height: 4em;
-  }
-
   &__imageContainer {
     position: absolute;
     top: 0;
@@ -70,7 +65,7 @@ export default {
   &__container {
     text-align: center;
     max-width: var(--max-width-lg);
-    padding: 8vmin 0;
+    padding: 5em 0;
     z-index: 1;
   }
 
