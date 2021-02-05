@@ -4,9 +4,10 @@
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .container {
   max-width: var(--max-width-lg);
+  width: 100%;
   margin: 0 auto;
   padding: 4vmin;
 }
