@@ -96,11 +96,11 @@ export default {
 
 <style lang="scss" scoped>
 .lander {
-  min-height: 100vh;
+  position: relative;
 
   &__mainContainer {
     position: relative;
-    height: 115vh;
+    min-height: 115vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -119,7 +119,7 @@ export default {
     top: 0;
     left: 0;
     right: 0;
-    height: 115vh;
+    bottom: 0;
     z-index: -1;
     overflow: hidden;
 
