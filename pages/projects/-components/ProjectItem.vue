@@ -1,16 +1,5 @@
 <template>
   <div class="projectItem">
-    <div
-      v-if="projectImage"
-      v-lazy-container="{ selector: 'img' }"
-      class="projectItem__imageContainer"
-    >
-      <img
-        :data-src="projectImage.image"
-        :data-loading="projectImage.placeholder"
-      >
-    </div>
-
     <div class="projectItem__info">
       <p class="projectItem__name">
         {{ project.name }}
@@ -43,6 +32,17 @@
           Contribute
         </a>
       </div>
+    </div>
+
+    <div
+      v-if="projectImage"
+      v-lazy-container="{ selector: 'img' }"
+      class="projectItem__imageContainer"
+    >
+      <img
+        :data-src="projectImage.image"
+        :data-loading="projectImage.placeholder"
+      >
     </div>
   </div>
 </template>
