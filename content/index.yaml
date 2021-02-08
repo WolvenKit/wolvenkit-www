@@ -1,4 +1,3 @@
----
 title: RED Modding Tools
 tools:
   - name: WolvenKit
@@ -10,4 +9,3 @@ tools:
   - name: CyberCAT
     description: CyberPunk 2077 Customization Assistant Tool. Work in progress savegame editor.
     pageLink: /projects/cybercat
----
