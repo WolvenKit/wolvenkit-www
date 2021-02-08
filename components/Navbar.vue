@@ -122,7 +122,7 @@ export default {
   }
 
   &__container {
-    max-width: calc(var(--max-width-lg) + 200px);
+    max-width: calc(var(--max-width-lg) + 180px);
     margin: 0 auto;
     display: flex;
     justify-content: space-between;

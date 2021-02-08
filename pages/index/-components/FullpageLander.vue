@@ -165,7 +165,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: var(--max-width-lg);
+    max-width: calc(var(--max-width-lg) + 180px);
     margin: 0 auto;
     padding: 0 4vmin;
 
