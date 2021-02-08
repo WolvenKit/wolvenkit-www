@@ -35,7 +35,7 @@
           class="nav__navItem"
         >
           Wiki
-        </nuxt-link>
+        </a>
       </div>
       <div class="nav__navRight">
         <a
