@@ -1,0 +1,30 @@
+title: Red Modding Tools
+columns:
+  - title: Main
+    items:
+      - name: Blog
+        link: '/blog'
+      - name: Projects
+        link: '/projects'
+      - name: Team
+        link: '/team'
+      - name: Wiki
+        link: '#'
+      - name: NativeDB
+        link: '#'
+
+  - title: Contribute
+    items:
+      - name: Github
+        link: https://github.com/WolvenKit
+      - name: WolvenKit
+        link: https://github.com/WolvenKit/Wolvenkit
+      - name: CyberCAT
+        link: https://github.com/WolvenKit/CyberCAT
+      - name: Website
+        link: https://github.com/Traderain/wolvenkit-www
+
+  - title: Community
+    items:
+      - name: Discord
+        link: https://discord.gg/cp77modding
