@@ -108,7 +108,7 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(#000, 0.8);
+    background: rgba(#000, 0.7);
     opacity: 0.5;
     z-index: -1;
     transition: all 0.5s ease;

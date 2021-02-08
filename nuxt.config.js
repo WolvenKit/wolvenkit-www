@@ -37,8 +37,8 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/stylelint
-    '@nuxtjs/stylelint-module'
-    // '@aceforth/nuxt-optimized-images'
+    '@nuxtjs/stylelint-module',
+    '@aceforth/nuxt-optimized-images'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -51,7 +51,7 @@ export default {
 
   optimizedImages: {
     optimizeImages: true,
-    optimizeImagesInDev: false
+    optimizeImagesInDev: true
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -64,6 +64,7 @@ export default {
   build: {
     cache: true,
     parallel: true,
+
     extend (config, { isDev, isClient }) {
       config.module.rules.push({
         test: /\.md$/i,

@@ -1,16 +1,22 @@
 <template>
   <div class="lander">
-    <div class="lander__imageContainer">
-      <transition
-        name="fade"
-        mode="out-in"
+    <transition
+      name="fade"
+      mode="out-in"
+    >
+      <div
+        v-if="Object.keys(images).length !== 0"
+        :key="currentTool"
+        v-lazy-container="{ selector: 'img' }"
+        class="lander__imageContainer"
       >
         <img
           :key="currentTool"
-          :src="indexData.tools[currentTool].backgroundImage"
+          :data-src="images[indexData.tools[currentTool].name].background.image"
+          :data-loading="images[indexData.tools[currentTool].name].background.placeholder"
         >
-      </transition>
-    </div>
+      </div>
+    </transition>
 
     <div class="lander__mainContainer">
       <span class="lander__spacer" />
@@ -50,17 +56,23 @@
         </a>
       </div>
 
-      <div class="lander__toolPreview">
-        <transition
-          name="fade"
-          mode="out-in"
+      <transition
+        name="fade"
+        mode="out-in"
+      >
+        <div
+          v-if="Object.keys(images).length !== 0"
+          :key="currentTool"
+          v-lazy-container="{ selector: 'img' }"
+          class="lander__toolPreview"
         >
           <img
             :key="currentTool"
-            :src="indexData.tools[currentTool].featureImage"
+            :data-src="images[indexData.tools[currentTool].name].feature.image"
+            :data-loading="images[indexData.tools[currentTool].name].feature.placeholder"
           >
-        </transition>
-      </div>
+        </div>
+      </transition>
     </div>
   </div>
 </template>
@@ -82,13 +94,34 @@ export default {
 
   data () {
     return {
-      currentTool: 0
+      currentTool: 0,
+      images: {}
+    }
+  },
+
+  mounted () {
+    for (const tool of this.indexData.tools) {
+      this.$set(this.images, tool.name, {
+        background: this.getImage(tool.name, true),
+        feature: this.getImage(tool.name)
+      })
     }
   },
 
   methods: {
     changeTool (index) {
       this.currentTool = index
+    },
+
+    getImage (toolName, isBackground = false) {
+      try {
+        return {
+          image: require(`~/content/indexImages/${toolName}_${isBackground ? 'Background' : 'Feature'}.jpg`),
+          placeholder: require(`~/content/indexImages/${toolName}_${isBackground ? 'Background' : 'Feature'}.jpg?lqip`)
+        }
+      } catch (err) {
+        return null
+      }
     }
   }
 }
@@ -97,6 +130,7 @@ export default {
 <style lang="scss" scoped>
 .lander {
   position: relative;
+  mask-image: linear-gradient(to top, transparent, #000 15vh);
 
   &__mainContainer {
     position: relative;
@@ -118,8 +152,8 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100%;
+    height: 100%;
     z-index: -1;
     overflow: hidden;
 
@@ -128,9 +162,15 @@ export default {
       height: 100%;
       object-fit: cover;
       object-position: center;
-      filter: blur(5px);
-      transform: scale(1.05);
       opacity: 0.3;
+      filter: blur(25px);
+      transform: scale(1.1);
+      transition: all 0.2s ease;
+
+      &[lazy=loaded] {
+        transform: scale(1.05);
+        filter: blur(8px);
+      }
     }
   }
 
@@ -141,6 +181,10 @@ export default {
   &__title {
     font-weight: 700;
     font-size: 4em;
+    text-align: center;
+  }
+
+  &__toolDescription {
     text-align: center;
   }
 
@@ -231,17 +275,37 @@ export default {
   }
 
   &__toolPreview {
+    position: relative;
     width: 100%;
     height: 100%;
     margin-top: 3vmin;
     border-radius: 0.5em 0.5em 0 0;
     overflow: hidden;
 
+    &::before {
+      content: "";
+      display: block;
+      height: 0;
+      width: 0;
+      padding-top: calc(100% * (9 / 16));
+    }
+
     > img {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
+      filter: blur(25px);
+      transform: scale(1.1);
+      transition: all 0.2s ease;
+
+      &[lazy=loaded] {
+        transform: scale(1);
+        filter: none;
+      }
     }
   }
 }

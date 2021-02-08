@@ -7,7 +7,7 @@
       <h2 class="latestPost__header">
         Latest Post
       </h2>
-      <PostItem :post="latestPost[0]" />
+      <PostItem :post="latestPost" />
     </PageContainer>
   </div>
 </template>
@@ -40,7 +40,7 @@ export default {
   methods: {
     getThumbnailImage () {
       try {
-        return require(`~/content/${this.latestPost[0].dir.substring(1)}/thumbnail.jpg?lqip`)
+        return require(`~/content/${this.latestPost.dir.substring(1)}/thumbnail.jpg?lqip`)
       } catch (err) {
         return null
       }
@@ -66,6 +66,7 @@ export default {
     bottom: 0;
     overflow: hidden;
     mask-image: linear-gradient(to bottom, #000, transparent);
+    z-index: -1;
 
     > img {
       width: 100%;
@@ -87,10 +88,10 @@ export default {
   }
 
   &__header {
-    margin-bottom: 1em;
-    padding-left: 0.5em;
-    font-size: 2.5em;
-    border-left: 0.25em solid var(--color-primary);
+    margin-bottom: 0.5em;
+    // padding-left: 0.5em;
+    font-size: 3em;
+    // border-left: 0.25em solid var(--color-primary);
   }
 }
 </style>

@@ -1,27 +1,24 @@
 <template>
   <div class="index">
     <FullpageLander :index-data="index" />
-    <LatestPost :latest-post="latestPost" />
-    <div class="index__section">
-      <h2>Community</h2>
-    </div>
-    <div class="index__section">
-      <h2>Contribute</h2>
-    </div>
-    <div class="index__section">
-      <h2>More Posts</h2>
-    </div>
+    <LatestPost :latest-post="latestPost[0]" />
+    <Community />
+    <Contribute />
   </div>
 </template>
 
 <script>
 import FullpageLander from '@/pages/index/-components/FullpageLander'
 import LatestPost from '@/pages/index/-components/LatestPost'
+import Community from '@/pages/index/-components/Community'
+import Contribute from '@/pages/index/-components/Contribute'
 
 export default {
   components: {
     FullpageLander,
-    LatestPost
+    LatestPost,
+    Community,
+    Contribute
   },
 
   async asyncData ({ $content, error }) {
