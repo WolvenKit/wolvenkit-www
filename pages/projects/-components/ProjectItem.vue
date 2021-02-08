@@ -76,8 +76,8 @@ export default {
     getProjectImage () {
       try {
         return {
-          image: require(`~/content/${this.project.path.substring(1)}.png`),
-          placeholder: require(`~/content/${this.project.path.substring(1)}.png?lqip&inline`)
+          image: require(`~/content/${this.project.path.substring(1)}.jpg`),
+          placeholder: require(`~/content/${this.project.path.substring(1)}.jpg?lqip&inline`)
         }
       } catch (err) {
         return null
