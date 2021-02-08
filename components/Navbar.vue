@@ -30,7 +30,7 @@
         >
           Team
         </nuxt-link>
-        <nuxt-link
+        <a
           to="https://wiki.cybermods.net"
           class="nav__navItem"
         >
