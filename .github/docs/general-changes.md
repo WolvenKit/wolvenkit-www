@@ -14,7 +14,7 @@ The content directory houses a few general files that manage some parts of the s
 - `team.yaml` - List of all the developers involved with WolvenKit and the community
 
 ### index.yaml
-This file will simply define the site title and list out the projects that are displayed on the landing page, it does not contain the images. For ever project that is added here the website will search the `indexImages/` folder for the project images.
+This file will simply define the site title and list out the projects that are displayed on the landing page, it does not contain the images. For every project that is added here the website will search the `indexImages/` folder for the project images.
 
 In `indexImages/` there must be two images labeled `toolName_Background.jpg` and `toolName_Feature.jpg`. `toolName` MUST be labeled the same as what is listed in the below array.
 
