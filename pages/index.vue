@@ -37,7 +37,7 @@ export default {
         'createdAt',
         'dir'
       ])
-      .sortBy('createdAt', 'asc')
+      .sortBy('createdAt', 'desc')
       .limit(1)
       .fetch()
       .catch(() => {
