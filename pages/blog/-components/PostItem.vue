@@ -77,6 +77,7 @@ export default {
   width: 100%;
   border-radius: 1em;
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   align-content: flex-start;
   // grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -138,6 +139,7 @@ export default {
     justify-content: center;
     margin-left: 1em;
     margin-right: 1em;
+    max-width: 40vmin;
   }
 
   &__category {
