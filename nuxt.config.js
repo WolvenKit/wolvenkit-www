@@ -51,7 +51,7 @@ export default {
 
   optimizedImages: {
     optimizeImages: true,
-    optimizeImagesInDev: true
+    optimizeImagesInDev: false
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
