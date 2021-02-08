@@ -5,6 +5,7 @@ headerImage: https://www.futuregamereleases.com/wp-content/uploads/2020/11/cyber
 headerColor: 10, 70, 230
 image: test.jpg
 category: CET
+createdAt: 2020-02-02
 ---
 
 <lazy-image src="testImage.png"></lazy-image>
