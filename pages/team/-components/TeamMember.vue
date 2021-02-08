@@ -93,8 +93,8 @@ export default {
 
       try {
         return {
-          image: require(`~/content/teamImages/${username}.png`),
-          placeholder: require(`~/content/teamImages/${username}.png?lqip`)
+          image: require(`~/content/teamImages/${username}.jpg`),
+          placeholder: require(`~/content/teamImages/${username}.jpg?lqip`)
         }
       } catch (err) {
         return null
