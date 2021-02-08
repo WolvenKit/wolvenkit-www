@@ -5,6 +5,7 @@ headerImage: https://www.futuregamereleases.com/wp-content/uploads/2020/11/cyber
 headerColor: 10, 70, 230
 image: Cyperpunk_2077.jpg
 category: Cyberpunk General Modding
+createdAt: 2021-01-15
 ---
 
 Hey Choombas!

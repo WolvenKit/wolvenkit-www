@@ -33,7 +33,7 @@ export default {
         'createdAt',
         'dir'
       ])
-      .sortBy('createdAt', 'asc')
+      .sortBy('createdAt', 'desc')
       .fetch()
       .catch(() => {
         error({ statusCode: 404, message: 'Page not found' })
