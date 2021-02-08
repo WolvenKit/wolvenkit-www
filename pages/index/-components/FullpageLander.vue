@@ -74,15 +74,20 @@
         </div>
       </transition>
     </div>
+    <div class="lander__scrollDown">
+      <ChevronDown class="lander__scrollDownIcon" />
+    </div>
   </div>
 </template>
 
 <script>
 import GithubIcon from 'vue-material-design-icons/Github.vue'
+import ChevronDown from 'vue-material-design-icons/ChevronDown.vue'
 
 export default {
   components: {
-    GithubIcon
+    GithubIcon,
+    ChevronDown
   },
 
   props: {
@@ -131,6 +136,29 @@ export default {
 .lander {
   position: relative;
   mask-image: linear-gradient(to top, transparent, #000 15vh);
+
+  &__scrollDown {
+    position: sticky;
+    bottom: 5em;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    height: 0;
+  }
+
+  &__scrollDownIcon {
+    height: 5em;
+    animation-name: bounce;
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+
+    ::v-deep svg {
+      height: 100%;
+      width: 100%;
+      filter: drop-shadow(0 0 5px rgba(0, 0, 0, 1));
+    }
+  }
 
   &__mainContainer {
     position: relative;
@@ -318,5 +346,23 @@ export default {
 .fade-enter,
 .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0 !important;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-0.5em);
+  }
+
+  60% {
+    transform: translateY(-0.15em);
+  }
 }
 </style>
