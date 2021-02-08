@@ -7,7 +7,7 @@
         </h2>
         <p>Submit your PRs to the various projects we have ongoing in our repos, we are always keen on welcoming new developers to help and contribute to the projects.</p>
         <a
-          href="https://discord.gg/cp77modding"
+          href="https://github.com/WolvenKit"
           class="contribute__button"
         >
           View Repositories
