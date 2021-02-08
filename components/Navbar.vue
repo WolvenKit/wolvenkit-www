@@ -31,7 +31,7 @@
           Team
         </nuxt-link>
         <a
-          to="https://wiki.cybermods.net"
+          href="https://wiki.cybermods.net"
           class="nav__navItem"
         >
           Wiki
