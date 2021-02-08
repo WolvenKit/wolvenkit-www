@@ -11,14 +11,14 @@ Eventually, we do want to hook up a backend for the site to run off as usability
 
 In the mean time, please feel free to submit your PRs for anything against this repo and they will be reviewed. 
 
-- [General Changes](https://github.com/WolvenKit/wolvenkit-www/tree/master/docs/general-changes.md)
-- [Project Page Changes](https://github.com/WolvenKit/wolvenkit-www/tree/master/docs/project-changes.md)
-- Blog Posts - Soon
-
 ## Creating/Modifying Content
 There are a few steps involved with creating content for the website that you will need to follow. Below are links that will take you to dedicated pages for each process.
 
 Before going though with any of these processes, it is recommended you setup a development environment so you can preview your changes in realtime.
+
+- [General Changes](https://github.com/WolvenKit/wolvenkit-www/tree/master/docs/general-changes.md)
+- [Project Page Changes](https://github.com/WolvenKit/wolvenkit-www/tree/master/docs/project-changes.md)
+- Blog Posts - Soon
 
 ## Build Setup
 New to everything? First thing is you'll need to install [Node](https://nodejs.org/en/) grab the latest LTS build of Node and install it. Follow the below instructions in your terminal to get setup.
