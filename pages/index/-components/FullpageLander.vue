@@ -13,7 +13,6 @@
         <img
           :key="currentTool"
           :data-src="images[indexData.tools[currentTool].name].background.image"
-          :data-loading="images[indexData.tools[currentTool].name].background.placeholder"
         >
       </div>
     </transition>
@@ -122,7 +121,7 @@ export default {
       try {
         return {
           image: require(`~/content/indexImages/${toolName}_${isBackground ? 'Background' : 'Feature'}.jpg`),
-          placeholder: require(`~/content/indexImages/${toolName}_${isBackground ? 'Background' : 'Feature'}.jpg?lqip`)
+          placeholder: isBackground ? null : require(`~/content/indexImages/${toolName}_Feature.jpg?lqip`)
         }
       } catch (err) {
         return null
@@ -190,14 +189,13 @@ export default {
       height: 100%;
       object-fit: cover;
       object-position: center;
-      opacity: 0.3;
-      filter: blur(25px);
-      transform: scale(1.1);
-      transition: all 0.2s ease;
+      opacity: 0;
+      transform: scale(1.05);
+      filter: blur(8px);
+      transition: opacity 0.3s ease;
 
       &[lazy=loaded] {
-        transform: scale(1.05);
-        filter: blur(8px);
+        opacity: 0.3;
       }
     }
   }
