@@ -40,7 +40,7 @@ export default {
   methods: {
     getThumbnailImage () {
       try {
-        return require(`~/content/${this.latestPost.dir.substring(1)}/thumbnail.jpg?lqip`)
+        return require(`~/content/${this.latestPost.dir.substring(1)}/${this.latestPost.thumbnailImage}?lqip`)
       } catch (err) {
         return null
       }

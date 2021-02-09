@@ -2,6 +2,7 @@
 title: Cyberpunk modding status and update.
 description: Cyberpunk has released and with this the modding community has started working on their own modding tools.
 headerImage:
+thumbnailImage: thumbnail.jpg
 headerColor: 10, 70, 230
 category: Cyberpunk General Modding
 createdAt: 2020-12-14

@@ -2,8 +2,8 @@
 title: Playground
 description: A horribly not so riveting description
 headerImage: header.jpg
+thumbnailImage: thumbnail.jpg
 headerColor: 10, 70, 230
-image: test.jpg
 category: CET
 createdAt: 2020-02-02
 ---
