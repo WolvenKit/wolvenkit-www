@@ -59,14 +59,24 @@ export default {
 
   methods: {
     getThumbnailImage () {
-      try {
-        return {
-          image: require(`~/content/${this.post.dir.substring(1)}/${this.post.thumbnailImage}`),
-          placeholder: require(`~/content/${this.post.dir.substring(1)}/${this.post.thumbnailImage}?lqip`)
+      if (this.post.thumbnailImage) {
+        try {
+          return {
+            image: require(`~/content/${this.post.dir.substring(1)}/${this.post.thumbnailImage}`),
+            placeholder: require(`~/content/${this.post.dir.substring(1)}/${this.post.thumbnailImage}?lqip`)
+          }
+        } catch (err) {
+          return null
         }
-      } catch (err) {
-        console.log(err)
-        return null
+      } else {
+        try {
+          return {
+            image: require(`~/content/${this.post.dir.substring(1)}/thumbnail.jpg`),
+            placeholder: require(`~/content/${this.post.dir.substring(1)}/thumbnail.jpg?lqip`)
+          }
+        } catch (err) {
+          return null
+        }
       }
     }
   }

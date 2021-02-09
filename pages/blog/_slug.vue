@@ -42,13 +42,24 @@ export default {
 
   methods: {
     getBannerImage () {
-      try {
-        return {
-          image: require(`~/content/${this.post.dir.substring(1)}/${this.post.headerImage}`),
-          placeholder: require(`~/content/${this.post.dir.substring(1)}/${this.post.headerImage}?lqip`)
+      if (this.post.headerImage) {
+        try {
+          return {
+            image: require(`~/content/${this.post.dir.substring(1)}/${this.post.headerImage}`),
+            placeholder: require(`~/content/${this.post.dir.substring(1)}/${this.post.headerImage}?lqip`)
+          }
+        } catch (err) {
+          return null
         }
-      } catch (err) {
-        return null
+      } else {
+        try {
+          return {
+            image: require(`~/content/${this.post.dir.substring(1)}/header.jpg`),
+            placeholder: require(`~/content/${this.post.dir.substring(1)}/header.jpg?lqip`)
+          }
+        } catch (err) {
+          return null
+        }
       }
     }
   }

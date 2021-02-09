@@ -39,11 +39,20 @@ export default {
 
   methods: {
     getThumbnailImage () {
-      try {
-        return require(`~/content/${this.latestPost.dir.substring(1)}/${this.latestPost.thumbnailImage}?lqip`)
-      } catch (err) {
-        return null
+      if (this.latestPost.thumbnailImage) {
+        try {
+          return require(`~/content/${this.latestPost.dir.substring(1)}/${this.latestPost.thumbnailImage}?lqip`)
+        } catch (err) {
+          return null
+        }
+      } else {
+        try {
+          return require(`~/content/${this.latestPost.dir.substring(1)}/thumbnail.jpg?lqip`)
+        } catch (err) {
+          return null
+        }
       }
+
     }
   }
 }
