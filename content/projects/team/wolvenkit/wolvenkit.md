@@ -1,6 +1,7 @@
 ---
 name: WolvenKit
 link: https://github.com/WolvenKit/Wolvenkit
+image:
 getStarted: https://wiki.redmodding.org/
 download: https://github.com/WolvenKit/Wolvenkit/releases/latest
 ---
