@@ -3,7 +3,7 @@
     <PageHeader
       :title="post.title"
       :subtitle="post.description"
-      :image="post.headerImage"
+      :image="bannerImage"
       :color="post.headerColor"
     />
     <PageContainer>
@@ -27,6 +27,29 @@ export default {
 
     return {
       post
+    }
+  },
+
+  data () {
+    return {
+      bannerImage: null
+    }
+  },
+
+  created () {
+    this.bannerImage = this.getBannerImage()
+  },
+
+  methods: {
+    getBannerImage () {
+      try {
+        return {
+          image: require(`~/content/${this.post.dir.substring(1)}/${this.post.headerImage}`),
+          placeholder: require(`~/content/${this.post.dir.substring(1)}/${this.post.headerImage}?lqip`)
+        }
+      } catch (err) {
+        return null
+      }
     }
   }
 }

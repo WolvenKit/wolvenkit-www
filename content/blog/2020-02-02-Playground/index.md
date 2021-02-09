@@ -1,7 +1,7 @@
 ---
 title: Playground
 description: A horribly not so riveting description
-headerImage: https://www.futuregamereleases.com/wp-content/uploads/2020/11/cyberpunk-2077-release-date.jpg
+headerImage: header.jpg
 headerColor: 10, 70, 230
 image: test.jpg
 category: CET
@@ -12,25 +12,19 @@ createdAt: 2020-02-02
 
 # Markdown: Syntax
 
-*   [Overview](#overview)
-    *   [Philosophy](#philosophy)
-    *   [Inline HTML](#html)
-    *   [Automatic Escaping for Special Characters](#autoescape)
-*   [Block Elements](#block)
-    *   [Paragraphs and Line Breaks](#p)
-    *   [Headers](#header)
-    *   [Blockquotes](#blockquote)
-    *   [Lists](#list)
-    *   [Code Blocks](#precode)
-    *   [Horizontal Rules](#hr)
-*   [Span Elements](#span)
-    *   [Links](#link)
-    *   [Emphasis](#em)
-    *   [Code](#code)
-    *   [Images](#img)
-*   [Miscellaneous](#misc)
-    *   [Backslash Escapes](#backslash)
-    *   [Automatic Links](#autolink)
+- [Markdown: Syntax](#markdown-syntax)
+  - [Overview](#overview)
+    - [Philosophy](#philosophy)
+  - [Block Elements](#block-elements)
+    - [Paragraphs and Line Breaks](#paragraphs-and-line-breaks)
+    - [Headers](#headers)
+    - [Blockquotes](#blockquotes)
+    - [Lists](#lists)
+    - [Code Blocks](#code-blocks)
+  - [Span Elements](#span-elements)
+    - [Links](#links)
+    - [Emphasis](#emphasis)
+    - [Code](#code)
 
 
 **Note:** This document is itself written using Markdown; you

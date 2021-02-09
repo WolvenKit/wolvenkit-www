@@ -1,9 +1,8 @@
 ---
 title: Cyberpunk modding status and update.
 description: Cyberpunk has released and with this the modding community has started working on their own modding tools.
-headerImage: https://www.futuregamereleases.com/wp-content/uploads/2020/11/cyberpunk-2077-release-date.jpg
+headerImage:
 headerColor: 10, 70, 230
-image: Cyperpunk_2077.jpg
 category: Cyberpunk General Modding
 createdAt: 2020-12-14
 ---
