@@ -7,7 +7,7 @@
     <PageContainer>
       <div class="team__list">
         <TeamMember
-          v-for="(member, index) in team.members"
+          v-for="(member, index) in memberOrder"
           :key="index"
           :member="member"
         />
@@ -31,8 +31,39 @@ export default {
         error({ statusCode: 404, message: 'Page not found' })
       })
 
+    const teamMembers = await $content('teamMembers', { deep: true })
+      .sortBy('createdAt', 'asc')
+      .fetch()
+      .catch(() => {
+        error({ statusCode: 404, message: 'Page not found' })
+      })
+
     return {
-      team
+      team,
+      teamMembers
+    }
+  },
+
+  computed: {
+    memberOrder () {
+      const original = this.teamMembers
+      const sortBy = this.team.members
+
+      if (!original || !sortBy) {
+        return original
+      }
+
+      const sortedList = []
+      sortBy.forEach((sort) => {
+        const existing = original.filter(member => member.name === sort)
+        if (existing.length > 0) {
+          sortedList.push(existing[0])
+        }
+      })
+
+      const remainder = original.filter(member => !sortBy.includes(member.name))
+
+      return [...sortedList, ...remainder]
     }
   }
 }

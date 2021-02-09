@@ -8,10 +8,15 @@
   >
     <div
       v-if="image"
+      v-lazy-container="{ selector: 'img' }"
       class="pageHeader__imageContainer"
     >
-      <img :src="image">
+      <img
+        :data-src="image.image"
+        :data-loading="image.placeholder"
+      >
     </div>
+
     <div class="pageHeader__container">
       <h1 class="pageHeader__title">
         {{ title }}
@@ -35,7 +40,7 @@ export default {
       default: null
     },
     image: {
-      type: String,
+      type: Object,
       default: null
     },
     color: {
@@ -68,9 +73,15 @@ export default {
       height: 100%;
       object-fit: cover;
       object-position: center;
-      filter: blur(5px);
-      transform: scale(1.05);
+      filter: blur(15px);
+      transform: scale(1.1);
       opacity: 0.5;
+      transition: all 0.2s ease;
+
+      &[lazy=loaded] {
+        transform: scale(1.05);
+        filter: blur(5px);
+      }
     }
   }
 

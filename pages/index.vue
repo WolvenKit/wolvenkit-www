@@ -32,7 +32,7 @@ export default {
       .only([
         'title',
         'description',
-        'image',
+        'thumbnailImage',
         'category',
         'createdAt',
         'dir'

@@ -89,7 +89,7 @@ export default {
   methods: {
     sortArray (original, sortBy) {
       if (!original || !sortBy) {
-        return []
+        return original
       }
 
       const sortedList = []

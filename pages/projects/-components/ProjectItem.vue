@@ -74,13 +74,24 @@ export default {
 
   methods: {
     getProjectImage () {
-      try {
-        return {
-          image: require(`~/content/${this.project.path.substring(1)}.jpg`),
-          placeholder: require(`~/content/${this.project.path.substring(1)}.jpg?lqip&inline`)
+      if (this.project.image) {
+        try {
+          return {
+            image: require(`~/content/${this.project.dir.substring(1)}/${this.project.image}`),
+            placeholder: require(`~/content/${this.project.dir.substring(1)}/${this.project.image}?lqip&inline`)
+          }
+        } catch (err) {
+          return null
         }
-      } catch (err) {
-        return null
+      } else {
+        try {
+          return {
+            image: require(`~/content/${this.project.path.substring(1)}.jpg`),
+            placeholder: require(`~/content/${this.project.path.substring(1)}.jpg?lqip&inline`)
+          }
+        } catch (err) {
+          return null
+        }
       }
     }
   }
