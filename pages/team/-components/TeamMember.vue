@@ -89,15 +89,26 @@ export default {
 
   methods: {
     getProfileImage () {
-      const username = this.member.name.toLowerCase()
-
-      try {
-        return {
-          image: require(`~/content/teamImages/${username}.jpg`),
-          placeholder: require(`~/content/teamImages/${username}.jpg?lqip`)
+      if (this.member.profileImage) {
+        try {
+          return {
+            image: require(`~/content/${this.member.dir.substring(1)}/${this.member.profileImage}`),
+            placeholder: require(`~/content/${this.member.dir.substring(1)}/${this.member.profileImage}?lqip`)
+          }
+        } catch (err) {
+          return null
         }
-      } catch (err) {
-        return null
+      } else {
+        const username = this.member.name.toLowerCase()
+
+        try {
+          return {
+            image: require(`~/content/${this.member.dir.substring(1)}/${username}.jpg`),
+            placeholder: require(`~/content/${this.member.dir.substring(1)}/${username}.jpg?lqip`)
+          }
+        } catch (err) {
+          return null
+        }
       }
     }
   }
