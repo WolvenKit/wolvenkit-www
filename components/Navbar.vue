@@ -21,7 +21,7 @@
             to="/"
             class="nav__navLogo"
           >
-            wolvenkit logo
+            <img src="./logo_temp.png"/>
           </nuxt-link>
           <div
             class="nav__closeMenuContainer"

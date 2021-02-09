@@ -70,7 +70,7 @@ export default {
 
   &__title {
     font-weight: 700;
-    font-size: 2em;
+    font-size: 1em;
   }
 
   &__columns {
