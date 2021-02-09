@@ -1,5 +1,5 @@
 ---
-title: Cyberpunk 2077 Modding Update Post - No 1
+title: Cyberpunk 2077 Modding Update Post No 2 - CD Project Red supports us!
 description: It has been some times and with times comes updates! The first updates regarding modding.
 headerImage: https://www.futuregamereleases.com/wp-content/uploads/2020/11/cyberpunk-2077-release-date.jpg
 headerColor: 10, 70, 230
