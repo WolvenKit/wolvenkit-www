@@ -67,7 +67,7 @@ export default {
 
     extend (config, { isDev, isClient }) {
       config.module.rules.push({
-        test: /\.md$/i,
+        test: /\.(md|yaml)$/i,
         loader: 'ignore-loader'
       })
     }
