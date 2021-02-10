@@ -86,7 +86,7 @@ columns:
 ### project.yaml
 This file is a little bit different to how the `index.yaml` file worked. The array here is only to define the order that projects should be displayed on this page, if a project is not defined on this link it will be ordered by it's file creation date.
 
-If you want to look into creating a project to display on this page click [here](TODO: LINK).
+If you want to look into creating a project to display on this page click [here]('./project-changes.md).
 
 Similarly to the index file the project names that are listed MUST match the `name:` value of the project that should be sorted.
 
@@ -110,41 +110,21 @@ communityProjects:
 ```
 
 ### team.yaml
-This file will contain quite a bit of information it will be an ordered list of all the team members who have helped along the way. It is also possible to define an image for people that are in the list.
+This file will act very similars to the project file in that it only decides the order of the team members. Team members will be stored in the `teamMembers` directory, for more information on this see [here]('./team-members.md).
 
-Images for users will need to be stored in the `teamImages` folder.
+The member names listed must match the name defined for the specific team member in their file for it to be ordered properly.
 
 
 #### Format
 ```yaml
 subtitle:
 members:
-  - name:
-    description:
-    projects:
-    socials:
 ```
 
 #### Example
 ```yaml
 subtitle: Showcasing our extensive team who make everything possible
 members:
-  - name: Traderain
-    description: 'Ultimate mega nerd #1'
-    projects:
-      - WolvenKit
-
-  - name: rfuzzo
-    description: 'Ultimate mega nerd #2'
-    projects:
-      - WolvenKit
-      - CP77 Tools
-    socials:
-      - github: https://github.com/rfuzzo
+  - Traderain
+  - rfuzzo
 ```
-
-#### `teamImages/` Example
-In the above file we have added both Traderain and rfuzzo to our list of team members. If we want to provide these users will profile images in the `teamImages/` folder we would add the following images
-
-- `traderain.png`
-- `rfuzzo.png`
