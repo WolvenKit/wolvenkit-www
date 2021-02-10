@@ -210,6 +210,7 @@ export default {
     display: none;
     height: 3em;
     max-height: 100%;
+    padding-right: 0.85em;
     -webkit-tap-highlight-color: transparent;
     transition: transform 0.4s;
     user-select: none;
