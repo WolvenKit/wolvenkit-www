@@ -5,13 +5,13 @@ The content directory houses a few general files that manage some parts of the s
 
 ## General Files
 
-- [`index.yaml`](#index.yaml) - Contains website title and the project pages displayed on the landing page
+- [`index.yaml`](#indexyaml) - Contains website title and the project pages displayed on the landing page
 
-- [`footer.yaml`](#footer.yaml) - Contains the website footer links and columns that are displayed
+- [`footer.yaml`](#footeryaml) - Contains the website footer links and columns that are displayed
 
-- [`project.yaml`](#project.yaml) - Decides the order of projects that are displayed on the `/projects` route of the website
+- [`project.yaml`](#projectyaml) - Decides the order of projects that are displayed on the `/projects` route of the website
 
-- [`team.yaml`](#team.yaml) - List of all the developers involved with WolvenKit and the community
+- [`team.yaml`](#teamyaml) - List of all the developers involved with WolvenKit and the community
 
 ### index.yaml
 This file will simply define the site title and list out the projects that are displayed on the landing page, it does not contain the images. For every project that is added here the website will search the `indexImages/` folder for the project images.
