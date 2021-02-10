@@ -33,12 +33,10 @@ projects:
 ## Images
 As seen by the above example we have defined an image for the user, in this circumstance the website will look in that folder for `profile.png`. If this was not defined it would try looking for `ExampleUser.jpg`.
 
-## Directory Structure
+## Example Directory Structure
 ```bash
 └── teamMembers
     └── ExampleUser
         ├── ExampleUser.yaml
         └── profile.png
 ```
-
-Do note that the folder name and yaml file name don't really matter, but it would good if we could keep these as close as possible to the member's actual username.
