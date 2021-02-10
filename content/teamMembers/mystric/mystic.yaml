@@ -1,7 +1,7 @@
 name: Mystic
-description: [Lorem Ipsum]
+description: Lorem Ipsum
 profileImage: image.png
 projects:
-  - [Projects]
+  - Projects
 socials:
-  - github: https://github.com/[NAME]
+  - github: https://github.com/NAME
