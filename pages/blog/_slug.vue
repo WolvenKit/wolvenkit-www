@@ -6,7 +6,7 @@
       :image="bannerImage"
       :color="post.headerColor"
     />
-    <PageContainer>
+    <PageContainer blog>
       <nuxt-content
         class="blogPost__post"
         :document="post"
