@@ -86,6 +86,7 @@ export default {
 <style lang="scss" scoped>
 .blogPostItem {
   width: 100%;
+  min-width: 0;
   border-radius: 1em;
   display: flex;
   align-items: center;
@@ -101,18 +102,20 @@ export default {
     position: relative;
     width: 100%;
     height: max-content;
-    min-width: 300px;
+    min-width: 350px;
     border-radius: 1em;
     overflow: hidden;
     background: var(--color-bg-alt);
-    flex: 1;
+    flex: 2;
     margin-bottom: 1em;
+    border: 3px solid var(--color-bg-alt);
+    box-shadow: 0 0.25em 15px 0 rgba(0, 0, 0, 0.2);
 
     &::before {
       content: "";
       display: block;
       height: 0;
-      width: 0;
+      width: 100%;
       padding-top: calc(100% * (9 / 16));
     }
 
@@ -148,9 +151,10 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 1em;
-    margin-right: 1em;
-    max-width: 40vmin;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    flex: 1;
+    min-width: 350px;
   }
 
   &__category {

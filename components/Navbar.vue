@@ -21,7 +21,7 @@
             to="/"
             class="nav__navLogo"
           >
-            <img src="./logo_temp.png"/>
+            <img src="./logo_temp.png">
           </nuxt-link>
           <div
             class="nav__closeMenuContainer"
@@ -210,6 +210,7 @@ export default {
     display: none;
     height: 3em;
     max-height: 100%;
+    padding-right: 0.85em;
     -webkit-tap-highlight-color: transparent;
     transition: transform 0.4s;
     user-select: none;
@@ -232,7 +233,21 @@ export default {
     }
   }
 
-  &__navLogo,
+  &__navLogo {
+    height: 100%;
+    padding: 0.85em;
+    margin-right: 0.5em;
+    transition: all 0.2s ease;
+
+    > img {
+      height: 100%;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
   &__navItem {
     display: flex;
     align-items: center;
