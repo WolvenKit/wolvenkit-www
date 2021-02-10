@@ -161,7 +161,7 @@ export default {
 
   &__mainContainer {
     position: relative;
-    min-height: 115vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
