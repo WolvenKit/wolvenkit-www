@@ -1,8 +1,8 @@
-name: Avail
+name: envy
 description: Lorem Ipsum
 profileImage: image.png
 projects:
   - Projects
 socials:
-  - flag: hr
-    github: https://github.com/avail
+  - flag: de
+    github: https://github.com/envy

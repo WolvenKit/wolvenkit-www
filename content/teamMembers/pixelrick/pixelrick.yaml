@@ -1,7 +1,5 @@
 name: PixelRick
 description: Lorem Ipsum
-profileImage: image.png
+profileImage:
 projects:
   - Projects
-socials:
-  - github: https://github.com/NAME

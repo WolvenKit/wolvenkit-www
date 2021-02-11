@@ -1,10 +1,11 @@
 <template>
   <div class="team">
     <PageHeader
-      title="Team"
-      subtitle="Showcasing our extensive team who make everything possible"
+      :title="team.title"
+      :subtitle="team.subtitle"
     />
     <PageContainer>
+      <p class="team__description">{{ team.description }}</p>
       <div class="team__list">
         <TeamMember
           v-for="(member, index) in memberOrder"
@@ -79,6 +80,18 @@ export default {
     max-width: var(--max-width-lg);
     margin: 0 auto;
     padding: 4vmin;
+  }
+
+  &__description {
+    width: 60%;
+    text-align: center;
+    margin: 0 auto 37px auto;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 }
 </style>

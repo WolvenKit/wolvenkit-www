@@ -1,7 +1,7 @@
-name: Yamashi
+name: yamashi
 description: Lorem Ipsum
-profileImage: image.png
+profileImage:
 projects:
   - Projects
 socials:
-  - github: https://github.com/NAME
+  - github: https://github.com/yamashi

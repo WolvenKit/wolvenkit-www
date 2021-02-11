@@ -4,5 +4,8 @@ profileImage: moonded.png
 projects:
   - Community Manager
 socials:
-  - github: https://github.com/Moonded
+  - flag: de
+    github: https://github.com/Moonded
     twitter: https://twitter.com/MoondedDE
+    reddit: https://www.reddit.com/user/Moonded
+    website: https://moonded.com/

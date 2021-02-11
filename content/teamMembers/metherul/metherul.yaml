@@ -1,8 +1,7 @@
-name: Avail
+name: metherul
 description: Lorem Ipsum
 profileImage: image.png
 projects:
   - Projects
 socials:
-  - flag: hr
-    github: https://github.com/avail
+  - github: https://github.com/metherul

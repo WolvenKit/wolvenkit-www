@@ -4,4 +4,5 @@ profileImage: image.png
 projects:
   - Projects
 socials:
-  - github: https://github.com/NAME
+  - flag: it
+    github: https://github.com/CPULL

@@ -3,3 +3,6 @@ description: 'Ultimate mega nerd #1'
 profileImage: traderain.png
 projects:
   - WolvenKit
+socials:
+  - flag: hu
+    github: https://github.com/Traderain

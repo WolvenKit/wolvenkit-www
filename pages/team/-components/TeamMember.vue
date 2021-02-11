@@ -34,9 +34,12 @@
             :key="social"
             class="teamMember__socialIcon"
           >
-            <a :href="link">
+            <CountryFlag v-if="social === 'flag'" :country="link" size="small" class="teamMember__socialIcon__flag" />
+            <a v-else :href="link">
               <GithubIcon v-if="social === 'github'" />
               <TwitterIcon v-else-if="social === 'twitter'" />
+              <Reddit v-else-if="social === 'reddit'" />
+              <Web v-else-if="social === 'website'" />
               <OtherIcon v-else />
             </a>
           </li>
@@ -61,13 +64,19 @@
 <script>
 import GithubIcon from 'vue-material-design-icons/Github.vue'
 import TwitterIcon from 'vue-material-design-icons/Twitter.vue'
+import Reddit from 'vue-material-design-icons/Reddit.vue'
+import Web from 'vue-material-design-icons/Web.vue'
 import OtherIcon from 'vue-material-design-icons/OpenInNew.vue'
+import CountryFlag from 'vue-country-flag'
 
 export default {
   components: {
     GithubIcon,
     TwitterIcon,
-    OtherIcon
+    Reddit,
+    Web,
+    OtherIcon,
+    CountryFlag
   },
 
   props: {
@@ -79,8 +88,12 @@ export default {
 
   data () {
     return {
-      profileImage: null
+      profileImage: null,
+      defaultProfileImage: 'image.png'
     }
+  },
+
+  beforeMount () {
   },
 
   created () {
@@ -89,26 +102,27 @@ export default {
 
   methods: {
     getProfileImage () {
-      if (this.member.profileImage) {
+      if (this.member.profileImage && this.member.profileImage !== this.defaultProfileImage) {
         try {
           return {
             image: require(`~/content/${this.member.dir.substring(1)}/${this.member.profileImage}`),
             placeholder: require(`~/content/${this.member.dir.substring(1)}/${this.member.profileImage}?lqip`)
           }
         } catch (err) {
-          return null
+          return this.getDefaultProfileImage()
         }
       } else {
-        const username = this.member.name.toLowerCase()
-
-        try {
-          return {
-            image: require(`~/content/${this.member.dir.substring(1)}/${username}.jpg`),
-            placeholder: require(`~/content/${this.member.dir.substring(1)}/${username}.jpg?lqip`)
-          }
-        } catch (err) {
-          return null
+        return this.getDefaultProfileImage()
+      }
+    },
+    getDefaultProfileImage () {
+      try {
+        return {
+          image: require(`~/content/teamImages/${this.defaultProfileImage}`),
+          placeholder: require(`~/content/teamImages/${this.defaultProfileImage}?lqip`)
         }
+      } catch (err) {
+        return null
       }
     }
   }
@@ -120,6 +134,8 @@ export default {
   display: flex;
   align-items: center;
   margin-bottom: 2em;
+  width: 45%;
+  min-width: 400px;
 
   &__imageContainer,
   &__imageContainerNone {
@@ -179,6 +195,8 @@ export default {
   }
 
   &__socials {
+    display: flex;
+    align-items: center;
     list-style: none;
     padding: 0;
   }
@@ -194,6 +212,11 @@ export default {
 
     &:hover {
       color: var(--color-primary-light);
+    }
+
+    &__flag {
+      margin: -11px -18.5px !important;
+      transform: scale(0.35) !important;
     }
   }
 

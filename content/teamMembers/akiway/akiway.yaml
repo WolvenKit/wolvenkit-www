@@ -1,7 +1,10 @@
 name: Akiway
-description: Lorem Ipsum
-profileImage: image.png
+description: '"Reality is all we have choom, and it sucks."'
+profileImage: akiway.png
 projects:
-  - Projects
+  - CP77 Tools GUI
+  - WolvenKit Website
 socials:
-  - github: https://github.com/NAME
+  - flag: fr
+    github: https://github.com/Akiway
+    website: https://aurelienklein.aklibrary.fr

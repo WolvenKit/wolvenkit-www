@@ -1,9 +1,10 @@
 name: Soulweaver
 description: A totally cool guy 😎
 color: 124, 48, 194
-profileImage:
+profileImage: soulweaver.jpg
 projects:
   - WolvenKit Website
 socials:
-  - github: https://github.com/zSoulweaver
-  - twitter: https://twitter.com/zSoulweaver
+  - flag: au
+    github: https://github.com/zSoulweaver
+    twitter: https://twitter.com/zSoulweaver
