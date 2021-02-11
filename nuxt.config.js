@@ -4,14 +4,30 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Red Modding',
+    titleTemplate: (chunk) => {
+      return chunk ? `${chunk} | Red Modding` : 'Red Modding'
+    },
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Red Modding'
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: 'The home to all your tools for modding REDEngine games.'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: `${process.env.BASE_URL || 'http://localhost:3000'}/logo_temp.png`
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }

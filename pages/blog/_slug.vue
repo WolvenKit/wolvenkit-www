@@ -32,12 +32,37 @@ export default {
 
   data () {
     return {
-      bannerImage: null
+      bannerImage: null,
+      thumbnailImage: null
+    }
+  },
+
+  head () {
+    return {
+      title: this.post.title,
+      meta: [
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.post.title
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.post.description
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: `${process.env.BASE_URL || 'http://localhost:3000'}${this.thumbnailImage}`
+        }
+      ]
     }
   },
 
   created () {
     this.bannerImage = this.getBannerImage()
+    this.thumbnailImage = this.getThumbnailImage()
   },
 
   methods: {
@@ -57,6 +82,22 @@ export default {
             image: require(`~/content/${this.post.dir.substring(1)}/header.jpg`),
             placeholder: require(`~/content/${this.post.dir.substring(1)}/header.jpg?lqip`)
           }
+        } catch (err) {
+          return null
+        }
+      }
+    },
+
+    getThumbnailImage () {
+      if (this.post.thumbnailImage) {
+        try {
+          return require(`~/content/${this.post.dir.substring(1)}/${this.post.thumbnailImage}`)
+        } catch (err) {
+          return null
+        }
+      } else {
+        try {
+          return require(`~/content/${this.post.dir.substring(1)}/thumbnail.jpg`)
         } catch (err) {
           return null
         }

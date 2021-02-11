@@ -76,6 +76,10 @@ export default {
     }
   },
 
+  head: {
+    title: 'Projects'
+  },
+
   computed: {
     teamProjectOrder () {
       return this.sortArray(this.teamProjects, this.page.projects)

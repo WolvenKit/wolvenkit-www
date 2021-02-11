@@ -44,6 +44,10 @@ export default {
     }
   },
 
+  head: {
+    title: 'Team'
+  },
+
   computed: {
     memberOrder () {
       const original = this.teamMembers

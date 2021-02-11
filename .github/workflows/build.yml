@@ -28,6 +28,8 @@ jobs:
 
       - name: Generate
         run: yarn run generate
+        env:
+          BASE_URL: https://redmodding.org/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
