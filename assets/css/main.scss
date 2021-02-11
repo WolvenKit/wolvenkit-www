@@ -5,7 +5,9 @@ html {
   --color-bg-alt: rgb(25, 25, 25);
   --color-text: rgb(255, 255, 255);
   --color-text-dark: rgb(172, 172, 172);
-  --max-width-lg: 1000px;
+  --color-text-semidark: rgb(220, 220, 220);
+  --max-width-lg: 1100px;
+  --max-width-blog: 900px;
 
   scroll-behavior: smooth;
 }
@@ -21,4 +23,22 @@ a {
   &:visited {
     color: var(--color-primary-light);
   }
+}
+
+/* Custom Scrollbar */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
