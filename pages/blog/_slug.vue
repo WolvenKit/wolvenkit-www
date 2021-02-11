@@ -110,6 +110,8 @@ export default {
 <style lang="scss" scoped>
 .blogPost {
   ::v-deep &__post {
+    line-height: 1.8em;
+
     h1 {
       margin: 0.5em 0 1em;
     }
@@ -123,19 +125,23 @@ export default {
     }
 
     p {
-      line-height: 1.6em;
       margin-bottom: 1em;
+      color: var(--color-text-semidark);
     }
 
     ul,
     ol {
       margin-bottom: 1.2em;
+      color: var(--color-text-semidark);
     }
 
     blockquote {
       padding: 0 1em;
       border-left: 0.25em solid var(--color-primary);
-      color: var(--color-text-dark);
+
+      * {
+        color: var(--color-text-dark);
+      }
     }
 
     .nuxt-content-highlight pre {

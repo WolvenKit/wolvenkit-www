@@ -9,7 +9,7 @@
       <div class="team__list">
         <TeamMember
           v-for="(member, index) in memberOrder"
-          :key="index"
+          :key="index+member.name"
           :member="member"
         />
       </div>

@@ -1,7 +1,7 @@
 name: Nyx/ZGal88
 description: Lorem Ipsum
-profileImage: image.png
+profileImage:
 projects:
   - Projects
 socials:
-  - github: https://github.com/NAME
+  - github: https://github.com/zgal88
