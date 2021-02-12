@@ -270,6 +270,7 @@ export default {
 
   &__toolLinks {
     display: flex;
+    margin-bottom: 2em;
   }
 
   &__toolLink {
@@ -304,7 +305,7 @@ export default {
     position: relative;
     width: 100%;
     height: 100%;
-    margin-top: 3vmin;
+    margin-top: auto;
     border-radius: 0.5em 0.5em 0 0;
     overflow: hidden;
 
