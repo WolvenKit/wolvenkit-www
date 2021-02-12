@@ -38,8 +38,8 @@
             <a v-else :href="link">
               <GithubIcon v-if="social === 'github'" />
               <TwitterIcon v-else-if="social === 'twitter'" />
-              <Reddit v-else-if="social === 'reddit'" />
-              <Web v-else-if="social === 'website'" />
+              <RedditIcon v-else-if="social === 'reddit'" />
+              <WebIcon v-else-if="social === 'website'" />
               <OtherIcon v-else />
             </a>
           </li>
@@ -64,8 +64,8 @@
 <script>
 import GithubIcon from 'vue-material-design-icons/Github.vue'
 import TwitterIcon from 'vue-material-design-icons/Twitter.vue'
-import Reddit from 'vue-material-design-icons/Reddit.vue'
-import Web from 'vue-material-design-icons/Web.vue'
+import RedditIcon from 'vue-material-design-icons/Reddit.vue'
+import WebIcon from 'vue-material-design-icons/Web.vue'
 import OtherIcon from 'vue-material-design-icons/OpenInNew.vue'
 import CountryFlag from 'vue-country-flag'
 
@@ -73,8 +73,8 @@ export default {
   components: {
     GithubIcon,
     TwitterIcon,
-    Reddit,
-    Web,
+    RedditIcon,
+    WebIcon,
     OtherIcon,
     CountryFlag
   },
@@ -91,9 +91,6 @@ export default {
       profileImage: null,
       defaultProfileImage: 'image.png'
     }
-  },
-
-  beforeMount () {
   },
 
   created () {
