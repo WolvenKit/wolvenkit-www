@@ -40,7 +40,10 @@
               size="small"
               class="teamMember__socialIcon__flag"
             />
-            <a v-else :href="link">
+            <a
+              v-else
+              :href="link"
+            >
               <GithubIcon v-if="social === 'github'" />
               <TwitterIcon v-else-if="social === 'twitter'" />
               <RedditIcon v-else-if="social === 'reddit'" />
