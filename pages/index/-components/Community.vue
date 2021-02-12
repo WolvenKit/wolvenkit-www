@@ -1,7 +1,7 @@
 <template>
   <div class="community">
     <PageContainer>
-      <DiscordIcon class="community__icon" />
+      <Wumpus />
       <div class="community__info">
         <h2 class="community__title">
           Join The Community!
@@ -19,11 +19,11 @@
 </template>
 
 <script>
-import DiscordIcon from 'vue-material-design-icons/Discord.vue'
+import Wumpus from '@/pages/index/-components/Wumpus'
 
 export default {
   components: {
-    DiscordIcon
+    Wumpus
   }
 }
 </script>
@@ -41,23 +41,6 @@ export default {
   ::v-deep .container {
     display: flex;
     align-items: center;
-  }
-
-  &__icon {
-    display: flex;
-    justify-content: center;
-    font-size: 30vmin;
-    flex: 1;
-
-    ::v-deep svg {
-      width: 1em;
-      height: 1em;
-      filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.2));
-    }
-
-    @media (max-width: 660px) {
-      display: none;
-    }
   }
 
   &__info {
