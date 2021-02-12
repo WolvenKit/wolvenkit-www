@@ -278,7 +278,7 @@ export default {
     align-items: center;
     background: var(--color-primary);
     color: var(--color-text);
-    padding: 0 2em;
+    padding: 0.5em 2em;
     margin-top: 3vh;
     border-radius: 0.25em;
     font-weight: 600;
@@ -289,11 +289,11 @@ export default {
     }
 
     > .github-icon {
-      height: 60%;
-      width: 100%;
+      height: 100%;
+      min-width: 2em;
       margin-right: 0.5em;
 
-      > svg {
+      ::v-deep svg {
         height: 100%;
         width: 100%;
       }
