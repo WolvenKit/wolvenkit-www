@@ -34,7 +34,12 @@
             :key="social"
             class="teamMember__socialIcon"
           >
-            <CountryFlag v-if="social === 'flag'" :country="link" size="small" class="teamMember__socialIcon__flag" />
+            <CountryFlag
+              v-if="social === 'flag' && link"
+              :country="link"
+              size="small"
+              class="teamMember__socialIcon__flag"
+            />
             <a v-else :href="link">
               <GithubIcon v-if="social === 'github'" />
               <TwitterIcon v-else-if="social === 'twitter'" />
