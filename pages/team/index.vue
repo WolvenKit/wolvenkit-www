@@ -5,7 +5,9 @@
       :subtitle="team.subtitle"
     />
     <PageContainer>
-      <p class="team__description">{{ team.description }}</p>
+      <p class="team__description">
+        {{ team.description }}
+      </p>
       <div class="team__list">
         <TeamMember
           v-for="(member, index) in memberOrder"
