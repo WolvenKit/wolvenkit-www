@@ -119,7 +119,7 @@ export default {
   &__imageContainerNone {
     max-width: 35vmin;
     min-width: 250px;
-    margin-right: 2em;
+    margin-left: 2em;
     border-radius: 0.5em;
     overflow: hidden;
     border: 5px solid var(--color-bg-alt);
@@ -158,28 +158,35 @@ export default {
   &__buttons {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 1em;
+    margin: -1em 0 0 -1em;
+    width: calc(100% + 1em);
   }
 
   &__button {
+    height: 3em;
+    margin: 1em 0 0 1em;
+    flex: 1;
     display: flex;
     align-items: center;
+    justify-content: center;
     background: var(--color-primary);
     color: var(--color-text);
     padding: 0.5em 2em;
-    margin-bottom: 1em;
     border-radius: 0.25em;
     font-weight: 600;
     text-decoration: none;
     white-space: nowrap;
-
-    &:not(:last-of-type) {
-      margin-right: 1em;
-    }
   }
 
   &__github {
+    height: 100%;
+    min-width: 2em;
     margin-right: 0.5em;
+
+    ::v-deep svg {
+      height: 100%;
+      width: 100%;
+    }
   }
 
   ::v-deep &__description {
