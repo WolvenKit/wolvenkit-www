@@ -10,16 +10,19 @@ export default {
         {
           hid: 'rive',
           src: 'https://unpkg.com/rive-js/dist/rive.js',
-          callback: () => {
-            // eslint-disable-next-line no-new, no-undef
-            new RiveAnimation({
-              src: '/rive/wumpus.riv',
-              canvas: this.$refs.riveWumpus,
-              autoplay: true
-            })
-          }
+          callback: () => this.initRiveAnimation()
         }
       ]
+    }
+  },
+  methods: {
+    initRiveAnimation () {
+      // eslint-disable-next-line no-new, no-undef
+      new RiveAnimation({
+        src: '/rive/wumpus.riv',
+        canvas: this.$refs.riveWumpus,
+        autoplay: true
+      })
     }
   }
 }
