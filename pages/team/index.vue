@@ -6,28 +6,30 @@
         {{ team.description }}
       </p>
       <div class="team__filter">
-        <FilterIcon v-if="projectFilter"
-                    class="team__filter__iconFilled"
-                    @click="projectFilter = null"
-                    title="Clear filters" />
+        <FilterIcon
+          v-if="projectFilter"
+          class="team__filter__iconFilled"
+          title="Clear filters"
+          @click="projectFilter = null"
+        />
         <FilterOutlineIcon v-else class="team__filter__icon" />
         <p>Filter by project: </p>
         <select v-model="projectFilter" class="team__filter__select">
           <option :value="null">
             All
           </option>
-          <option v-for="project in projectList"
-                  :key="project"
-                  :value="project">
+          <option v-for="project in projectList" :key="project" :value="project">
             {{ project }}
           </option>
         </select>
       </div>
       <div class="team__list">
-        <TeamMember v-for="(member, index) in memberOrder"
-                    :key="index+member.name"
-                    :member="member"
-                    :project-filter="projectFilter" />
+        <TeamMember
+          v-for="(member, index) in memberOrder"
+          :key="index+member.name"
+          :member="member"
+          :project-filter="projectFilter"
+        />
       </div>
     </PageContainer>
   </div>

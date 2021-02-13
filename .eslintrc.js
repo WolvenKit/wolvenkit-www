@@ -16,15 +16,15 @@ module.exports = {
   // add your custom rules here
   rules: {
     'vue/max-attributes-per-line': ['error', {
-      singleline: 2,
+      singleline: 3,
       multiline: {
         max: 1,
-        allowFirstLine: true
+        allowFirstLine: false
       }
     }],
     'vue/html-closing-bracket-newline': ['error', {
       singleline: 'never',
-      multiline: 'never'
+      multiline: 'always'
     }]
   }
 }

@@ -6,20 +6,24 @@
         Team Projects
       </h2>
       <div class="projects__teamProjects">
-        <ProjectItem v-for="project in teamProjectOrder"
-                     :key="project.slug"
-                     :project="project"
-                     :members="membersOfProject(project)" />
+        <ProjectItem
+          v-for="project in teamProjectOrder"
+          :key="project.slug"
+          :project="project"
+          :members="membersOfProject(project)"
+        />
       </div>
 
       <h2 v-if="communityProjects.length > 0" class="projects__heading">
         Community Projects
       </h2>
       <div class="projects__communityProjects">
-        <ProjectItem v-for="project in communityProjectOrder"
-                     :key="project.slug"
-                     :project="project"
-                     :members="membersOfProject(project)" />
+        <ProjectItem
+          v-for="project in communityProjectOrder"
+          :key="project.slug"
+          :project="project"
+          :members="membersOfProject(project)"
+        />
       </div>
     </PageContainer>
   </div>

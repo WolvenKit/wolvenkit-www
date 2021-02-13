@@ -1,13 +1,13 @@
 <template>
   <div class="teamMember">
-    <div v-if="profileImage"
-         v-lazy-container="{ selector: 'img' }"
-         class="teamMember__imageContainer">
-      <img :data-src="profileImage.image" :data-loading="profileImage.placeholder" />
-    </div>
     <div
-      v-else
-      class="teamMember__imageContainerNone">
+      v-if="profileImage"
+      v-lazy-container="{ selector: 'img' }"
+      class="teamMember__imageContainer"
+    >
+      <img :data-src="profileImage.image" :data-loading="profileImage.placeholder">
+    </div>
+    <div v-else class="teamMember__imageContainerNone">
       <div class="teamMember__color" :style="{ background: member.color ? `rgb(${member.color})` : null }" />
     </div>
 
@@ -17,13 +17,17 @@
           {{ member.name }}
         </p>
         <ul v-if="member.socials" class="teamMember__socials">
-          <li v-for="(link, social) in member.socials[0]"
-              :key="social"
-              class="teamMember__socialIcon">
-            <CountryFlag v-if="social === 'flag' && link"
-                         :country="link"
-                         size="small"
-                         class="teamMember__socialIcon__flag" />
+          <li
+            v-for="(link, social) in member.socials[0]"
+            :key="social"
+            class="teamMember__socialIcon"
+          >
+            <CountryFlag
+              v-if="social === 'flag' && link"
+              :country="link"
+              size="small"
+              class="teamMember__socialIcon__flag"
+            />
             <a v-else :href="link">
               <GithubIcon v-if="social === 'github'" />
               <TwitterIcon v-else-if="social === 'twitter'" />
@@ -35,10 +39,12 @@
         </ul>
       </div>
       <ul class="teamMember__projects">
-        <li v-for="project in member.projects"
-            :key="project"
-            class="teamMember__project"
-            :class="{'highlighted': projectFilter === project}">
+        <li
+          v-for="project in member.projects"
+          :key="project"
+          class="teamMember__project"
+          :class="{'highlighted': projectFilter === project}"
+        >
           {{ project }}
         </li>
       </ul>

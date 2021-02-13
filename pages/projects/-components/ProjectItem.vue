@@ -6,38 +6,48 @@
       </p>
       <nuxt-content class="projectItem__description" :document="project" />
       <div class="projectItem__buttons">
-        <a v-if="project.getStarted"
-           :href="project.getStarted"
-           class="projectItem__button projectItem__getStarted">
+        <a
+          v-if="project.getStarted"
+          :href="project.getStarted"
+          class="projectItem__button projectItem__getStarted"
+        >
           Get Started
         </a>
-        <a v-if="project.download"
-           :href="project.download"
-           class="projectItem__button projectItem__download">
+        <a
+          v-if="project.download"
+          :href="project.download"
+          class="projectItem__button projectItem__download"
+        >
           Download
         </a>
-        <a v-if="project.link"
-           :href="project.link"
-           class="projectItem__button projectItem__contribute">
+        <a
+          v-if="project.link"
+          :href="project.link"
+          class="projectItem__button projectItem__contribute"
+        >
           <GithubIcon class="projectItem__github" />
           Contribute
         </a>
       </div>
       <div class="projectItem__contributors">
         <span>Contributors: </span>
-        <div v-for="member in members"
-             :key="member.name"
-             v-lazy-container="{ selector: 'img' }"
-             :title="member.name"
-             class="projectItem__contributors__contributor">
+        <div
+          v-for="member in members"
+          :key="member.name"
+          v-lazy-container="{ selector: 'img' }"
+          :title="member.name"
+          class="projectItem__contributors__contributor"
+        >
           <img :data-src="member.profileImageObj.image" :data-loading="member.profileImageObj.placeholder">
         </div>
       </div>
     </div>
 
-    <div v-if="projectImage"
-         v-lazy-container="{ selector: 'img' }"
-         class="projectItem__imageContainer">
+    <div
+      v-if="projectImage"
+      v-lazy-container="{ selector: 'img' }"
+      class="projectItem__imageContainer"
+    >
       <img :data-src="projectImage.image" :data-loading="projectImage.placeholder">
     </div>
   </div>
