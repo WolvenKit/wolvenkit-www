@@ -1,36 +1,25 @@
 <template>
   <div class="projects">
-    <PageHeader
-      title="Projects"
-      subtitle="All the projects by the team and community"
-    />
+    <PageHeader :title="page.title" :subtitle="page.subtitle" />
     <PageContainer>
-      <h2
-        v-if="teamProjects.length > 0"
-        class="projects__heading"
-      >
+      <h2 v-if="teamProjects.length > 0" class="projects__heading">
         Team Projects
       </h2>
       <div class="projects__teamProjects">
-        <ProjectItem
-          v-for="project in teamProjectOrder"
-          :key="project.slug"
-          :project="project"
-        />
+        <ProjectItem v-for="project in teamProjectOrder"
+                     :key="project.slug"
+                     :project="project"
+                     :members="membersOfProject(project)" />
       </div>
 
-      <h2
-        v-if="communityProjects.length > 0"
-        class="projects__heading"
-      >
+      <h2 v-if="communityProjects.length > 0" class="projects__heading">
         Community Projects
       </h2>
       <div class="projects__communityProjects">
-        <ProjectItem
-          v-for="project in communityProjectOrder"
-          :key="project.slug"
-          :project="project"
-        />
+        <ProjectItem v-for="project in communityProjectOrder"
+                     :key="project.slug"
+                     :project="project"
+                     :members="membersOfProject(project)" />
       </div>
     </PageContainer>
   </div>
@@ -61,6 +50,13 @@ export default {
       .fetch()
       .catch(() => {})
 
+    let teamMembers = await $content('teamMembers', { deep: true })
+      .sortBy('createdAt', 'asc')
+      .fetch()
+      .catch(() => {
+        error({ statusCode: 404, message: 'Page not found' })
+      })
+
     if (!teamProjects) {
       teamProjects = []
     }
@@ -69,10 +65,15 @@ export default {
       communityProjects = []
     }
 
+    if (!teamMembers) {
+      teamMembers = []
+    }
+
     return {
       page,
       teamProjects,
-      communityProjects
+      communityProjects,
+      teamMembers
     }
   },
 
@@ -107,6 +108,10 @@ export default {
       const remainder = original.filter(e => !sortBy.includes(e.name))
 
       return [...sortedList, ...remainder]
+    },
+
+    membersOfProject (project) {
+      return this.teamMembers.filter(m => m.projects.includes(project.name))
     }
   }
 }
