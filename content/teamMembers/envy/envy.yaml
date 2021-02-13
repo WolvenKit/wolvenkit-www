@@ -1,8 +1,8 @@
 name: envy
 description: Lorem Ipsum
-profileImage: image.png
+profileImage:
 projects:
-  - Projects
+  - CyberCAT
 socials:
   - flag: de
     github: https://github.com/envy

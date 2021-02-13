@@ -1,7 +1,7 @@
 name: jato
 description: Lorem Ipsum
-profileImage: image.png
+profileImage:
 projects:
-  - Projects
+  - WolvenKit
 socials:
   - github: https://github.com/NAME
