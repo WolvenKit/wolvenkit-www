@@ -1,11 +1,7 @@
 <template>
   <div class="teamMember">
-    <div
-      v-if="profileImage"
-      v-lazy-container="{ selector: 'img' }"
-      class="teamMember__imageContainer"
-    >
-      <img :data-src="profileImage.image" :data-loading="profileImage.placeholder">
+    <div v-if="profileImage" class="teamMember__imageContainer">
+      <img v-lazy="profileImage">
     </div>
     <div v-else class="teamMember__imageContainerNone">
       <div class="teamMember__color" :style="{ background: member.color ? `rgb(${member.color})` : null }" />
@@ -78,7 +74,10 @@ export default {
       type: Object,
       required: true
     },
-    projectFilter: String
+    projectFilter: {
+      type: String,
+      default: null
+    }
   },
 
   data () {
@@ -89,17 +88,19 @@ export default {
   },
 
   created () {
-    this.profileImage = this.getProfileImage()
+    this.getProfileImage().then(o => (this.profileImage = o))
   },
 
   methods: {
     getProfileImage () {
       if (this.member.profileImage && this.member.profileImage !== this.defaultProfileImage) {
         try {
-          return {
-            image: require(`~/content/${this.member.dir.substring(1)}/${this.member.profileImage}`),
-            placeholder: require(`~/content/${this.member.dir.substring(1)}/${this.member.profileImage}?lqip`)
-          }
+          return new Promise((resolve) => {
+            resolve({
+              src: require(`~/content/${this.member.dir.substring(1)}/${this.member.profileImage}`),
+              loading: require(`~/content/${this.member.dir.substring(1)}/${this.member.profileImage}?lqip`)
+            })
+          });
         } catch (err) {
           return this.getDefaultProfileImage()
         }
@@ -107,11 +108,12 @@ export default {
         return this.getDefaultProfileImage()
       }
     },
-    getDefaultProfileImage () {
+    async getDefaultProfileImage () {
       try {
+        const picture = await fetch('https://aws.random.cat/meow?ref=apilist.fun').then(r => r.json())
         return {
-          image: require(`~/content/teamImages/${this.defaultProfileImage}`),
-          placeholder: require(`~/content/teamImages/${this.defaultProfileImage}?lqip`)
+          src: picture.file,
+          loading: 'Random cat'
         }
       } catch (err) {
         return null
