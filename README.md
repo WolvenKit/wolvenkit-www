@@ -1,5 +1,5 @@
 ## Introduction
-Official source of the WolvenKit website. The website is built upon [Nuxt](https://github.com/nuxt/nuxt.js) along with their [nuxt/content](https://github.com/nuxt/content) module for CMS-less content creation.
+Official source of the WolvenKit website. The website is built upon [Nuxt](https://github.com/nuxt/nuxt.js) along with their [nuxt/content](https://github.com/nuxt/content) module for CMS-less content creation. The future website will be custom hosted with its own backend.
 
 ## CMS-Less?
 Yes! Currently the site is working through nuxt/content which will generate static pages based on files in the [`content`](./content) directory of this repo. The files are mostly written in markdown, but can be written also in JSON, YAML, XML and CSV. For ease of use, markdown and YAML files are preferred for use here. 
