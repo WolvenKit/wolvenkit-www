@@ -21,7 +21,7 @@
             to="/"
             class="nav__navLogo"
           >
-            <img src="logo_temp.png">
+            <img src="/logo_temp.png">
           </nuxt-link>
           <div
             class="nav__closeMenuContainer"
