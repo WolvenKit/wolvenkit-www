@@ -87,8 +87,8 @@ export default {
     }
   },
 
-  created () {
-    this.getProfileImage().then(o => (this.profileImage = o))
+  async created () {
+    this.profileImage = await this.getProfileImage()
   },
 
   methods: {
@@ -100,7 +100,7 @@ export default {
               src: require(`~/content/${this.member.dir.substring(1)}/${this.member.profileImage}`),
               loading: require(`~/content/${this.member.dir.substring(1)}/${this.member.profileImage}?lqip`)
             })
-          });
+          })
         } catch (err) {
           return this.getDefaultProfileImage()
         }
