@@ -80,7 +80,7 @@ export default {
 
   created () {
     this.projectImage = this.getProjectImage()
-    this.members.forEach(m => m.profileImageObj = this.getProfileImage(m))
+    this.members.forEach((m) => { m.profileImageObj = this.getProfileImage(m) })
   },
 
   methods: {

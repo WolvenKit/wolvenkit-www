@@ -291,7 +291,7 @@ export default {
 
     > .github-icon {
       height: 100%;
-      min-width: 2em;
+      width: 2em;
       margin-right: 0.5em;
 
       ::v-deep svg {
