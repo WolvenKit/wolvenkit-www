@@ -1,5 +1,10 @@
 <template>
-  <canvas ref="riveWumpus" class="wumpus-canvas" width="300px" height="300px" />
+  <canvas
+    ref="riveWumpus"
+    class="wumpus-canvas"
+    width="300px"
+    height="300px"
+  />
 </template>
 
 <script>
