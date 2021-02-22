@@ -1,7 +1,10 @@
 <template>
   <div
     class="nav"
-    :class="{ 'nav--open': menuOpen }"
+    :class="{
+      'nav--open': menuOpen,
+      'nav--mobile': small
+    }"
   >
     <div
       class="nav__mobileBackground"
@@ -15,7 +18,7 @@
       class="nav__container"
       @click="menuOpen = false"
     >
-      <div class="nav__navLeft">
+      <div ref="navLeft" class="nav__navLeft">
         <div class="nav__top">
           <nuxt-link
             to="/"
@@ -46,32 +49,54 @@
             </svg>
           </div>
         </div>
-        <nuxt-link
-          to="/blog"
-          class="nav__navItem"
-        >
-          Blog
-        </nuxt-link>
-        <nuxt-link
-          to="/projects"
-          class="nav__navItem"
-        >
-          Projects
-        </nuxt-link>
-        <nuxt-link
-          to="/team"
-          class="nav__navItem"
-        >
-          Team
-        </nuxt-link>
-        <a
-          href="https://wiki.cybermods.net"
-          class="nav__navItem"
-        >
-          Wiki
-        </a>
+        <template v-for="item in navItems">
+          <nuxt-link
+            v-if="item.link && item.link.startsWith('/')"
+            :key="item.name"
+            :to="item.link"
+            class="nav__navItem"
+          >
+            {{ item.name }}
+          </nuxt-link>
+          <a
+            v-else-if="item.link"
+            :key="item.name"
+            :href="item.link"
+            class="nav__navItem"
+          >
+            {{ item.name }}
+          </a>
+          <div
+            v-else-if="item.subItems"
+            :key="item.name"
+            class="nav__navItem nav__navItem--hasSub"
+          >
+            <p>{{ item.name }}</p>
+            <div class="nav__subItemContainer">
+              <div class="nav__subTriangle" />
+              <template v-for="subItem in item.subItems">
+                <nuxt-link
+                  v-if="subItem.link && subItem.link.startsWith('/')"
+                  :key="subItem.name"
+                  :to="subItem.link"
+                  class="nav__navSubItem"
+                >
+                  {{ subItem.name }}
+                </nuxt-link>
+                <a
+                  v-else-if="subItem.link"
+                  :key="subItem.name"
+                  :href="subItem.link"
+                  class="nav__navSubItem"
+                >
+                  {{ subItem.name }}
+                </a>
+              </template>
+            </div>
+          </div>
+        </template>
       </div>
-      <div class="nav__navRight">
+      <div ref="navRight" class="nav__navRight">
         <a
           href="https://github.com/WolvenKit/"
           class="nav__navItem"
@@ -102,7 +127,36 @@ export default {
   data () {
     return {
       scrolled: false,
-      menuOpen: false
+      menuOpen: false,
+      navMaxWidth: null,
+      small: false,
+      navItems: [
+        {
+          name: 'Blog',
+          link: '/blog'
+        },
+        {
+          name: 'Projects',
+          link: '/projects'
+        },
+        {
+          name: 'Team',
+          link: '/team'
+        },
+        {
+          name: 'Resources',
+          subItems: [
+            {
+              name: 'Wiki',
+              link: 'https://wiki.cybermods.net/'
+            },
+            {
+              name: 'DoxyGen',
+              link: 'https://doxygen.redmodding.org/'
+            }
+          ]
+        }
+      ]
     }
   },
 
@@ -115,6 +169,12 @@ export default {
   mounted () {
     window.addEventListener('scroll', this.handleScroll)
     window.addEventListener('resize', this.handleResize)
+
+    const navLeftWidth = this.$refs.navLeft.clientWidth
+    const navRightWidth = this.$refs.navRight.clientWidth
+
+    this.navMaxWidth = navLeftWidth + navRightWidth + 100
+    this.handleResize()
   },
 
   destroyed () {
@@ -134,8 +194,11 @@ export default {
     },
 
     handleResize () {
-      if (window.innerWidth > 620) {
+      if (window.innerWidth > this.navMaxWidth) {
         this.menuOpen = false
+        this.small = false
+      } else {
+        this.small = true
       }
     }
   }
@@ -150,8 +213,7 @@ export default {
   z-index: 50;
   height: max-content;
   max-height: 4em;
-  transition: all 0.2s ease, max-height 0.35s ease;
-  overflow: hidden;
+  transition: max-height 0.35s ease;
 
   &__mobileBackground {
     position: fixed;
@@ -249,6 +311,7 @@ export default {
   }
 
   &__navItem {
+    position: relative;
     display: flex;
     align-items: center;
     padding: 1em;
@@ -263,13 +326,98 @@ export default {
       display: flex;
     }
 
+    &--hasSub {
+      transform: translateY(0) !important;
+      text-shadow: none !important;
+
+      &:hover {
+        > p {
+          text-shadow: 0 0 4px rgba(255, 255, 255, 0.25);
+        }
+      }
+    }
+
     &:hover {
       transform: translateY(-2px);
+      text-shadow: 0 0 4px rgba(255, 255, 255, 0.25);
+
+      .nav__subItemContainer {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+      }
+    }
+  }
+
+  &__subItemContainer {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 1em 0;
+    padding-top: 1.5em;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    visibility: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0.5em;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(#000, 0.7);
+      z-index: -1;
+      transition: all 0.5s ease;
+      pointer-events: none;
+      backdrop-filter: blur(30px);
+      border-radius: 0.5em;
+    }
+  }
+
+  &__subTriangle {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1em;
+    height: 1em;
+    transform: translateX(-50%) rotate(45deg);
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 150%;
+      width: 150%;
+      transform: rotate(45deg) translate(-74%, 0);
+      background: rgba(#000, 0.7);
+      backdrop-filter: blur(30px);
+    }
+  }
+
+  &__navSubItem {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 600;
+    padding: 0.5em 1em;
+    padding-right: 2em;
+    transition: text-shadow 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      transform: translateX(2px);
       text-shadow: 0 0 4px rgba(255, 255, 255, 0.25);
     }
   }
 
-  @media (max-width: 620px) {
+  &--mobile {
+    overflow: hidden;
+  }
+
+  &--mobile & {
     &__container {
       flex-direction: column;
     }
@@ -290,6 +438,37 @@ export default {
 
     &__closeMenu {
       display: initial;
+    }
+
+    &__navItem {
+      flex-direction: column;
+    }
+
+    &__subItemContainer {
+      padding: 1em;
+      text-align: center;
+      position: initial;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+
+      &::before {
+        display: none;
+      }
+    }
+
+    &__subTriangle {
+      display: none;
+    }
+
+    &__navSubItem {
+      padding: 0.5em 1em;
+      color: var(--color-text-dark);
+
+      &:hover {
+        transform: translateY(-2px);
+        color: var(--color-text-semidark);
+      }
     }
   }
 
