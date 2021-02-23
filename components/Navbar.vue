@@ -144,15 +144,28 @@ export default {
           link: '/team'
         },
         {
+          name: 'Wiki',
+          subItems: [
+            {
+              name: 'CET',
+              link: 'https://wiki.cybermods.net/cyber-engine-tweaks/'
+            },
+            {
+              name: 'WolvenKit',
+              link: 'https://github.com/WolvenKit/Wolvenkit/wiki'
+            }
+          ]
+        },
+        {
           name: 'Resources',
           subItems: [
             {
-              name: 'Wiki',
-              link: 'https://wiki.cybermods.net/'
+              name: 'Doxygen',
+              link: 'https://doxygen.redmodding.org/'
             },
             {
-              name: 'DoxyGen',
-              link: 'https://doxygen.redmodding.org/'
+              name: 'Redscript',
+              link: 'https://redscript.redmodding.org/'
             }
           ]
         }
