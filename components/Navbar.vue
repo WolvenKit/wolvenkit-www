@@ -73,7 +73,6 @@
           >
             <p>{{ item.name }}</p>
             <div class="nav__subItemContainer">
-              <div class="nav__subTriangle" />
               <template v-for="subItem in item.subItems">
                 <nuxt-link
                   v-if="subItem.link && subItem.link.startsWith('/')"
@@ -356,7 +355,7 @@ export default {
 
       .nav__subItemContainer {
         opacity: 1;
-        transform: translateY(0);
+        transform: translate(-50%, 0);
         visibility: visible;
       }
     }
@@ -365,13 +364,12 @@ export default {
   &__subItemContainer {
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 50%;
     display: flex;
     flex-direction: column;
     padding: 1em 0;
-    padding-top: 1.5em;
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translate(-50%, -10px);
     transition: opacity 0.2s ease, transform 0.2s ease;
     visibility: hidden;
 
@@ -388,27 +386,6 @@ export default {
       pointer-events: none;
       backdrop-filter: blur(30px);
       border-radius: 0.5em;
-    }
-  }
-
-  &__subTriangle {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 1em;
-    height: 1em;
-    transform: translateX(-50%) rotate(45deg);
-    overflow: hidden;
-
-    &::after {
-      content: '';
-      position: absolute;
-      height: 150%;
-      width: 150%;
-      transform: rotate(45deg) translate(-74%, 0);
-      background: rgba(#000, 0.7);
-      backdrop-filter: blur(30px);
     }
   }
 
@@ -459,19 +436,16 @@ export default {
 
     &__subItemContainer {
       padding: 1em;
+      padding-bottom: 0;
       text-align: center;
       position: initial;
       opacity: 1;
       visibility: visible;
-      transform: translateY(0);
+      transform: translateY(0) !important;
 
       &::before {
         display: none;
       }
-    }
-
-    &__subTriangle {
-      display: none;
     }
 
     &__navSubItem {
@@ -481,6 +455,10 @@ export default {
       &:hover {
         transform: translateY(-2px);
         color: var(--color-text-semidark);
+      }
+
+      &:last-child {
+        padding-bottom: 0;
       }
     }
   }
