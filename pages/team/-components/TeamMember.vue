@@ -112,8 +112,7 @@ export default {
       try {
         const picture = await fetch('https://aws.random.cat/meow?ref=apilist.fun').then(r => r.json())
         return {
-          src: picture.file,
-          loading: 'Random cat'
+          src: picture.file
         }
       } catch (err) {
         return null
