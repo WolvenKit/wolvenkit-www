@@ -1,7 +1,7 @@
 <template>
   <div class="teamMember">
     <div v-if="profileImage" class="teamMember__imageContainer">
-      <img v-lazy="profileImage">
+      <img v-lazy="profileImage" :alt="`${member.name}'s profile picture`">
     </div>
     <div v-else class="teamMember__imageContainerNone">
       <div class="teamMember__color" :style="{ background: member.color ? `rgb(${member.color})` : null }" />

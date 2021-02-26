@@ -14,6 +14,7 @@
       <img
         :data-src="image.image"
         :data-loading="image.placeholder"
+        alt=""
       >
     </div>
 

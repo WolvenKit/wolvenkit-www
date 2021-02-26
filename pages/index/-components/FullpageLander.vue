@@ -13,6 +13,7 @@
         <img
           :key="currentTool"
           :data-src="images[indexData.tools[currentTool].name].background.image"
+          alt=""
         >
       </div>
     </transition>
@@ -69,6 +70,7 @@
             :key="currentTool"
             :data-src="images[indexData.tools[currentTool].name].feature.image"
             :data-loading="images[indexData.tools[currentTool].name].feature.placeholder"
+            :alt="`Preview/feature image of ${indexData.tools[currentTool].name} in action`"
           >
         </div>
       </transition>

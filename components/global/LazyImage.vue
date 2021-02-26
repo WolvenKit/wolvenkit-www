@@ -5,10 +5,12 @@
       v-lazy-container="{ selector: 'img' }"
       class="lazyImage__container"
     >
+      <!-- TODO: Implement image alt/caption tags within blog post -->
       <img
         :data-src="lazyImage.image"
         :data-loading="lazyImage.placeholder"
         :src="lazyImage.placeholder"
+        alt=""
       >
     </div>
   </div>

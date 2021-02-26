@@ -38,7 +38,7 @@
           :title="member.name"
           class="projectItem__contributors__contributor"
         >
-          <img :data-src="member.profileImageObj.image" :data-loading="member.profileImageObj.placeholder">
+          <img :data-src="member.profileImageObj.image" :data-loading="member.profileImageObj.placeholder" :alt="`${member.name}'s profile picture`">
         </div>
       </div>
     </div>
@@ -48,7 +48,7 @@
       v-lazy-container="{ selector: 'img' }"
       class="projectItem__imageContainer"
     >
-      <img :data-src="projectImage.image" :data-loading="projectImage.placeholder">
+      <img :data-src="projectImage.image" :data-loading="projectImage.placeholder" :alt="`Preview/feature image of ${project.name} in action`">
     </div>
   </div>
 </template>

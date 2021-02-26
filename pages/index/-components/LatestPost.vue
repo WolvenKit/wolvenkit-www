@@ -1,7 +1,7 @@
 <template>
   <div class="latestPost">
     <div class="latestPost__background">
-      <img :src="thumbnailImage">
+      <img :src="thumbnailImage" alt="">
     </div>
     <PageContainer>
       <h2 class="latestPost__header">

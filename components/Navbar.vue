@@ -24,7 +24,7 @@
             to="/"
             class="nav__navLogo"
           >
-            <img src="/logo_temp.png">
+            <img src="/logo_temp.png" alt="Red Modding Logo">
           </nuxt-link>
           <div
             class="nav__closeMenuContainer"

@@ -14,7 +14,7 @@
         </a>
       </div>
       <div class="contribute__image">
-        <img src="octocat.png">
+        <img src="octocat.png" alt="GitHub Octocat mascot in science gear mixing chemicals">
       </div>
     </PageContainer>
   </div>
