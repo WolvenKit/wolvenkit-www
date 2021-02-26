@@ -15,7 +15,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
-        property: 'description',
+        name: 'description',
         content: 'The home to all your tools for modding REDEngine games, such as WolvenKit, CyberCAT and many community projects.'
       },
       {
