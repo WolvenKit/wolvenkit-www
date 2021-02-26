@@ -89,7 +89,7 @@ export default {
         try {
           return {
             image: require(`~/content/${this.project.dir.substring(1)}/${this.project.image}`),
-            placeholder: require(`~/content/${this.project.dir.substring(1)}/${this.project.image}?lqip&inline`)
+            placeholder: require(`~/content/${this.project.dir.substring(1)}/${this.project.image}?lqip`)
           }
         } catch (err) {
           return null
@@ -98,7 +98,7 @@ export default {
         try {
           return {
             image: require(`~/content/${this.project.path.substring(1)}.jpg`),
-            placeholder: require(`~/content/${this.project.path.substring(1)}.jpg?lqip&inline`)
+            placeholder: require(`~/content/${this.project.path.substring(1)}.jpg?lqip`)
           }
         } catch (err) {
           return null

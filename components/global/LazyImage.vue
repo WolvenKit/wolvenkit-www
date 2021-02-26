@@ -38,7 +38,7 @@ export default {
       try {
         return {
           image: require(`~/content/${this.$route.path.substring(1)}/img/${this.src}`),
-          placeholder: require(`~/content/${this.$route.path.substring(1)}/img/${this.src}?lqip&inline`)
+          placeholder: require(`~/content/${this.$route.path.substring(1)}/img/${this.src}?lqip`)
         }
       } catch (err) {
         return null
