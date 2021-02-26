@@ -47,6 +47,11 @@ export default {
           content: this.post.title
         },
         {
+          hid: 'description',
+          property: 'description',
+          content: this.post.description
+        },
+        {
           hid: 'og:description',
           property: 'og:description',
           content: this.post.description
