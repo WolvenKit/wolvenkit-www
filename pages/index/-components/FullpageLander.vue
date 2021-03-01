@@ -36,9 +36,9 @@
         </li>
       </ul>
 
-      <p class="lander__toolDescription">
+      <h2 class="lander__toolDescription">
         {{ indexData.tools[currentTool].description }}
-      </p>
+      </h2>
 
       <div class="lander__toolLinks">
         <nuxt-link
@@ -214,6 +214,8 @@ export default {
 
   &__toolDescription {
     text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
   }
 
   &__toolNav {
