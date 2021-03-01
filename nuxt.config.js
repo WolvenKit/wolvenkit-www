@@ -70,7 +70,7 @@ export default {
 
   i18n: {
     lazy: true,
-    langDir: 'lang/',
+    langDir: 'locale/',
     locales: [
       {
         code: 'en',
