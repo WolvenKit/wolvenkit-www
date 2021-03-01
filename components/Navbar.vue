@@ -21,7 +21,7 @@
       <div ref="navLeft" class="nav__navLeft">
         <div class="nav__top">
           <nuxt-link
-            to="/"
+            :to="localePath('/')"
             class="nav__navLogo"
           >
             <img src="/logo_temp.png">
@@ -53,10 +53,10 @@
           <nuxt-link
             v-if="item.link && item.link.startsWith('/')"
             :key="item.name"
-            :to="item.link"
+            :to="localePath(item.link)"
             class="nav__navItem"
           >
-            {{ item.name }}
+            {{ item.locale ? $t(item.locale) : item.name }}
           </nuxt-link>
           <a
             v-else-if="item.link"
@@ -64,23 +64,23 @@
             :href="item.link"
             class="nav__navItem"
           >
-            {{ item.name }}
+            {{ item.locale ? $t(item.locale) : item.name }}
           </a>
           <div
             v-else-if="item.subItems"
             :key="item.name"
             class="nav__navItem nav__navItem--hasSub"
           >
-            <p>{{ item.name }}</p>
+            <p>{{ item.locale ? $t(item.locale) : item.name }}</p>
             <div class="nav__subItemContainer">
               <template v-for="subItem in item.subItems">
                 <nuxt-link
                   v-if="subItem.link && subItem.link.startsWith('/')"
                   :key="subItem.name"
-                  :to="subItem.link"
+                  :to="localePath(subItem.link)"
                   class="nav__navSubItem"
                 >
-                  {{ subItem.name }}
+                  {{ subItem.locale ? $t(subItem.locale) : subItem.name }}
                 </nuxt-link>
                 <a
                   v-else-if="subItem.link"
@@ -88,7 +88,7 @@
                   :href="subItem.link"
                   class="nav__navSubItem"
                 >
-                  {{ subItem.name }}
+                  {{ subItem.locale ? $t(subItem.locale) : subItem.name }}
                 </a>
               </template>
             </div>
@@ -108,6 +108,22 @@
         >
           <DiscordIcon />
         </a>
+        <div class="nav__navItem nav__navItem--hasSub nav__localeSwitcher">
+          <p class="nav__currentLocale">
+            {{ currentLocale }}
+          </p>
+          <div class="nav__subItemContainer">
+            <template v-for="locale in availableLocales">
+              <nuxt-link
+                :key="locale.code"
+                :to="switchLocalePath(locale.code)"
+                class="nav__navSubItem"
+              >
+                {{ locale.name }}
+              </nuxt-link>
+            </template>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -132,18 +148,22 @@ export default {
       navItems: [
         {
           name: 'Blog',
-          link: '/blog'
+          link: '/blog',
+          locale: 'nav.blog'
         },
         {
           name: 'Projects',
-          link: '/projects'
+          link: '/projects',
+          locale: 'nav.projects'
         },
         {
           name: 'Team',
-          link: '/team'
+          link: '/team',
+          locale: 'nav.team'
         },
         {
           name: 'Wiki',
+          locale: 'nav.wiki',
           subItems: [
             {
               name: 'CET',
@@ -157,18 +177,31 @@ export default {
         },
         {
           name: 'Resources',
+          locale: 'nav.resources.resources',
           subItems: [
             {
-              name: 'Doxygen',
-              link: 'https://doxygen.redmodding.org/'
+              name: 'DoxyGen',
+              link: 'https://doxygen.redmodding.org/',
+              locale: 'nav.resources.doxygen'
             },
             {
-              name: 'Redscript',
-              link: 'https://redscript.redmodding.org/'
+              name: 'RedScript',
+              link: 'https://redscript.redmodding.org/',
+              locale: 'nav.resources.redscript'
             }
           ]
         }
       ]
+    }
+  },
+
+  computed: {
+    availableLocales () {
+      return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
+    },
+
+    currentLocale () {
+      return this.$i18n.locale
     }
   },
 
@@ -379,7 +412,7 @@ export default {
       top: 0.5em;
       left: 0;
       right: 0;
-      bottom: 0;
+      bottom: 0.5em;
       background: rgba(#000, 0.7);
       z-index: -1;
       transition: all 0.5s ease;
@@ -394,13 +427,16 @@ export default {
     color: var(--color-text);
     font-weight: 600;
     padding: 0.5em 1em;
-    padding-right: 2em;
     transition: text-shadow 0.2s ease, transform 0.2s ease;
 
     &:hover {
       transform: translateX(2px);
       text-shadow: 0 0 4px rgba(255, 255, 255, 0.25);
     }
+  }
+
+  &__currentLocale {
+    text-transform: uppercase;
   }
 
   &--mobile {
@@ -410,10 +446,16 @@ export default {
   &--mobile & {
     &__container {
       flex-direction: column;
+      max-height: 100vh;
+      overflow: hidden;
     }
 
     &__navLeft {
       flex-direction: column;
+    }
+
+    &__navRight {
+      flex-wrap: wrap;
     }
 
     &__navItem,
@@ -461,6 +503,10 @@ export default {
         padding-bottom: 0;
       }
     }
+
+    &__localeSwitcher {
+      width: 100%;
+    }
   }
 
   &--open {
@@ -468,6 +514,10 @@ export default {
   }
 
   &--open & {
+    &__container {
+      overflow-y: auto;
+    }
+
     &__mobileBackground {
       opacity: 1;
       visibility: visible;
