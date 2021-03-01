@@ -64,8 +64,30 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
-    '@nuxt/content'
+    '@nuxt/content',
+    'nuxt-i18n'
   ],
+
+  i18n: {
+    lazy: true,
+    langDir: 'lang/',
+    locales: [
+      {
+        code: 'en',
+        file: 'en-US.js',
+        name: 'English'
+      },
+      {
+        code: 'es',
+        file: 'es-ES.js',
+        name: 'Espanol'
+      }
+    ],
+    defaultLocale: 'en',
+    vueI18n: {
+      fallbackLocale: 'en'
+    }
+  },
 
   optimizedImages: {
     optimizeImages: true,
