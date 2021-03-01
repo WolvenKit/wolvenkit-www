@@ -36,7 +36,7 @@
       </ul>
 
       <p class="lander__toolDescription">
-        {{ indexData.tools[currentTool].description }}
+        {{ $t(indexData.tools[currentTool].description) }}
       </p>
 
       <div class="lander__toolLinks">
