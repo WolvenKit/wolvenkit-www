@@ -21,7 +21,7 @@
             >
               <nuxt-link
                 v-if="item.link.startsWith('/')"
-                :to="item.link"
+                :to="localePath(item.link)"
               >
                 {{ item.name }}
               </nuxt-link>

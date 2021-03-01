@@ -1,7 +1,7 @@
 <template>
   <nuxt-link
     class="blogPostItem"
-    :to="post.dir"
+    :to="localePath(post.dir)"
   >
     <!-- TODO: Better handling/design of non image blog posts -->
     <div
