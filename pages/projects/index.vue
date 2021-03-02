@@ -37,7 +37,9 @@ export default {
     ProjectItem
   },
 
-  async asyncData ({ $content, error }) {
+  async asyncData ({ $content, error, app }) {
+    const currentLocale = app.i18n.locale
+
     const page = await $content('project')
       .fetch()
       .catch(() => {
@@ -46,13 +48,76 @@ export default {
 
     let teamProjects = await $content('projects/team', { deep: true })
       .sortBy('createdAt', 'asc')
+      .where({
+        slug: 'index'
+      })
       .fetch()
       .catch(() => {})
 
     let communityProjects = await $content('projects/community', { deep: true })
       .sortBy('createdAt', 'asc')
+      .where({
+        slug: 'index'
+      })
       .fetch()
       .catch(() => {})
+
+    if (currentLocale !== 'en') {
+      const slug = currentLocale
+      let teamProjectsTranslated = await $content('projects/team', { deep: true })
+        .sortBy('createdAt', 'asc')
+        .where({
+          slug
+        })
+        .fetch()
+        .catch(() => {})
+
+      if (!teamProjectsTranslated) {
+        teamProjectsTranslated = []
+      }
+
+      teamProjectsTranslated = teamProjectsTranslated.map((project) => {
+        return Object.assign({}, project, {
+          dir: project.dir.substr(0, project.dir.lastIndexOf('/'))
+        })
+      })
+
+      const teamProjectDirs = teamProjects.reduce((dir, project, index) => {
+        dir[project.dir] = index
+        return dir
+      }, Object.create(null))
+
+      for (const project of teamProjectsTranslated) {
+        Object.assign(teamProjects[teamProjectDirs[project.dir]], project)
+      }
+
+      let communityProjectsTranslated = await $content('projects/community', { deep: true })
+        .sortBy('createdAt', 'asc')
+        .where({
+          slug
+        })
+        .fetch()
+        .catch(() => {})
+
+      if (!communityProjectsTranslated) {
+        communityProjectsTranslated = []
+      }
+
+      communityProjectsTranslated = communityProjectsTranslated.map((project) => {
+        return Object.assign({}, project, {
+          dir: project.dir.substr(0, project.dir.lastIndexOf('/'))
+        })
+      })
+
+      const communityProjectDirs = communityProjects.reduce((dir, project, index) => {
+        dir[project.dir] = index
+        return dir
+      }, Object.create(null))
+
+      for (const project of communityProjectsTranslated) {
+        Object.assign(communityProjects[communityProjectDirs[project.dir]], project)
+      }
+    }
 
     let teamMembers = await $content('teamMembers', { deep: true })
       .sortBy('createdAt', 'asc')
