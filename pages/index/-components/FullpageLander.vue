@@ -44,14 +44,14 @@
           :to="localePath(indexData.tools[currentTool].pageLink)"
           class="lander__toolLink"
         >
-          {{ $t('index.getStarted') }}
+          {{ $t('general.getStarted') }}
         </nuxt-link>
         <a
           class="lander__toolLink"
           href="#"
         >
           <GithubIcon />
-          Github
+          GitHub
         </a>
       </div>
 

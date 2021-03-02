@@ -1,9 +1,9 @@
 <template>
   <div class="team">
-    <PageHeader :title="team.title" :subtitle="team.subtitle" />
+    <PageHeader :title="$t('team.pageTitle')" :subtitle="$t('team.pageDescription')" />
     <PageContainer>
       <p class="team__description">
-        {{ team.description }}
+        {{ $t('team.teamDescription') }}
       </p>
       <div class="team__filter">
         <FilterIcon
@@ -13,10 +13,10 @@
           @click="projectFilter = null"
         />
         <FilterOutlineIcon v-else class="team__filter__icon" />
-        <p>Filter by project: </p>
+        <p>{{ $t('team.projectFilter.label') }}: </p>
         <select v-model="projectFilter" class="team__filter__select">
           <option :value="null">
-            All
+            {{ $t('team.projectFilter.all') }}
           </option>
           <option v-for="project in projectList" :key="project" :value="project">
             {{ project }}

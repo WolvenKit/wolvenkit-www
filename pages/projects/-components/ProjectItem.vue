@@ -11,14 +11,14 @@
           :href="project.getStarted"
           class="projectItem__button projectItem__getStarted"
         >
-          Get Started
+          {{ $t('general.getStarted') }}
         </a>
         <a
           v-if="project.download"
           :href="project.download"
           class="projectItem__button projectItem__download"
         >
-          Download
+          {{ $t('general.download') }}
         </a>
         <a
           v-if="project.link"
@@ -26,11 +26,11 @@
           class="projectItem__button projectItem__contribute"
         >
           <GithubIcon class="projectItem__github" />
-          Contribute
+          {{ $t('projects.contribute') }}
         </a>
       </div>
       <div class="projectItem__contributors">
-        <span>Contributors: </span>
+        <span>{{ $t('projects.contributors') }}: </span>
         <div
           v-for="member in members"
           :key="member.name"

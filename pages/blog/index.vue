@@ -1,8 +1,8 @@
 <template>
   <div class="blogPosts">
     <PageHeader
-      title="Blog"
-      subtitle="Featured progress, new developments and feature updates"
+      :title="$t('blog.pageTitle')"
+      :subtitle="$t('blog.pageDescription')"
     />
     <PageContainer class="blogPosts__container">
       <PostItem

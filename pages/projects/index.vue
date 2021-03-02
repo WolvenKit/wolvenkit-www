@@ -1,9 +1,9 @@
 <template>
   <div class="projects">
-    <PageHeader :title="page.title" :subtitle="page.subtitle" />
+    <PageHeader :title="$t('projects.pageTitle')" :subtitle="$t('projects.pageDescription')" />
     <PageContainer>
       <h2 v-if="teamProjects.length > 0" class="projects__heading">
-        Team Projects
+        {{ $t('projects.teamProjects') }}
       </h2>
       <div class="projects__teamProjects">
         <ProjectItem
@@ -15,7 +15,7 @@
       </div>
 
       <h2 v-if="communityProjects.length > 0" class="projects__heading">
-        Community Projects
+        {{ $t('projects.communityProjects') }}
       </h2>
       <div class="projects__communityProjects">
         <ProjectItem
