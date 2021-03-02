@@ -32,7 +32,7 @@
         {{ post.description }}
       </p>
       <p class="blogPostItem__date">
-        Published {{ post.createdAt | formatDate }}
+        {{ $t('blog.published') }} {{ post.createdAt | formatDate }}
       </p>
     </div>
   </nuxt-link>

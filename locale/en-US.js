@@ -43,7 +43,8 @@ export default {
   },
   blog: {
     pageTitle: 'Blog',
-    pageDescription: 'Featured progress, new developments and feature updates'
+    pageDescription: 'Featured progress, new developments and feature updates',
+    published: 'Published'
   },
   projects: {
     pageTitle: 'Projects',
