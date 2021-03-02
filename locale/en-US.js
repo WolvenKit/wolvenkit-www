@@ -14,6 +14,19 @@ export default {
       redscript: 'RedScript'
     }
   },
+  footer: {
+    main: {
+      label: 'Main',
+      home: 'Home'
+    },
+    contribute: {
+      label: 'Contribute',
+      website: 'Website'
+    },
+    community: {
+      label: 'Community'
+    }
+  },
   index: {
     latestPost: 'Latest Post',
     community: 'Join the Community!',

@@ -11,7 +11,7 @@
           class="footer__column"
         >
           <p class="footer__columnTitle">
-            {{ column.title }}
+            {{ $t(column.title) }}
           </p>
           <ul class="footer__columnList">
             <li
@@ -23,13 +23,13 @@
                 v-if="item.link.startsWith('/')"
                 :to="localePath(item.link)"
               >
-                {{ item.name }}
+                {{ item.nameLocale ? $t(item.nameLocale) : item.name }}
               </nuxt-link>
               <a
                 v-else
                 :href="item.link"
               >
-                {{ item.name }}
+                {{ item.nameLocale ? $t(item.nameLocale) : item.name }}
               </a>
             </li>
           </ul>
