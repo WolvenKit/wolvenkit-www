@@ -5,10 +5,12 @@
       v-lazy-container="{ selector: 'img' }"
       class="lazyImage__container"
     >
+      <!-- TODO: Implement image alt/caption tags within blog post -->
       <img
         :data-src="lazyImage.image"
         :data-loading="lazyImage.placeholder"
         :src="lazyImage.placeholder"
+        alt=""
       >
     </div>
   </div>
@@ -38,7 +40,7 @@ export default {
       try {
         return {
           image: require(`~/content/${this.$route.path.substring(1)}/img/${this.src}`),
-          placeholder: require(`~/content/${this.$route.path.substring(1)}/img/${this.src}?lqip&inline`)
+          placeholder: require(`~/content/${this.$route.path.substring(1)}/img/${this.src}?lqip`)
         }
       } catch (err) {
         return null

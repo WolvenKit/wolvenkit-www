@@ -38,7 +38,7 @@
           :title="member.name"
           class="projectItem__contributors__contributor"
         >
-          <img :data-src="member.profileImageObj.image" :data-loading="member.profileImageObj.placeholder">
+          <img :data-src="member.profileImageObj.image" :data-loading="member.profileImageObj.placeholder" :alt="`${member.name}'s profile picture`">
         </div>
       </div>
     </div>
@@ -48,7 +48,7 @@
       v-lazy-container="{ selector: 'img' }"
       class="projectItem__imageContainer"
     >
-      <img :data-src="projectImage.image" :data-loading="projectImage.placeholder">
+      <img :data-src="projectImage.image" :data-loading="projectImage.placeholder" :alt="`Preview/feature image of ${project.name} in action`">
     </div>
   </div>
 </template>
@@ -91,7 +91,7 @@ export default {
         try {
           return {
             image: require(`~/content/${projectRoot}/${this.project.image}`),
-            placeholder: require(`~/content/${projectRoot}/${this.project.image}?lqip&inline`)
+            placeholder: require(`~/content/${projectRoot}/${this.project.image}?lqip`)
           }
         } catch (err) {
           return null
@@ -100,7 +100,7 @@ export default {
         try {
           return {
             image: require(`~/content/${projectRoot}.jpg`),
-            placeholder: require(`~/content/${projectRoot}.jpg?lqip&inline`)
+            placeholder: require(`~/content/${projectRoot}.jpg?lqip`)
           }
         } catch (err) {
           return null

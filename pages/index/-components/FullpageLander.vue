@@ -13,6 +13,7 @@
         <img
           :key="currentTool"
           :data-src="images[indexData.tools[currentTool].name].background.image"
+          alt=""
         >
       </div>
     </transition>
@@ -35,9 +36,9 @@
         </li>
       </ul>
 
-      <p class="lander__toolDescription">
+      <h2 class="lander__toolDescription">
         {{ $t(indexData.tools[currentTool].description) }}
-      </p>
+      </h2>
 
       <div class="lander__toolLinks">
         <nuxt-link
@@ -69,6 +70,7 @@
             :key="currentTool"
             :data-src="images[indexData.tools[currentTool].name].feature.image"
             :data-loading="images[indexData.tools[currentTool].name].feature.placeholder"
+            :alt="`Preview/feature image of ${indexData.tools[currentTool].name} in action`"
           >
         </div>
       </transition>
@@ -212,6 +214,8 @@ export default {
 
   &__toolDescription {
     text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
   }
 
   &__toolNav {

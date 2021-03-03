@@ -18,14 +18,24 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
+        hid: 'description',
+        name: 'description',
+        content: 'The home to all your tools for modding REDEngine games, such as WolvenKit, CyberCAT and many community projects.'
+      },
+      {
         hid: 'og:title',
         property: 'og:title',
         content: 'Red Modding'
       },
       {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: 'Red Modding'
+      },
+      {
         hid: 'og:description',
         property: 'og:description',
-        content: 'The home to all your tools for modding REDEngine games.'
+        content: 'The home to all your tools for modding REDEngine games, such as WolvenKit, CyberCAT and many community projects.'
       },
       {
         hid: 'og:image',

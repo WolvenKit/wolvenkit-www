@@ -1,7 +1,7 @@
 <template>
   <div class="teamMember">
     <div v-if="profileImage" class="teamMember__imageContainer">
-      <img v-lazy="profileImage">
+      <img v-lazy="profileImage" :alt="`${member.name}'s profile picture`">
     </div>
     <div v-else class="teamMember__imageContainerNone">
       <div class="teamMember__color" :style="{ background: member.color ? `rgb(${member.color})` : null }" />
@@ -112,8 +112,7 @@ export default {
       try {
         const picture = await fetch('https://aws.random.cat/meow?ref=apilist.fun').then(r => r.json())
         return {
-          src: picture.file,
-          loading: 'Random cat'
+          src: picture.file
         }
       } catch (err) {
         return null

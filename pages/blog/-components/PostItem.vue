@@ -12,6 +12,7 @@
       <img
         :data-src="thumbnailImage.image"
         :data-loading="thumbnailImage.placeholder"
+        alt="Blog post thumbnail/preview image"
       >
     </div>
     <div
