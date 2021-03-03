@@ -80,11 +80,6 @@ export default {
         code: 'en',
         file: 'en-US.js',
         name: 'English'
-      },
-      {
-        code: 'es',
-        file: 'es-ES.js',
-        name: 'Espanol'
       }
     ],
     defaultLocale: process.env.DEFAULT_LOCALE ? process.env.DEFAULT_LOCALE : 'en',
