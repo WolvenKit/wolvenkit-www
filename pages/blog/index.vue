@@ -42,7 +42,7 @@ export default {
       .sortBy('createdAt', 'desc')
       .fetch()
       .catch(() => {
-        error({ statusnpmCode: 404, message: 'Page not found' })
+        error({ statusCode: 404, message: 'Page not found' })
       })
 
     if (currentLocale !== defaultLocale) {
