@@ -37,22 +37,22 @@
       </ul>
 
       <h2 class="lander__toolDescription">
-        {{ indexData.tools[currentTool].description }}
+        {{ $t(indexData.tools[currentTool].description) }}
       </h2>
 
       <div class="lander__toolLinks">
         <nuxt-link
-          :to="indexData.tools[currentTool].pageLink"
+          :to="localePath(indexData.tools[currentTool].pageLink)"
           class="lander__toolLink"
         >
-          Get Started
+          {{ $t('general.getStarted') }}
         </nuxt-link>
         <a
           class="lander__toolLink"
           href="#"
         >
           <GithubIcon />
-          Github
+          GitHub
         </a>
       </div>
 

@@ -3,14 +3,16 @@
     <PageContainer>
       <div class="contribute__info">
         <h2 class="contribute__title">
-          Contribute
+          {{ $t('index.contribute') }}
         </h2>
-        <p>Submit your PRs to the various projects we have ongoing in our repos, we are always keen on welcoming new developers to help and contribute to the projects.</p>
+        <p>
+          {{ $t('index.contributeParagraph') }}
+        </p>
         <a
           href="https://github.com/WolvenKit"
           class="contribute__button"
         >
-          View Repositories
+          {{ $t('index.contributeRepoButton') }}
         </a>
       </div>
       <div class="contribute__image">

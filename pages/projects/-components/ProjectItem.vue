@@ -11,14 +11,14 @@
           :href="project.getStarted"
           class="projectItem__button projectItem__getStarted"
         >
-          Get Started
+          {{ $t('general.getStarted') }}
         </a>
         <a
           v-if="project.download"
           :href="project.download"
           class="projectItem__button projectItem__download"
         >
-          Download
+          {{ $t('general.download') }}
         </a>
         <a
           v-if="project.link"
@@ -26,11 +26,11 @@
           class="projectItem__button projectItem__contribute"
         >
           <GithubIcon class="projectItem__github" />
-          Contribute
+          {{ $t('projects.contribute') }}
         </a>
       </div>
       <div class="projectItem__contributors">
-        <span>Contributors: </span>
+        <span>{{ $t('projects.contributors') }}: </span>
         <div
           v-for="member in members"
           :key="member.name"
@@ -85,11 +85,13 @@ export default {
 
   methods: {
     getProjectImage () {
+      const projectRoot = this.project.dir.substring(1).substr(0, this.project.dir.lastIndexOf('/') - 1)
+
       if (this.project.image) {
         try {
           return {
-            image: require(`~/content/${this.project.dir.substring(1)}/${this.project.image}`),
-            placeholder: require(`~/content/${this.project.dir.substring(1)}/${this.project.image}?lqip`)
+            image: require(`~/content/${projectRoot}/${this.project.image}`),
+            placeholder: require(`~/content/${projectRoot}/${this.project.image}?lqip`)
           }
         } catch (err) {
           return null
@@ -97,8 +99,8 @@ export default {
       } else {
         try {
           return {
-            image: require(`~/content/${this.project.path.substring(1)}.jpg`),
-            placeholder: require(`~/content/${this.project.path.substring(1)}.jpg?lqip`)
+            image: require(`~/content/${projectRoot}.jpg`),
+            placeholder: require(`~/content/${projectRoot}.jpg?lqip`)
           }
         } catch (err) {
           return null

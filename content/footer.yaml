@@ -1,19 +1,19 @@
 title: Red Modding Tools - 2021
 columns:
-  - title: Main
+  - title: footer.main.label
     items:
-      - name: Home
+      - nameLocale: footer.main.home
         link: '/'
-      - name: Blog
+      - nameLocale: nav.blog
         link: '/blog'
-      - name: Projects
+      - nameLocale: nav.projects
         link: '/projects'
-      - name: Team
+      - nameLocale: nav.team
         link: '/team'
-      - name: Wiki
+      - nameLocale: nav.wiki
         link: '#'
 
-  - title: Contribute
+  - title: footer.contribute.label
     items:
       - name: GitHub
         link: https://github.com/WolvenKit
@@ -21,10 +21,10 @@ columns:
         link: https://github.com/WolvenKit/Wolvenkit
       - name: CyberCAT
         link: https://github.com/WolvenKit/CyberCAT
-      - name: Website
+      - nameLocale: footer.contribute.website
         link: https://github.com/WolvenKit/wolvenkit-www
 
-  - title: Community
+  - title: footer.community.label
     items:
       - name: Discord
         link: https://discord.gg/Epkq79kd96
