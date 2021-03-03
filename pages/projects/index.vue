@@ -1,9 +1,9 @@
 <template>
   <div class="projects">
-    <PageHeader :title="page.title" :subtitle="page.subtitle" />
+    <PageHeader :title="$t('projects.pageTitle')" :subtitle="$t('projects.pageDescription')" />
     <PageContainer>
       <h2 v-if="teamProjects.length > 0" class="projects__heading">
-        Team Projects
+        {{ $t('projects.teamProjects') }}
       </h2>
       <div class="projects__teamProjects">
         <ProjectItem
@@ -15,7 +15,7 @@
       </div>
 
       <h2 v-if="communityProjects.length > 0" class="projects__heading">
-        Community Projects
+        {{ $t('projects.communityProjects') }}
       </h2>
       <div class="projects__communityProjects">
         <ProjectItem
@@ -37,7 +37,10 @@ export default {
     ProjectItem
   },
 
-  async asyncData ({ $content, error }) {
+  async asyncData ({ $content, error, app, env }) {
+    const currentLocale = app.i18n.locale
+    const defaultLocale = env.DEFAULT_LOCALE
+
     const page = await $content('project')
       .fetch()
       .catch(() => {
@@ -46,13 +49,65 @@ export default {
 
     let teamProjects = await $content('projects/team', { deep: true })
       .sortBy('createdAt', 'asc')
+      .where({
+        slug: defaultLocale
+      })
       .fetch()
       .catch(() => {})
 
     let communityProjects = await $content('projects/community', { deep: true })
       .sortBy('createdAt', 'asc')
+      .where({
+        slug: defaultLocale
+      })
       .fetch()
       .catch(() => {})
+
+    if (currentLocale !== defaultLocale) {
+      const slug = currentLocale
+
+      let teamProjectsTranslated = await $content('projects/team', { deep: true })
+        .sortBy('createdAt', 'asc')
+        .where({
+          slug
+        })
+        .fetch()
+        .catch(() => {})
+
+      if (!teamProjectsTranslated) {
+        teamProjectsTranslated = []
+      }
+
+      const teamProjectDirs = teamProjects.reduce((dir, project, index) => {
+        dir[project.dir] = index
+        return dir
+      }, Object.create(null))
+
+      for (const project of teamProjectsTranslated) {
+        Object.assign(teamProjects[teamProjectDirs[project.dir]], project)
+      }
+
+      let communityProjectsTranslated = await $content('projects/community', { deep: true })
+        .sortBy('createdAt', 'asc')
+        .where({
+          slug
+        })
+        .fetch()
+        .catch(() => {})
+
+      if (!communityProjectsTranslated) {
+        communityProjectsTranslated = []
+      }
+
+      const communityProjectDirs = communityProjects.reduce((dir, project, index) => {
+        dir[project.dir] = index
+        return dir
+      }, Object.create(null))
+
+      for (const project of communityProjectsTranslated) {
+        Object.assign(communityProjects[communityProjectDirs[project.dir]], project)
+      }
+    }
 
     let teamMembers = await $content('teamMembers', { deep: true })
       .sortBy('createdAt', 'asc')

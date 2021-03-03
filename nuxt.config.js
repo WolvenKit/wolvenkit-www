@@ -2,6 +2,10 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  env: {
+    DEFAULT_LOCALE: process.env.DEFAULT_LOCALE ? process.env.DEFAULT_LOCALE : 'en'
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: (chunk) => {
@@ -64,8 +68,25 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
-    '@nuxt/content'
+    '@nuxt/content',
+    'nuxt-i18n'
   ],
+
+  i18n: {
+    lazy: true,
+    langDir: 'locale/',
+    locales: [
+      {
+        code: 'en',
+        file: 'en-US.js',
+        name: 'English'
+      }
+    ],
+    defaultLocale: process.env.DEFAULT_LOCALE ? process.env.DEFAULT_LOCALE : 'en',
+    vueI18n: {
+      fallbackLocale: process.env.DEFAULT_LOCALE ? process.env.DEFAULT_LOCALE : 'en'
+    }
+  },
 
   optimizedImages: {
     optimizeImages: true,

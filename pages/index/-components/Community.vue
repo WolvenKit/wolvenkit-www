@@ -4,14 +4,16 @@
       <Wumpus />
       <div class="community__info">
         <h2 class="community__title">
-          Join The Community!
+          {{ $t('index.community') }}
         </h2>
-        <p>Come and join our Discord and become a part of the community. Find all the latest discussion, guides and support on modding tools, or simply discuss anything and everything.</p>
+        <p>
+          {{ $t('index.communityParagraph') }}
+        </p>
         <a
           href="https://discord.gg/cp77modding"
           class="community__button"
         >
-          Join Server
+          {{ $t('index.communityJoinButton') }}
         </a>
       </div>
     </PageContainer>

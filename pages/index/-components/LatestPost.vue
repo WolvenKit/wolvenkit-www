@@ -5,7 +5,7 @@
     </div>
     <PageContainer>
       <h2 class="latestPost__header">
-        Latest Post
+        {{ $t('index.latestPost') }}
       </h2>
       <PostItem :post="latestPost" />
     </PageContainer>

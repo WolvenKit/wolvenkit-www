@@ -1,7 +1,7 @@
 <template>
   <nuxt-link
     class="blogPostItem"
-    :to="post.dir"
+    :to="localePath(post.dir.substr(0, post.dir.lastIndexOf('/')))"
   >
     <!-- TODO: Better handling/design of non image blog posts -->
     <div
@@ -32,7 +32,7 @@
         {{ post.description }}
       </p>
       <p class="blogPostItem__date">
-        Published {{ post.createdAt | formatDate }}
+        {{ $t('blog.published') }} {{ post.createdAt | formatDate }}
       </p>
     </div>
   </nuxt-link>
@@ -59,11 +59,13 @@ export default {
 
   methods: {
     getThumbnailImage () {
+      const blogRoot = this.post.dir.substring(1).substr(0, this.post.dir.lastIndexOf('/') - 1)
+
       if (this.post.thumbnailImage) {
         try {
           return {
-            image: require(`~/content/${this.post.dir.substring(1)}/${this.post.thumbnailImage}`),
-            placeholder: require(`~/content/${this.post.dir.substring(1)}/${this.post.thumbnailImage}?lqip`)
+            image: require(`~/content/${blogRoot}/${this.post.thumbnailImage}`),
+            placeholder: require(`~/content/${blogRoot}/${this.post.thumbnailImage}?lqip`)
           }
         } catch (err) {
           return null
@@ -71,8 +73,8 @@ export default {
       } else {
         try {
           return {
-            image: require(`~/content/${this.post.dir.substring(1)}/thumbnail.jpg`),
-            placeholder: require(`~/content/${this.post.dir.substring(1)}/thumbnail.jpg?lqip`)
+            image: require(`~/content/${blogRoot}/thumbnail.jpg`),
+            placeholder: require(`~/content/${blogRoot}/thumbnail.jpg?lqip`)
           }
         } catch (err) {
           return null

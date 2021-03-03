@@ -1,6 +1,3 @@
-title: Team
-subtitle: Showcasing our extensive team who make everything possible
-description: Our team is made up of people from all over the world, gathered by a passion for programming and a desire to improve the gaming experience.
 # Order of team members, name must match the name field on the teamMembers file
 members:
   - Traderain
