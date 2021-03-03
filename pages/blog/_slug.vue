@@ -17,23 +17,24 @@
 
 <script>
 export default {
-  async asyncData ({ $content, params, error, app }) {
+  async asyncData ({ $content, params, error, app, env }) {
     const currentLocale = app.i18n.locale
-    const isEnglish = currentLocale === 'en'
+    const defaultLocale = env.DEFAULT_LOCALE
+    const isDefaultLocale = currentLocale === defaultLocale
+
     let [post] = await $content('blog', { deep: true })
       .where({
-        dir: isEnglish ? `/blog/${params.slug}` : `/blog/${params.slug}/locales`,
-        slug: isEnglish ? 'index' : currentLocale
+        dir: `/blog/${params.slug}/locales`,
+        slug: currentLocale
       })
       .fetch()
-      .catch(() => {
-        error({ statusCode: 404, message: 'Page not found' })
-      })
+      .catch(() => {})
 
-    if (!isEnglish && !post) {
+    if (!isDefaultLocale && !post) {
       [post] = await $content('blog', { deep: true })
         .where({
-          dir: `/blog/${params.slug}`
+          dir: `/blog/${params.slug}/locales`,
+          slug: defaultLocale
         })
         .fetch()
         .catch(() => {

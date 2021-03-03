@@ -23,8 +23,10 @@ export default {
     PostItem
   },
 
-  async asyncData ({ $content, error, app }) {
+  async asyncData ({ $content, error, app, env }) {
     const currentLocale = app.i18n.locale
+    const defaultLocale = env.DEFAULT_LOCALE
+
     const posts = await $content('blog', { deep: true })
       .only([
         'title',
@@ -35,17 +37,17 @@ export default {
         'dir'
       ])
       .where({
-        slug: 'index'
+        slug: defaultLocale
       })
       .sortBy('createdAt', 'desc')
       .fetch()
       .catch(() => {
-        error({ statusCode: 404, message: 'Page not found' })
+        error({ statusnpmCode: 404, message: 'Page not found' })
       })
 
-    if (currentLocale !== 'en') {
+    if (currentLocale !== defaultLocale) {
       const slug = currentLocale
-      let postsTranslated = await $content('blog', { deep: true })
+      const postsTranslated = await $content('blog', { deep: true })
         .only([
           'title',
           'description',
@@ -62,12 +64,6 @@ export default {
         .catch(() => {
           error({ statusCode: 404, message: 'Page not found' })
         })
-
-      postsTranslated = postsTranslated.map((post) => {
-        return Object.assign({}, post, {
-          dir: post.dir.substr(0, post.dir.lastIndexOf('/'))
-        })
-      })
 
       const postDirs = posts.reduce((dir, post, index) => {
         dir[post.dir] = index

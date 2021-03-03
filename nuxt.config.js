@@ -2,6 +2,10 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  env: {
+    DEFAULT_LOCALE: process.env.DEFAULT_LOCALE ? process.env.DEFAULT_LOCALE : 'en'
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: (chunk) => {
@@ -83,9 +87,9 @@ export default {
         name: 'Espanol'
       }
     ],
-    defaultLocale: 'en',
+    defaultLocale: process.env.DEFAULT_LOCALE ? process.env.DEFAULT_LOCALE : 'en',
     vueI18n: {
-      fallbackLocale: 'en'
+      fallbackLocale: process.env.DEFAULT_LOCALE ? process.env.DEFAULT_LOCALE : 'en'
     }
   },
 

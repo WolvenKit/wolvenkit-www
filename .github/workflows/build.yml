@@ -30,6 +30,7 @@ jobs:
         run: yarn run generate
         env:
           BASE_URL: https://redmodding.org/
+          DEFAULT_LOCALE: en
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

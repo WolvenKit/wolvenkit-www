@@ -85,11 +85,13 @@ export default {
 
   methods: {
     getProjectImage () {
+      const projectRoot = this.project.dir.substring(1).substr(0, this.project.dir.lastIndexOf('/') - 1)
+
       if (this.project.image) {
         try {
           return {
-            image: require(`~/content/${this.project.dir.substring(1)}/${this.project.image}`),
-            placeholder: require(`~/content/${this.project.dir.substring(1)}/${this.project.image}?lqip&inline`)
+            image: require(`~/content/${projectRoot}/${this.project.image}`),
+            placeholder: require(`~/content/${projectRoot}/${this.project.image}?lqip&inline`)
           }
         } catch (err) {
           return null
@@ -97,8 +99,8 @@ export default {
       } else {
         try {
           return {
-            image: require(`~/content/${this.project.path.substring(1)}.jpg`),
-            placeholder: require(`~/content/${this.project.path.substring(1)}.jpg?lqip&inline`)
+            image: require(`~/content/${projectRoot}.jpg`),
+            placeholder: require(`~/content/${projectRoot}.jpg?lqip&inline`)
           }
         } catch (err) {
           return null

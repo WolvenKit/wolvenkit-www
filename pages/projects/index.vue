@@ -37,8 +37,9 @@ export default {
     ProjectItem
   },
 
-  async asyncData ({ $content, error, app }) {
+  async asyncData ({ $content, error, app, env }) {
     const currentLocale = app.i18n.locale
+    const defaultLocale = env.DEFAULT_LOCALE
 
     const page = await $content('project')
       .fetch()
@@ -49,7 +50,7 @@ export default {
     let teamProjects = await $content('projects/team', { deep: true })
       .sortBy('createdAt', 'asc')
       .where({
-        slug: 'index'
+        slug: defaultLocale
       })
       .fetch()
       .catch(() => {})
@@ -57,13 +58,14 @@ export default {
     let communityProjects = await $content('projects/community', { deep: true })
       .sortBy('createdAt', 'asc')
       .where({
-        slug: 'index'
+        slug: defaultLocale
       })
       .fetch()
       .catch(() => {})
 
-    if (currentLocale !== 'en') {
+    if (currentLocale !== defaultLocale) {
       const slug = currentLocale
+
       let teamProjectsTranslated = await $content('projects/team', { deep: true })
         .sortBy('createdAt', 'asc')
         .where({
@@ -75,12 +77,6 @@ export default {
       if (!teamProjectsTranslated) {
         teamProjectsTranslated = []
       }
-
-      teamProjectsTranslated = teamProjectsTranslated.map((project) => {
-        return Object.assign({}, project, {
-          dir: project.dir.substr(0, project.dir.lastIndexOf('/'))
-        })
-      })
 
       const teamProjectDirs = teamProjects.reduce((dir, project, index) => {
         dir[project.dir] = index
@@ -102,12 +98,6 @@ export default {
       if (!communityProjectsTranslated) {
         communityProjectsTranslated = []
       }
-
-      communityProjectsTranslated = communityProjectsTranslated.map((project) => {
-        return Object.assign({}, project, {
-          dir: project.dir.substr(0, project.dir.lastIndexOf('/'))
-        })
-      })
 
       const communityProjectDirs = communityProjects.reduce((dir, project, index) => {
         dir[project.dir] = index
