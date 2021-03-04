@@ -97,6 +97,11 @@ export default {
         name: 'Français'
       },
       {
+        code: 'cn',
+        file: 'zh-CN.js',
+        name: '简体中文'
+      },
+      {
         code: 'jp',
         file: 'ja-JP.js',
         name: '日本語'
