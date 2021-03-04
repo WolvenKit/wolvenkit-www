@@ -20,6 +20,7 @@ Before going though with any of these processes, it is recommended you setup a d
 - [General Changes](./docs/general-changes.md)
 - [Project Page Changes](./docs/project-changes.md)
 - [Blog Posts](./docs/blog-posts.md)
+- [localization](./docs/localization.md)
 
 ## Build Setup
 New to everything? First thing is you'll need to install [Node](https://nodejs.org/en/) grab the latest LTS build of Node and install it. Follow the below instructions in your terminal to get setup.
