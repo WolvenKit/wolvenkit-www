@@ -37,13 +37,22 @@ export default {
 
   methods: {
     getImage () {
-      try {
+      if (this.src.startsWith('http')) {
         return {
-          image: require(`~/content/${this.$route.path.substring(1)}/img/${this.src}`),
-          placeholder: require(`~/content/${this.$route.path.substring(1)}/img/${this.src}?lqip`)
+          image: this.src
         }
-      } catch (err) {
-        return null
+      } else {
+        const { document } = this.$parent
+        const blogRoot = document.dir.substring(1).substr(0, document.dir.lastIndexOf('/') - 1)
+
+        try {
+          return {
+            image: require(`~/content/${blogRoot}/img/${this.src}`),
+            placeholder: require(`~/content/${blogRoot}/img/${this.src}?lqip`)
+          }
+        } catch (err) {
+          return null
+        }
       }
     }
   }

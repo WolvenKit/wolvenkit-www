@@ -127,8 +127,7 @@ export default {
   display: flex;
   align-items: center;
   margin-bottom: 2em;
-  width: 45%;
-  min-width: 400px;
+  width: 100%;
 
   &__imageContainer,
   &__imageContainerNone {
@@ -178,6 +177,7 @@ export default {
   &__personalInfo {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   &__name {
@@ -185,6 +185,7 @@ export default {
     font-weight: 600;
     margin-bottom: 0.25em;
     margin-right: 0.5em;
+    word-break: break-all;
   }
 
   &__socials {

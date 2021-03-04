@@ -170,9 +170,17 @@ export default {
   }
 
   &__list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // flex-wrap: wrap;
+    // justify-content: space-between;
+  }
+
+  @media (max-width: 1100px) {
+    &__list {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
   }
 }
 </style>
