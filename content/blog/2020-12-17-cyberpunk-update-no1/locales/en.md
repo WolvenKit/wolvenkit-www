@@ -21,7 +21,7 @@ How is it going to work?The mod manager is going to be separated into 2 main par
 1. the GUI, a interface for everyone to work with. Here you go and look for mods online and install them manually, or via our own Mod site. (We have not been in touch with nexus mods yet, but we looking for a way, to maybe integrate them!) With our easy GUI design even those who never modded can install new mods easily with just a press of a button. We are currently working on the design itself, with having a prototype, leaning on RapidDevs ModManager design from nexus. ! THE MOD MANAGER ON NEXUS IS NOT BY US !
 (More here)
 
-<lazy-image src="https://preview.redd.it/6yx3phhhzq561.png?width=1347&format=png&auto=webp&s=c6909626fe33ab9b2f782397784abe17dbfb3bc8"></lazy-image>
+<img style="width:100%;" src="https://preview.redd.it/6yx3phhhzq561.png?width=1347&format=png&auto=webp&s=c6909626fe33ab9b2f782397784abe17dbfb3bc8">
 
 2. The GPM or Game Package Manager is a CLI for mod management, responsible for installing, building, publishing and downloading mod packages. It's basically the backbone, and what we are going to use to mods the game with.
 
