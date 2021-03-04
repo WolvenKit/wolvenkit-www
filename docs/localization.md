@@ -4,7 +4,7 @@
 With the player count comming from all over the world, we want to localize the website to include more people who might not speek english good enough. If you want to translate into a not given laguage to want to fix speeling mistakes feel free to open a PR.
 
 ## How to?
-To create a new language you have to change some files and add some new ones.
+To add a new language you have to change some files and create some new ones.
 
 The follwing files need to be changed: 
 - nuxt.config.js
