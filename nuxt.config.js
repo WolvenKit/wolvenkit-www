@@ -95,6 +95,11 @@ export default {
         code: 'fr',
         file: 'fr-FR.js',
         name: 'Français'
+      },
+      {
+        code: 'jp',
+        file: 'ja-JP.js',
+        name: '日本語'
       }
     ],
     defaultLocale: process.env.DEFAULT_LOCALE ? process.env.DEFAULT_LOCALE : 'en',
