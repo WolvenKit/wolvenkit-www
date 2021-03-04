@@ -428,6 +428,7 @@ export default {
     font-weight: 600;
     padding: 0.5em 1em;
     transition: text-shadow 0.2s ease, transform 0.2s ease;
+    width: max-content;
 
     &:hover {
       transform: translateX(2px);

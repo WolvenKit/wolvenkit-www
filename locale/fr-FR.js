@@ -32,7 +32,7 @@ export default {
     community: 'Rejoignez la Communauté!',
     communityParagraph: 'Rejoignez notre Discord et faites partie de la communauté. Trouvez toutes les dernières discussions, guides et support sur les outils de modding, ou venez simplement discutez de tout et de rien.',
     communityJoinButton: 'Rejoindre le serveur',
-    contribute: 'contribuer',
+    contribute: 'Contribuer',
     contributeParagraph: 'Soumettez vos PR aux différents projets que nous avons en cours dans nos dépôts, nous avons toujours à cœur d\'accueillir de nouveaux développeurs pour aider et contribuer aux projets.',
     contributeRepoButton: 'Voir les dépôts',
     tools: {
