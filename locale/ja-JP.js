@@ -38,7 +38,7 @@ export default {
     tools: {
       wolvenkitDescription: 'REDエンジンゲーム用のModエディター/クリエーター。REDエンジンで作成されたゲームのModを作成するためのオールインワンツールを用意するのは目標です。',
       cetDescription: 'パフォーマンスの向上、バグ修正、『サイバーパンク2077』の楽しみのためのハック。',
-      cybercatDescription: '『サイバーパンク2077』カスタマイズアシスタントツール。進行中のセーブゲームエディタ.'
+      cybercatDescription: '『サイバーパンク2077』カスタマイズアシスタントツール。進行中のセーブゲームエディタ。'
     }
   },
   blog: {
