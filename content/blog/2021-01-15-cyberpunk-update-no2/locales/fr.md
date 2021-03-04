@@ -1,5 +1,5 @@
 ---
-title: Cyberpunk 2077 Modding Update Post N°2 - CD Project Red nous soutient !
+title: MàJ modding Cyberpunk 2077 n°2 - CD Project Red nous soutient !
 description: Cela fait quelque temps et avec le temps viennent les mises à jour ! Les premières concernant le modding.
 headerImage:
 thumbnailImage: blogpost3.jpg
