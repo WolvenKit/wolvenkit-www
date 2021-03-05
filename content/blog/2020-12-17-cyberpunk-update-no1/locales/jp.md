@@ -21,9 +21,9 @@ Mod Manager
 1. GUI、誰もが操作できるインターフェイス。 ここでは、オンラインでModを探して手動でインストールするか、独自のModサイトを介してインストールします。 （私たちはまだnexus modsと連絡を取り合っていませんが、おそらくそれらを統合する方法を探しています！）簡単なGUIデザインで、改造したことがない人でもボタンを押すだけで新しいmodを簡単にインストールできます。 現在、ネクサスのRapidDevs ModManager設計に基づいて、プロトタイプを作成し、設計自体に取り組んでいます。 ！ NEXUSのMODマネージャーは米国ではありません！
 （詳細はこちら）
 
-<lazy-image src="https://preview.redd.it/6yx3phhhzq561.png?width=1347&format=png&auto=webp&s=c6909626fe33ab9b2f782397784abe17dbfb3bc8">
+<lazy-image src="https://preview.redd.it/6yx3phhhzq561.png?width=1347&format=png&auto=webp&s=c6909626fe33ab9b2f782397784abe17dbfb3bc8"></lazy-image>
 
-1. GPMまたはゲームパッケージマネージャーは、Mod管理用のCLIであり、Modパッケージのインストール、ビルド、公開、ダウンロードを担当します。 これは基本的にバックボーンであり、ゲームを改造するために使用するものです。
+2. GPMまたはゲームパッケージマネージャーは、Mod管理用のCLIであり、Modパッケージのインストール、ビルド、公開、ダウンロードを担当します。 これは基本的にバックボーンであり、ゲームを改造するために使用するものです。
 
 
 
