@@ -21,7 +21,7 @@ createdAt: 2020-12-17
 1. GUI，每个人都可以使用的界面。在这里，您可以在线查找mod，并手动或通过我们自己的Mod站点进行安装。 （我们尚未与nexus mod保持联系，但我们正在寻找一种方法，可能将它们集成！）通过我们的简单GUI设计，即使是从未进行过修改的用户也可以通过按一下按钮轻松地安装新的mod。我们目前正在研究设计本身，并拥有一个原型，它依赖于nexus的RapidDevs ModManager设计。 ！ NEXUS上的模组管理器不是我们的！
 （更多在这里）
 
-<lazy-image src="https://preview.redd.it/6yx3phhhzq561.png?width=1347&format=png&auto=webp&s=c6909626fe33ab9b2f782397784abe17dbfb3bc8">
+<lazy-image src="https://preview.redd.it/6yx3phhhzq561.png?width=1347&format=png&auto=webp&s=c6909626fe33ab9b2f782397784abe17dbfb3bc8"></lazy-image>
 
 2. GPM或游戏包管理器是用于mod管理的CLI，负责安装，构建，发布和下载mod包。它基本上是骨干，以及我们将用来修改游戏的内容。
 
