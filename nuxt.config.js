@@ -92,6 +92,11 @@ export default {
         name: 'English'
       },
       {
+        code: 'es',
+        file: 'es-ES.js',
+        name: 'Español'
+      },
+      {
         code: 'fr',
         file: 'fr-FR.js',
         name: 'Français'
