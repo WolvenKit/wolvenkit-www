@@ -1,21 +1,20 @@
 ---
 title: Cyberpunk modding status and update.
-description: Cyberpunk has released and with this the modding community has started working on their own modding tools.
+description: Cyberpunk has released, and with this, the modding community has started working on their own modding tools.
 headerImage:
-thumbnailImage: blogpost2.jpg
+thumbnailImage: blogpost1.jpg
 headerColor: 10, 70, 230
 category: Cyberpunk General Modding
 createdAt: 2020-12-14
 ---
 
-Hey Choomba!
-I'm the Community Manager of the "CP77 Modding Community" Discord and wanted to give y'all an update and status regarding modding for the game.
+Hey, choomba!
+I'm the community manager of the "CP77 Modding Community" Discord server, and I wanted to give y'all a status update regarding the modding effort.
 
-Cyberpunk has been released 4 days ago, and we the community have been working day and night on reverse engineering the engine. With every day, we are getting closer to release the first mod manager and to be able to load mods without changing the files directly. The discord is currently with a lot of members who have created "WolvenKit", the modding kit for W3 and CDPR staff who are watching us. We all are working together to create tools and mods for everyone.
+Cyberpunk has been out for 4 days now, and people in the community have been working day and night on reverse engineering it. With every passing day, we are getting closer to release the first mod manager and being able to load mods without directly overwriting game assets. The server is currently full of members working on WolvenKit, the main modding tool for W3. We're also cooperating with CDPR staff, some of whom we know to be tracking us with great interest.
 
 Modding status:
-The current status of a mod manager is unclear, but not far away. Thanks to Avery3R to figuring out a way to use the already build in console, we have managed to archive a huge milestone. While working on a mod manager we are also working of various tool to help modders. A huge part we are working on are getting all those hashes for game files and working on textures and model extraction.
+The current status of a mod manager is unclear, but it should not be too far away. Avery3R figuring out how to use the built-in console was a huge milestone. We're concurrently working on various tools to help modders. The focus right now is getting all hashes for game assets and working on texture/model extraction.
 
-
-Until then cheers,
+Until then, cheers,
 Your RED Modding Team

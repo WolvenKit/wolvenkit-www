@@ -2,7 +2,7 @@
 title: 《赛博朋克》模改现状与最新消息
 description: 《赛博朋克》已经发布，与此同时，模改社群也开始开发自己的模改工具。
 headerImage:
-thumbnailImage: blogpost2.jpg
+thumbnailImage: blogpost1.jpg
 headerColor: 10, 70, 230
 category: Cyberpunk General Modding
 createdAt: 2020-12-14

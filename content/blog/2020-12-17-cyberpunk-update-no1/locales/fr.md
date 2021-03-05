@@ -2,7 +2,7 @@
 title: Cyberpunk 2077 Modding Update Post - N°1
 description: Cela fait quelque temps et avec les temps viennent des mises à jour ! Les premières mises à jour concernant le modding.
 headerImage:
-thumbnailImage: blogpost1.jpg
+thumbnailImage: blogpost2.jpg
 headerColor: 10, 70, 230
 category: Cyberpunk General Modding
 createdAt: 2020-12-17

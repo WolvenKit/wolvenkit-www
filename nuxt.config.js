@@ -101,6 +101,11 @@ export default {
         file: 'zh-CN.js',
         name: '简体中文'
       }
+      {
+        code: 'tr'
+        file: 'tr-TR.js'
+        name: 'Türkçe'
+      }
     ],
     defaultLocale: process.env.DEFAULT_LOCALE ? process.env.DEFAULT_LOCALE : 'en',
     vueI18n: {

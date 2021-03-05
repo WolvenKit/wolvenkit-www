@@ -1,6 +1,6 @@
 ---
 title: Website & Co
-description: With time comes progress, and we have progressed far!
+description: With time comes progress, and progressed we have!
 headerImage:
 thumbnailImage: blogpost4.jpg
 headerColor: 10, 70, 230
@@ -12,7 +12,7 @@ createdAt: 2021-02-17
 
 Today, I’d like to introduce everyone to our website. With this website, we’re aiming to create a place where we can showcase our work and give everyone a place to find out more about it.
 
-You might be asking yourself the question "Who are these nerds?" right about now. I can answer that: everyone working under the Red Modding Initiative! The initiative is not a corporation or anything, but rather a group of people with the common aim of creating modding tools for games made on CD Projekt Red’s proprietary REDEngine, and hopefully in the future, for other games. We do not fall under any direct, official jurisdiction of CD Projekt Co. Ltd. or their subsidiary CD Projekt Red, but are in the early stages of collaborating with them. None of our members are working full time, it should go without saying, meaning everyone is doing this in their free time. As of now, we do not pay, nor receive money for any of our efforts. 
+You might be asking yourself the question "Who are these nerds?" right about now. I can answer that: everyone working under the Red Modding Initiative! The initiative is not a corporation or anything, but rather a group of people with the common aim of creating modding tools for games made on CD Projekt Red’s proprietary REDEngine, and hopefully in the future, for other games. We do not fall under any direct, official jurisdiction of CD Projekt Co. Ltd. or their subsidiary CD Projekt Red, but are in the early stages of collaborating with them. None of our members are working full time, it should go without saying, meaning everyone is doing this in their free time. As of now, we do not pay, nor receive money for any of our efforts.
 <br><br>
 
 ### **Social media and WolvenKit**
@@ -26,6 +26,5 @@ You may have noticed that Cyber Engine Tweaks (CET) has discontinued its Nexus M
 <br><sub>CET: [Github](https://github.com/yamashi/CyberEngineTweaks) - [Wiki](https://wiki.cybermods.net/cyber-engine-tweaks/)</sub>
 <br><br>
 
-**Until next time**
-<br>Your Red Modding Team. 
-
+**Until next time,**
+<br>Your Red Modding Team
