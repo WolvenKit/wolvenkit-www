@@ -1,6 +1,6 @@
 ---
-title: Cyberpunk 2077 Modding Update Post - N°1
-description: Cela fait quelque temps et avec les temps viennent des mises à jour ! Les premières mises à jour concernant le modding.
+title: MàJ modding Cyberpunk 2077 - n°1
+description: Cela fait quelque temps et avec le temps viennent les mises à jour ! Les premières concernant le modding.
 headerImage:
 thumbnailImage: blogpost2.jpg
 headerColor: 10, 70, 230
@@ -21,11 +21,9 @@ Comment cela va-t-il fonctionner ? Le gestionnaire de mods va être séparé en 
 1. L'interface graphique, une interface avec laquelle tout le monde peut travailler. Jusqu'ici, vous recherchez des mods en ligne et installez-les manuellement, ou via notre propre site Mod. (Nous n'avons pas encore été en contact avec les mods nexus, mais nous cherchons un moyen pour peut-être les intégrer !) Avec notre conception d'interface graphique facile, même ceux qui n'ont jamais modifié un jeu peuvent installer de nouveaux mods facilement en appuyant simplement sur un bouton. Nous travaillons actuellement sur la conception de celle-ci, avec un prototype, en nous appuyant sur la conception du ModManager de RapidDevs de nexus. ! LE GESTIONNAIRE DE MOD SUR NEXUS N'EST PAS LE NOTRE !
 (Plus ici)
 
-<img style="width:100%;" src="https://preview.redd.it/6yx3phhhzq561.png?width=1347&format=png&auto=webp&s=c6909626fe33ab9b2f782397784abe17dbfb3bc8">
+<lazy-image src="https://preview.redd.it/6yx3phhhzq561.png?width=1347&format=png&auto=webp&s=c6909626fe33ab9b2f782397784abe17dbfb3bc8"></lazy-image>
 
 2. Le GPM ou Game Package Manager est un CLI pour la gestion des mods, responsable de l'installation, de la construction, de la publication et du téléchargement des packages de mods. C'est la base de que nous allons utiliser pour modifier le jeu.
-
-
 
 Nous faisons actuellement tellement de choses à la fois, qu'il n'est même pas possible pour nous de le lister ici, donc si cela vous intéresse, n'hésitez pas à rejoindre notre Discord et à interagir avec plus de 4,5 milles personnes intéressées par le modding ou aidez-nous dans divers sujets allant de la rétro-ingénierie au niveau de la mémoire jusqu'à la maîtrise de modèles et texture ! Nous accueillons tout le monde !
 

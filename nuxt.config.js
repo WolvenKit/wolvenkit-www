@@ -92,6 +92,11 @@ export default {
         name: 'English'
       },
       {
+        code: 'es',
+        file: 'es-ES.js',
+        name: 'Español'
+      },
+      {
         code: 'fr',
         file: 'fr-FR.js',
         name: 'Français'
@@ -100,6 +105,11 @@ export default {
         code: 'cn',
         file: 'zh-CN.js',
         name: '简体中文'
+      },
+      {
+        code: 'jp',
+        file: 'ja-JP.js',
+        name: '日本語'
       }
       {
         code: 'tr'

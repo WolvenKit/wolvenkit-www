@@ -8,15 +8,12 @@
         <p>
           {{ $t('index.contributeParagraph') }}
         </p>
-        <a
-          href="https://github.com/WolvenKit"
-          class="contribute__button"
-        >
+        <a href="https://github.com/WolvenKit" class="contribute__button">
           {{ $t('index.contributeRepoButton') }}
         </a>
       </div>
       <div class="contribute__image">
-        <img src="octocat.png" alt="GitHub Octocat mascot in science gear mixing chemicals">
+        <img v-lazy="'/octocat.png'" alt="GitHub Octocat mascot in science gear mixing chemicals">
       </div>
     </PageContainer>
   </div>

@@ -9,6 +9,11 @@
 
 <script>
 export default {
+  data () {
+    return {
+      rive: null
+    }
+  },
   head () {
     return {
       script: [
@@ -20,14 +25,20 @@ export default {
       ]
     }
   },
+  mounted () {
+    this.initRiveAnimation()
+  },
   methods: {
     initRiveAnimation () {
-      // eslint-disable-next-line no-new, no-undef
-      new RiveAnimation({
-        src: '/rive/wumpus.riv',
-        canvas: this.$refs.riveWumpus,
-        autoplay: true
-      })
+      // eslint-disable-next-line no-undef
+      if (typeof RiveAnimation === 'function' && !this.rive) {
+        // eslint-disable-next-line no-new, no-undef
+        this.rive = new RiveAnimation({
+          src: '/rive/wumpus.riv',
+          canvas: this.$refs.riveWumpus,
+          autoplay: true
+        })
+      }
     }
   }
 }
