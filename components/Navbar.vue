@@ -427,6 +427,7 @@ export default {
     color: var(--color-text);
     font-weight: 600;
     padding: 0.5em 1em;
+    white-space: nowrap;
     transition: text-shadow 0.2s ease, transform 0.2s ease;
     width: max-content;
 
