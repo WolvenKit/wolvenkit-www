@@ -25,6 +25,9 @@ export default {
     },
     community: {
       label: 'Community'
+    },
+    legal: {
+      label: 'Legal'
     }
   },
   index: {

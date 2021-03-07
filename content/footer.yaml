@@ -1,4 +1,5 @@
-title: Red Modding Tools - 2021
+title: © 2021 Red Modding Tools. All Rights Reserved.
+
 columns:
   - title: footer.main.label
     items:
@@ -28,3 +29,8 @@ columns:
     items:
       - name: Discord
         link: https://discord.gg/Epkq79kd96
+
+  - title: footer.legal.label
+    items:
+      - name: Contact
+        link: mailto:contact@redmodding.org
