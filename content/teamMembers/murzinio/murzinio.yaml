@@ -1,8 +1,7 @@
 name: Murzinio
 description: Lorem Ipsum
-profileImage: 
+profileImage:
 projects:
   - WolvenKit
 socials:
-  - flag:
-    github: https://github.com/murzinio
+  - github: https://github.com/murzinio

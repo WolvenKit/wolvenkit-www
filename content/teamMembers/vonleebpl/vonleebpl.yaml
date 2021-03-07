@@ -1,8 +1,7 @@
 name: vonLeebpl
 description: Lorem Ipsum
-profileImage: 
+profileImage:
 projects:
   - WolvenKit
 socials:
-  - flag:
-    github: https://github.com/vonleebpl
+  - github: https://github.com/vonleebpl

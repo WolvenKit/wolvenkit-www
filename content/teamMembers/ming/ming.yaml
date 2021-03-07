@@ -1,8 +1,7 @@
 name: Ming
 description: Lorem Ipsum
-profileImage: 
+profileImage:
 projects:
   - WolvenKit Website
 socials:
-  - flag:
-    github: https://github.com/Nats-ji
+  - github: https://github.com/Nats-ji

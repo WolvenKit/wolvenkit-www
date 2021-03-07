@@ -1,8 +1,7 @@
 name: Michaelpolakatwork
 description: Lorem Ipsum
-profileImage: 
+profileImage:
 projects:
   - WolvenKit
 socials:
-  - flag:
-    github: https://github.com/michaelpolakatwork
+  - github: https://github.com/michaelpolakatwork
