@@ -2,7 +2,7 @@
 title: MàJ modding Cyberpunk 2077 - n°1
 description: Cela fait quelque temps et avec le temps viennent les mises à jour ! Les premières concernant le modding.
 headerImage:
-thumbnailImage: blogpost1.jpg
+thumbnailImage: blogpost2.jpg
 headerColor: 10, 70, 230
 category: Cyberpunk General Modding
 createdAt: 2020-12-17

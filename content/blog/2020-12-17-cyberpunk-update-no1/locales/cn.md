@@ -2,7 +2,7 @@
 title: 《赛博朋克2077》模改最新动态1号
 description: 已经有一段时间了，随着时间的推移更新！有关模改的第一时间更新。
 headerImage:
-thumbnailImage: blogpost1.jpg
+thumbnailImage: blogpost2.jpg
 headerColor: 10, 70, 230
 category: Cyberpunk General Modding
 createdAt: 2020-12-17

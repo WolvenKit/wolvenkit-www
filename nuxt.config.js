@@ -110,6 +110,11 @@ export default {
         code: 'jp',
         file: 'ja-JP.js',
         name: '日本語'
+      },
+      {
+        code: 'tr',
+        file: 'tr-TR.js',
+        name: 'Türkçe',
       }
     ],
     defaultLocale: process.env.DEFAULT_LOCALE ? process.env.DEFAULT_LOCALE : 'en',

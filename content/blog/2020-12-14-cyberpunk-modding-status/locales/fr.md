@@ -2,7 +2,7 @@
 title: Statut et mise à jour du modding Cyberpunk.
 description: Cyberpunk est sorti et avec cela, la communauté de modding a commencé à travailler sur ses propres outils de modding.
 headerImage:
-thumbnailImage: blogpost2.jpg
+thumbnailImage: blogpost1.jpg
 headerColor: 10, 70, 230
 category: Cyberpunk General Modding
 createdAt: 2020-12-14
