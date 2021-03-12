@@ -8,7 +8,7 @@ category: Cyberpunk General Modding
 createdAt: 2020-12-17
 ---
 
-Hey, choombas!
+Hey Choombas!
 
 Welcome to the first weekly update post from us at the CP77 Modding Tools Server. It's barely been 3 days since the first post regarding modding, but we simply had to make another one; we have come even closer to being able to mod the game! We toil day and night to make modding a reality, and currently we're working on big stuff. Most importantly, we've started work on our very own mod manager! More on that later in this post.
 
