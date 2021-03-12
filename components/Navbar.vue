@@ -97,6 +97,12 @@
       </div>
       <div ref="navRight" class="nav__navRight">
         <a
+          href="https://www.patreon.com/RedModdingTools"
+          class="nav__navItem"
+        >
+          <PatreonIcon />
+        </a>
+        <a
           href="https://github.com/WolvenKit/"
           class="nav__navItem"
         >
@@ -132,11 +138,13 @@
 <script>
 import GithubIcon from 'vue-material-design-icons/Github.vue'
 import DiscordIcon from 'vue-material-design-icons/Discord.vue'
+import PatreonIcon from 'vue-material-design-icons/Patreon.vue'
 
 export default {
   components: {
     GithubIcon,
-    DiscordIcon
+    DiscordIcon,
+    PatreonIcon
   },
 
   data () {
