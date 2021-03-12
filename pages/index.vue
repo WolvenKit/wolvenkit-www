@@ -4,6 +4,7 @@
     <LatestPost :latest-post="latestPost" />
     <Community />
     <Contribute />
+    <Patreon />
   </div>
 </template>
 
@@ -12,13 +13,15 @@ import FullpageLander from '@/pages/index/-components/FullpageLander'
 import LatestPost from '@/pages/index/-components/LatestPost'
 import Community from '@/pages/index/-components/Community'
 import Contribute from '@/pages/index/-components/Contribute'
+import Patreon from '@/pages/index/-components/Patreon'
 
 export default {
   components: {
     FullpageLander,
     LatestPost,
     Community,
-    Contribute
+    Contribute,
+    Patreon
   },
 
   async asyncData ({ $content, error, app, env }) {
