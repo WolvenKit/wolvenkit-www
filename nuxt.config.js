@@ -140,10 +140,16 @@ export default {
     parallel: true,
 
     extend (config, { isDev, isClient }) {
-      config.module.rules.push({
-        test: /\.(md|yaml)$/i,
-        loader: 'ignore-loader'
-      })
+      config.module.rules.push(
+        {
+          test: /\.(md|yaml)$/i,
+          loader: 'ignore-loader'
+        },
+        {
+          test: /\.riv$/,
+          loader: 'arraybuffer-loader'
+        }
+      )
     }
   },
 
