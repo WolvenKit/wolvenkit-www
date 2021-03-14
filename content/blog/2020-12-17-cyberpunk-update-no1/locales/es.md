@@ -2,7 +2,7 @@
 title: Cyberpunk 2077 Actualización Importante - N° 1
 description: Ha pasado un tiempo considerable desde que publicamos algo pero no te preocupes, te traemos grandes noticias en relación al modding.
 headerImage:
-thumbnailImage: blogpost1.jpg
+thumbnailImage: blogpost2.jpg
 headerColor: 10, 70, 230
 category: Modding de Cyberpunk
 createdAt: 2020-12-17

@@ -2,7 +2,7 @@
 title: ¡Los mods para Cyberpunk 2077 pronto serán una realidad!
 description: Cyberpunk 2077 se ha lanzado y la comunidad de modders ya comenzó a trabajar en sus propias herramientas para dar hincapié a la creación de modificaciones para el juego.
 headerImage:
-thumbnailImage: blogpost2.jpg
+thumbnailImage: blogpost1.jpg
 headerColor: 10, 70, 230
 category: Modding de Cyberpunk
 createdAt: 2020-12-14
