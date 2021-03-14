@@ -18,7 +18,7 @@
         {{ $t('projects.communityProjects') }}
       </h2>
       <div class="projects__communityProjects">
-        <ProjectItem
+        <ProjectsProject
           v-for="project in communityProjectOrder"
           :key="project.slug"
           :project="project"
@@ -30,13 +30,8 @@
 </template>
 
 <script>
-import ProjectItem from '@/pages/projects/-components/ProjectItem'
 
 export default {
-  components: {
-    ProjectItem
-  },
-
   async asyncData ({ $content, error, app, env }) {
     const currentLocale = app.i18n.locale
     const defaultLocale = env.DEFAULT_LOCALE

@@ -36,13 +36,11 @@
 </template>
 
 <script>
-import TeamMember from '@/pages/team/-components/TeamMember'
 import FilterIcon from 'vue-material-design-icons/Filter.vue'
 import FilterOutlineIcon from 'vue-material-design-icons/FilterOutline.vue'
 
 export default {
   components: {
-    TeamMember,
     FilterIcon,
     FilterOutlineIcon
   },

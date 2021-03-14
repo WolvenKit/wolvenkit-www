@@ -151,9 +151,5 @@ export default {
         }
       )
     }
-  },
-
-  ignore: [
-    '/pages/**/-components/**'
-  ]
+  }
 }
