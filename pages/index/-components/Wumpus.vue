@@ -8,38 +8,20 @@
 </template>
 
 <script>
+import { Rive } from 'rive-js'
+
 export default {
   data () {
     return {
       rive: null
     }
   },
-  head () {
-    return {
-      script: [
-        {
-          hid: 'rive',
-          src: 'https://unpkg.com/rive-js/dist/rive.js',
-          callback: () => this.initRiveAnimation()
-        }
-      ]
-    }
-  },
   mounted () {
-    this.initRiveAnimation()
-  },
-  methods: {
-    initRiveAnimation () {
-      // eslint-disable-next-line no-undef
-      if (typeof RiveAnimation === 'function' && !this.rive) {
-        // eslint-disable-next-line no-new, no-undef
-        this.rive = new RiveAnimation({
-          src: '/rive/wumpus.riv',
-          canvas: this.$refs.riveWumpus,
-          autoplay: true
-        })
-      }
-    }
+    this.rive = new Rive({
+      buffer: require('@/assets/rive/wumpus.riv'),
+      canvas: this.$refs.riveWumpus,
+      autoplay: true
+    })
   }
 }
 </script>
