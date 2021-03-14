@@ -46,7 +46,7 @@ export default {
   },
   blog: {
     pageTitle: 'Blog',
-    pageDescription: 'Noticias, avances y mucho más!',
+    pageDescription: '¡Noticias, avances y mucho más!',
     published: 'Publicado en'
   },
   projects: {
