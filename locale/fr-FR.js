@@ -25,6 +25,9 @@ export default {
     },
     community: {
       label: 'Communauté'
+    },
+    legal: {
+      label: 'Légal'
     }
   },
   index: {
@@ -35,6 +38,9 @@ export default {
     contribute: 'Contribuer',
     contributeParagraph: 'Soumettez vos PR aux différents projets que nous avons en cours dans nos dépôts, nous avons toujours à cœur d\'accueillir de nouveaux développeurs pour aider et contribuer aux projets.',
     contributeRepoButton: 'Voir les dépôts',
+    patreon: 'Soutenir les développeurs',
+    patreonParagraph: 'Les développeurs de Red Modding consacrent leur temps libre à la création de divers outils open source gratuits pour modder les jeux RedEngine. Nos Patrons nous permettent de consacrer plus de temps et nous motivent à continuer d\'aider la communauté.',
+    patreonButton: 'Devenez un Patron',
     tools: {
       wolvenkitDescription: 'Éditeur / créateur de mods pour les jeux RED Engine. Le but est d\'avoir un outil tout-en-un pour créer des mods pour les jeux créés avec ce moteur.',
       cetDescription: 'Amélioration des performances, corrections de bugs et hacks pour s\'amuser pour Cyberpunk 2077.',
