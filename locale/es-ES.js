@@ -35,7 +35,7 @@ export default {
     contribute: 'Contribuye',
     contributeParagraph: 'Colabora a los diferentes proyectos que tenemos en marcha en nuestros repositorios de GitHub. Siempre estamos dispuestos a dar la bienvenida a nuevos desarrolladores para que puedan contribuir a nuestros proyectos.',
     contributeRepoButton: 'Ver Repositorios',
-	patreon: 'Apoya a los Desarrolladores',
+    patreon: 'Apoya a los Desarrolladores',
     patreonParagraph: 'Los desarrolladores de Red Modding trabajan en su tiempo libre para crear software de código abierto para modificar juegos que utilizan RED Engine. Nuestros "Patreons" nos permiten atribuir más tiempo a nuestros proyectos y nos mantienen motivados para continuar ayudando a la comunidad.',
     patreonButton: '¡Suscríbete a nuestro Patreon!',
     tools: {
