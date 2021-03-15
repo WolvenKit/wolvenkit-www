@@ -5,7 +5,7 @@
       :subtitle="$t('blog.pageDescription')"
     />
     <PageContainer class="blogPosts__container">
-      <PostItem
+      <BlogPostItem
         v-for="(post, index) in posts"
         :key="index"
         :class="{ 'blogPosts__feature': index === 0 }"
@@ -16,12 +16,7 @@
 </template>
 
 <script>
-import PostItem from '@/pages/blog/-components/PostItem'
-
 export default {
-  components: {
-    PostItem
-  },
 
   async asyncData ({ $content, error, app, env }) {
     const currentLocale = app.i18n.locale

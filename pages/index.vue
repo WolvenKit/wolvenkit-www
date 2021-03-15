@@ -1,29 +1,15 @@
 <template>
   <div class="index">
-    <FullpageLander :index-data="index" />
-    <LatestPost :latest-post="latestPost" />
-    <Community />
-    <Contribute />
-    <Patreon />
+    <IndexFullpageLander :index-data="index" />
+    <IndexLatestPost :latest-post="latestPost" />
+    <IndexCommunity />
+    <IndexContribute />
+    <IndexPatreon />
   </div>
 </template>
 
 <script>
-import FullpageLander from '@/pages/index/-components/FullpageLander'
-import LatestPost from '@/pages/index/-components/LatestPost'
-import Community from '@/pages/index/-components/Community'
-import Contribute from '@/pages/index/-components/Contribute'
-import Patreon from '@/pages/index/-components/Patreon'
-
 export default {
-  components: {
-    FullpageLander,
-    LatestPost,
-    Community,
-    Contribute,
-    Patreon
-  },
-
   async asyncData ({ $content, error, app, env }) {
     const currentLocale = app.i18n.locale
     const defaultLocale = env.DEFAULT_LOCALE

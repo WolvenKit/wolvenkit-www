@@ -7,18 +7,13 @@
       <h2 class="latestPost__header">
         {{ $t('index.latestPost') }}
       </h2>
-      <PostItem :post="latestPost" />
+      <BlogPostItem :post="latestPost" />
     </PageContainer>
   </div>
 </template>
 
 <script>
-import PostItem from '@/pages/blog/-components/PostItem'
-
 export default {
-  components: {
-    PostItem
-  },
 
   props: {
     latestPost: {

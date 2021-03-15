@@ -1,7 +1,7 @@
 <template>
   <div class="community">
     <PageContainer>
-      <Wumpus />
+      <IndexWumpus />
       <div class="community__info">
         <h2 class="community__title">
           {{ $t('index.community') }}
@@ -19,16 +19,6 @@
     </PageContainer>
   </div>
 </template>
-
-<script>
-import Wumpus from '@/pages/index/-components/Wumpus'
-
-export default {
-  components: {
-    Wumpus
-  }
-}
-</script>
 
 <style lang="scss" scoped>
 .community {
