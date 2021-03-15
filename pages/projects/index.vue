@@ -6,7 +6,7 @@
         {{ $t('projects.teamProjects') }}
       </h2>
       <div class="projects__teamProjects">
-        <ProjectItem
+        <ProjectsItem
           v-for="project in teamProjectOrder"
           :key="project.slug"
           :project="project"
