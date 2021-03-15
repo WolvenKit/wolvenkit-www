@@ -23,7 +23,7 @@ How exactly is it going to work? The mod manager is going to be separated into 2
 Just to be perfectly clear: THE MOD MANAGER ON NEXUSMODS IS NOT AFFILIATED WITH US.
 (More here)
 
-<img style="width:100%;" src="https://preview.redd.it/6yx3phhhzq561.png?width=1347&format=png&auto=webp&s=c6909626fe33ab9b2f782397784abe17dbfb3bc8">
+<image-lazy src="https://preview.redd.it/6yx3phhhzq561.png?width=1347&format=png&auto=webp&s=c6909626fe33ab9b2f782397784abe17dbfb3bc8"></image-lazy>
 
 2. The GPM, or Game Package Manager, is a CLI for mod management, responsible for installing/building/publishing and downloading mod packages. It's basically the backbone of what's going to be used to mod the game (a backend, if you so wish).
 

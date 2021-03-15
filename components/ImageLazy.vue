@@ -1,15 +1,15 @@
 <template>
-  <div class="lazyImage">
+  <div class="imageLazy">
     <div
-      v-if="lazyImage"
+      v-if="imageLazy"
       v-lazy-container="{ selector: 'img' }"
-      class="lazyImage__container"
+      class="imageLazy__container"
     >
       <!-- TODO: Implement image alt/caption tags within blog post -->
       <img
-        :data-src="lazyImage.image"
-        :data-loading="lazyImage.placeholder"
-        :src="lazyImage.placeholder"
+        :data-src="imageLazy.image"
+        :data-loading="imageLazy.placeholder"
+        :src="imageLazy.placeholder"
         alt=""
       >
     </div>
@@ -27,12 +27,12 @@ export default {
 
   data () {
     return {
-      lazyImage: null
+      imageLazy: null
     }
   },
 
   created () {
-    this.lazyImage = this.getImage()
+    this.imageLazy = this.getImage()
   },
 
   methods: {
@@ -60,7 +60,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.lazyImage {
+.imageLazy {
   padding: 0 2em;
   margin: 2em 0;
 

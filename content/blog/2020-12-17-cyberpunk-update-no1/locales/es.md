@@ -26,7 +26,7 @@ Con nuestro sencillo diseño de interfaz de usuario incluso aquellos que nunca h
 
 (Más aquí)
 
-<lazy-image src="https://preview.redd.it/6yx3phhhzq561.png?width=1347&format=png&auto=webp&s=c6909626fe33ab9b2f782397784abe17dbfb3bc8"></lazy-image>
+<image-lazy src="https://preview.redd.it/6yx3phhhzq561.png?width=1347&format=png&auto=webp&s=c6909626fe33ab9b2f782397784abe17dbfb3bc8"></image-lazy>
 
 2. GPM o Game Package Manager es una CLI para la administración de modificaciones el cual es responsable de instalar, construir, publicar y descargar paquetes de mods. Es básicamente la columna vertebral y es lo que vamos a usar para modificar el juego.
 
