@@ -18,7 +18,7 @@
         {{ $t('projects.communityProjects') }}
       </h2>
       <div class="projects__communityProjects">
-        <ProjectsProject
+        <ProjectsItem
           v-for="project in communityProjectOrder"
           :key="project.slug"
           :project="project"
