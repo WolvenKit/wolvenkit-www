@@ -23,4 +23,4 @@ El estado actual de un gestor de mods no está claro, pero tampoco está lejos. 
 Mientras trabajamos en un gestor de modificaciones también estamos trabajando en varias herramientas para ayudar a los modders. Una gran parte de nosotros se encuentra trabajando en conseguir todos los hashes de los archivos del juego y así poder conseguir en la extracción de texturas y modelos presentes en los archivos del juego.
 
 Sin nada más que agregar,
-REDModding Team
+RED Modding Team

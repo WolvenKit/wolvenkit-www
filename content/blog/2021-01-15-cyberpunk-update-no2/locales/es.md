@@ -44,4 +44,4 @@ También damos la bienvenida a aquellos que quieran ayudarnos de una manera dife
 
 Hasta entonces, 
 
-REDModding Team
+RED Modding Team

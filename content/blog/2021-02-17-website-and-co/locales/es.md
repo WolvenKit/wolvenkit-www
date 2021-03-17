@@ -38,4 +38,4 @@ El mod todavía está disponible en su repositorio dedicado de GitHub y, a parti
 <br><br>
 
 **¡Hasta la próxima!**
-<br>REDModding Team
+<br>RED Modding Team
