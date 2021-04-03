@@ -2,10 +2,13 @@ title: RED Modding Tools
 tools:
   - name: WolvenKit
     description: index.tools.wolvenkitDescription
-    pageLink: /projects
+    pageLink: https://github.com/WolvenKit/WolvenKit/releases/latest
+    github: https://github.com/WolvenKit/WolvenKit
   - name: CET
     description: index.tools.cetDescription
-    pageLink: /projects
+    pageLink: https://github.com/yamashi/CyberEngineTweaks/releases/latest
+    github: https://github.com/yamashi/CyberEngineTweaks
   - name: CyberCAT
     description: index.tools.cybercatDescription
-    pageLink: /projects
+    pageLink: https://github.com/WolvenKit/CyberCAT/releases/latest
+    github: https://github.com/WolvenKit/CyberCAT

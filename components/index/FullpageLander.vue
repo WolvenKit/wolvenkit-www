@@ -42,14 +42,24 @@
 
       <div class="lander__toolLinks">
         <nuxt-link
+          v-if="indexData.tools[currentTool].pageLink && indexData.tools[currentTool].pageLink.startsWith('/')"
           :to="localePath(indexData.tools[currentTool].pageLink)"
           class="lander__toolLink"
         >
           {{ $t('general.getStarted') }}
         </nuxt-link>
         <a
+          v-else
+          :href="indexData.tools[currentTool].pageLink"
           class="lander__toolLink"
-          href="#"
+          target="_blank"
+        >
+          {{ $t('general.getStarted') }}
+        </a>
+        <a
+          class="lander__toolLink"
+          :href="indexData.tools[currentTool].github"
+          target="_blank"
         >
           <GithubIcon />
           GitHub
