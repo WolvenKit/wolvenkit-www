@@ -114,7 +114,7 @@ export default {
       {
         code: 'tr',
         file: 'tr-TR.js',
-        name: 'Türkçe',
+        name: 'Türkçe'
       }
     ],
     defaultLocale: process.env.DEFAULT_LOCALE ? process.env.DEFAULT_LOCALE : 'en',
