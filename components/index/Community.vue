@@ -10,7 +10,7 @@
           {{ $t('index.communityParagraph') }}
         </p>
         <a
-          href="https://discord.gg/cp77modding"
+          href="https://discord.gg/Epkq79kd96"
           class="community__button"
         >
           {{ $t('index.communityJoinButton') }}

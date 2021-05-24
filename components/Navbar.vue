@@ -109,7 +109,7 @@
           <GithubIcon />
         </a>
         <a
-          href="https://discord.gg/cp77modding"
+          href="https://discord.gg/Epkq79kd96"
           class="nav__navItem"
         >
           <DiscordIcon />
