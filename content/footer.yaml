@@ -11,8 +11,6 @@ columns:
         link: '/projects'
       - nameLocale: nav.team
         link: '/team'
-      - nameLocale: nav.wiki
-        link: '#'
 
   - title: footer.contribute.label
     items:
