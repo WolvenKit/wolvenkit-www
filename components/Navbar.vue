@@ -179,7 +179,7 @@ export default {
             },
             {
               name: 'WolvenKit',
-              link: 'https://github.com/WolvenKit/Wolvenkit/wiki'
+              link: 'https://wiki.cybermods.net/wolvenkit/'
             }
           ]
         },
