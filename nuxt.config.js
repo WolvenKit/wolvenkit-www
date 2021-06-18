@@ -140,6 +140,10 @@ export default {
     parallel: true,
 
     extend (config, { isDev, isClient }) {
+      config.node = {
+        fs: 'empty'
+      }
+
       config.module.rules.push(
         {
           test: /\.(md|yaml)$/i,

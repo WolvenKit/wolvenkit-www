@@ -1,9 +1,9 @@
 <template>
   <canvas
-    ref="riveWumpus"
-    class="wumpus-canvas"
-    width="300"
-    height="300"
+    ref="riveOctocat"
+    class="octocat-canvas"
+    width="340"
+    height="340"
   />
 </template>
 
@@ -18,8 +18,8 @@ export default {
   },
   mounted () {
     this.rive = new Rive({
-      buffer: require('@/assets/rive/wumpus.riv'),
-      canvas: this.$refs.riveWumpus,
+      buffer: require('@/assets/rive/octocat.riv'),
+      canvas: this.$refs.riveOctocat,
       autoplay: true
     })
   }
@@ -27,9 +27,7 @@ export default {
 </script>
 
 <style lang="scss">
-.wumpus-canvas {
-  transform: rotate(-3deg);
-
+.octocat-canvas {
   @media (max-width: 660px) {
     display: none;
   }
