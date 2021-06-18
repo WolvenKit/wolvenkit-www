@@ -12,9 +12,7 @@
           {{ $t('index.contributeRepoButton') }}
         </a>
       </div>
-      <div class="contribute__image">
-        <img v-lazy="'/octocat.png'" alt="GitHub Octocat mascot in science gear mixing chemicals">
-      </div>
+      <IndexOctocat />
     </PageContainer>
   </div>
 </template>
