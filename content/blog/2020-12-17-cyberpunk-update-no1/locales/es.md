@@ -36,4 +36,5 @@ Estamos haciendo tantas cosas a la vez que ni siquiera es posible para nosotros 
 Puedes ayudarnos en varios temas que van desde la ingeniería inversa a nivel de memoria, o ayudarnos a familiarizarnos con los modelos y sus texturas. ¡Damos la bienvenida a todos!
 
 Hasta entonces,
-El equipo de CP77 Modding Tools
+
+RED Modding Team

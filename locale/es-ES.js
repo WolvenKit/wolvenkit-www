@@ -51,14 +51,14 @@ export default {
   },
   projects: {
     pageTitle: 'Proyectos',
-    pageDescription: 'Todos los proyectos creados por el RedModding Team y la comunidad.',
-    teamProjects: 'Proyectos del REDModding Team',
+    pageDescription: 'Todos los proyectos creados por el RED Modding Team y la comunidad.',
+    teamProjects: 'Proyectos del RED Modding Team',
     communityProjects: 'Proyectos de la Comunidad',
     contribute: 'Contribuir',
     contributors: 'Contribuidores'
   },
   team: {
-    pageTitle: 'Equipo',
+    pageTitle: 'RED Modding Team',
     pageDescription: 'Nuestro amplio equipo que hace que todo sea posible.',
     teamDescription: 'Nuestro equipo está conformado por personas de todo el mundo, reunidos por la pasión por la programación y el deseo de mejorar la experiencia de juego.',
     projectFilter: {
