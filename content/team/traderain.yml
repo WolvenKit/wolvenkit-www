@@ -1,0 +1,8 @@
+name: Traderain
+profileImage: /img/traderain.png
+projects:
+  - WolvenKit
+country: hu
+socials:
+  - service: github
+    link: https://github.com/Traderain
