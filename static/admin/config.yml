@@ -1,8 +1,6 @@
 backend:
   name: 'github'
-  repo: 'zSoulweaver/wolvenkit-www'
-
-local_backend: true
+  repo: 'WolvenKit/wolvenkit-www'
 
 media_folder: 'static/img'
 public_folder: '/img'
