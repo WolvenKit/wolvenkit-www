@@ -2,24 +2,9 @@
   <div class="projects">
     <PageHeader :title="$t('projects.pageTitle')" :subtitle="$t('projects.pageDescription')" />
     <PageContainer>
-      <h2 v-if="teamProjects.length > 0" class="projects__heading">
-        {{ $t('projects.teamProjects') }}
-      </h2>
-      <div class="projects__teamProjects">
+      <div class="projects__projectList">
         <ProjectsItem
-          v-for="project in teamProjectOrder"
-          :key="project.slug"
-          :project="project"
-          :members="membersOfProject(project)"
-        />
-      </div>
-
-      <h2 v-if="communityProjects.length > 0" class="projects__heading">
-        {{ $t('projects.communityProjects') }}
-      </h2>
-      <div class="projects__communityProjects">
-        <ProjectsItem
-          v-for="project in communityProjectOrder"
+          v-for="project in projects"
           :key="project.slug"
           :project="project"
           :members="membersOfProject(project)"
@@ -42,92 +27,38 @@ export default {
         error({ statusCode: 404, message: 'Page not found' })
       })
 
-    let teamProjects = await $content('projects/team', { deep: true })
+    const projects = await $content(`projects/${defaultLocale}`)
       .sortBy('createdAt', 'asc')
-      .where({
-        slug: defaultLocale
-      })
-      .fetch()
-      .catch(() => {})
-
-    let communityProjects = await $content('projects/community', { deep: true })
-      .sortBy('createdAt', 'asc')
-      .where({
-        slug: defaultLocale
-      })
       .fetch()
       .catch(() => {})
 
     if (currentLocale !== defaultLocale) {
-      const slug = currentLocale
-
-      let teamProjectsTranslated = await $content('projects/team', { deep: true })
+      const projectsTranslated = await $content(`projects/${currentLocale}`)
         .sortBy('createdAt', 'asc')
-        .where({
-          slug
-        })
         .fetch()
         .catch(() => {})
 
-      if (!teamProjectsTranslated) {
-        teamProjectsTranslated = []
-      }
+      if (projectsTranslated) {
+        const projectSlugs = projects.reduce((slug, project, index) => {
+          slug[project.slug] = index
+          return slug
+        }, Object.create(null))
 
-      const teamProjectDirs = teamProjects.reduce((dir, project, index) => {
-        dir[project.dir] = index
-        return dir
-      }, Object.create(null))
-
-      for (const project of teamProjectsTranslated) {
-        Object.assign(teamProjects[teamProjectDirs[project.dir]], project)
-      }
-
-      let communityProjectsTranslated = await $content('projects/community', { deep: true })
-        .sortBy('createdAt', 'asc')
-        .where({
-          slug
+        projectsTranslated.forEach((project) => {
+          const defaultPost = projects.find(x => x.slug === project.slug)
+          Object.assign(projects[projectSlugs[project.slug]], { ...defaultPost, ...project })
         })
-        .fetch()
-        .catch(() => {})
-
-      if (!communityProjectsTranslated) {
-        communityProjectsTranslated = []
-      }
-
-      const communityProjectDirs = communityProjects.reduce((dir, project, index) => {
-        dir[project.dir] = index
-        return dir
-      }, Object.create(null))
-
-      for (const project of communityProjectsTranslated) {
-        Object.assign(communityProjects[communityProjectDirs[project.dir]], project)
       }
     }
 
-    let teamMembers = await $content('teamMembers', { deep: true })
-      .sortBy('createdAt', 'asc')
+    const team = await $content('team')
       .fetch()
-      .catch(() => {
-        error({ statusCode: 404, message: 'Page not found' })
-      })
-
-    if (!teamProjects) {
-      teamProjects = []
-    }
-
-    if (!communityProjects) {
-      communityProjects = []
-    }
-
-    if (!teamMembers) {
-      teamMembers = []
-    }
+      .catch(() => {})
 
     return {
       page,
-      teamProjects,
-      communityProjects,
-      teamMembers
+      projects,
+      team
     }
   },
 
@@ -135,37 +66,12 @@ export default {
     title: 'Projects'
   },
 
-  computed: {
-    teamProjectOrder () {
-      return this.sortArray(this.teamProjects, this.page.projects)
-    },
-
-    communityProjectOrder () {
-      return this.sortArray(this.communityProjects, this.page.communityProjects)
-    }
-  },
-
   methods: {
-    sortArray (original, sortBy) {
-      if (!original || !sortBy) {
-        return original
-      }
-
-      const sortedList = []
-      sortBy.forEach((sort) => {
-        const existing = original.filter(item => item.name === sort)
-        if (existing.length > 0) {
-          sortedList.push(existing[0])
-        }
-      })
-
-      const remainder = original.filter(e => !sortBy.includes(e.name))
-
-      return [...sortedList, ...remainder]
-    },
-
     membersOfProject (project) {
-      return this.teamMembers.filter(m => m.projects.includes(project.name))
+      if (this.team) {
+        return this.team.filter(member => member.projects && member.projects.includes(project.name))
+      }
+      return []
     }
   }
 }

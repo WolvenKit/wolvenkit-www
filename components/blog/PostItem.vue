@@ -1,7 +1,7 @@
 <template>
   <nuxt-link
     class="blogPostItem"
-    :to="localePath(post.dir.substr(0, post.dir.lastIndexOf('/')))"
+    :to="localePath(`/blog/${post.slug}`)"
   >
     <!-- TODO: Better handling/design of non image blog posts -->
     <div
@@ -60,22 +60,13 @@ export default {
 
   methods: {
     getThumbnailImage () {
-      const blogRoot = this.post.dir.substring(1).substr(0, this.post.dir.lastIndexOf('/') - 1)
-
       if (this.post.thumbnailImage) {
+        const imgRoot = this.post.thumbnailImage.substring(1)
+
         try {
           return {
-            image: require(`~/content/${blogRoot}/${this.post.thumbnailImage}`),
-            placeholder: require(`~/content/${blogRoot}/${this.post.thumbnailImage}?lqip`)
-          }
-        } catch (err) {
-          return null
-        }
-      } else {
-        try {
-          return {
-            image: require(`~/content/${blogRoot}/thumbnail.jpg`),
-            placeholder: require(`~/content/${blogRoot}/thumbnail.jpg?lqip`)
+            image: require(`~/static/${imgRoot}`),
+            placeholder: require(`~/static/${imgRoot}?lqip`)
           }
         } catch (err) {
           return null
@@ -95,7 +86,6 @@ export default {
   align-items: center;
   flex-wrap: wrap;
   align-content: flex-start;
-  // grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   color: var(--color-text);
   text-decoration: none;
   padding: 0 1em 1em;

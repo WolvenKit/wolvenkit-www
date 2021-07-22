@@ -25,8 +25,8 @@
       </div>
       <div class="team__list">
         <TeamMember
-          v-for="(member, index) in memberOrder"
-          :key="index+member.name"
+          v-for="member in memberSort"
+          :key="member.name"
           :member="member"
           :project-filter="projectFilter"
         />
@@ -52,16 +52,8 @@ export default {
         error({ statusCode: 404, message: 'Page not found' })
       })
 
-    const teamMembers = await $content('teamMembers', { deep: true })
-      .sortBy('createdAt', 'asc')
-      .fetch()
-      .catch(() => {
-        error({ statusCode: 404, message: 'Page not found' })
-      })
-
     return {
-      team,
-      teamMembers
+      team
     }
   },
 
@@ -76,36 +68,49 @@ export default {
   },
 
   computed: {
-    memberOrder () {
-      // TODO: find another name/way to differentiate teamMembers and team.members
-      const original = this.teamMembers
-      const sortBy = this.team.members
+    // memberOrder () {
+    //   // TODO: find another name/way to differentiate teamMembers and team.members
+    //   const original = this.teamMembers
+    //   const sortBy = this.team.members
 
-      if (!original || !sortBy) {
-        return original
+    //   if (!original || !sortBy) {
+    //     return original
+    //   }
+
+    //   const sortedList = []
+    //   sortBy.forEach((sort) => {
+    //     const existing = original.filter(member => member.name === sort)
+    //     if (existing.length > 0) {
+    //       sortedList.push(existing[0])
+    //     }
+    //   })
+
+    //   const remainder = original.filter(member => !sortBy.includes(member.name))
+
+    //   let finalList = [...sortedList, ...remainder]
+    //   if (this.projectFilter != null) {
+    //     finalList = finalList.filter(m => m.projects.includes(this.projectFilter))
+    //   }
+
+    //   return finalList
+    // },
+
+    memberSort () {
+      const memberList = this.team
+      if (this.projectFilter) {
+        return memberList.filter(member => member.projects && member.projects.includes(this.projectFilter))
       }
 
-      const sortedList = []
-      sortBy.forEach((sort) => {
-        const existing = original.filter(member => member.name === sort)
-        if (existing.length > 0) {
-          sortedList.push(existing[0])
-        }
-      })
-
-      const remainder = original.filter(member => !sortBy.includes(member.name))
-
-      let finalList = [...sortedList, ...remainder]
-      if (this.projectFilter != null) {
-        finalList = finalList.filter(m => m.projects.includes(this.projectFilter))
-      }
-
-      return finalList
+      return this.team
     },
 
     projectList () {
       const projects = []
-      this.teamMembers.forEach(member => projects.push(...member.projects))
+      this.team.forEach((member) => {
+        if (member.projects) {
+          projects.push(...member.projects)
+        }
+      })
 
       return [...new Set(projects)].sort()
     }

@@ -20,26 +20,25 @@ export default {
   async asyncData ({ $content, params, error, app, env }) {
     const currentLocale = app.i18n.locale
     const defaultLocale = env.DEFAULT_LOCALE
-    const isDefaultLocale = currentLocale === defaultLocale
 
-    let [post] = await $content('blog', { deep: true })
-      .where({
-        dir: `/blog/${params.slug}/locales`,
-        slug: currentLocale
-      })
+    let post = await $content(`blog/${defaultLocale}/${params.slug}`)
       .fetch()
-      .catch(() => {})
+      .catch(() => {
+        error({ statusCode: 404, message: 'Page not found' })
+      })
 
-    if (!isDefaultLocale && !post) {
-      [post] = await $content('blog', { deep: true })
-        .where({
-          dir: `/blog/${params.slug}/locales`,
-          slug: defaultLocale
-        })
+    if (currentLocale !== defaultLocale) {
+      const translatedPost = (await $content(`blog/${currentLocale}/${params.slug}`)
         .fetch()
-        .catch(() => {
-          error({ statusCode: 404, message: 'Page not found' })
-        })
+        .catch(() => {}))
+
+      if (translatedPost) {
+        if (translatedPost.body.children.length === 0) {
+          delete translatedPost.body
+        }
+
+        post = { ...post, ...translatedPost }
+      }
     }
 
     return {

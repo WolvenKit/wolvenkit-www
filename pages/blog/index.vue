@@ -22,18 +22,16 @@ export default {
     const currentLocale = app.i18n.locale
     const defaultLocale = env.DEFAULT_LOCALE
 
-    const posts = await $content('blog', { deep: true })
+    const posts = await $content(`blog/${defaultLocale}`)
       .only([
         'title',
         'description',
         'thumbnailImage',
         'category',
         'createdAt',
+        'slug',
         'dir'
       ])
-      .where({
-        slug: defaultLocale
-      })
       .sortBy('createdAt', 'desc')
       .fetch()
       .catch(() => {
@@ -41,32 +39,30 @@ export default {
       })
 
     if (currentLocale !== defaultLocale) {
-      const slug = currentLocale
-      const postsTranslated = await $content('blog', { deep: true })
+      const postsTranslated = await $content(`blog/${currentLocale}`)
         .only([
           'title',
           'description',
           'thumbnailImage',
           'category',
           'createdAt',
-          'dir'
+          'dir',
+          'slug'
         ])
-        .where({
-          slug
-        })
         .sortBy('createdAt', 'desc')
         .fetch()
-        .catch(() => {
-          error({ statusCode: 404, message: 'Page not found' })
+        .catch(() => {})
+
+      if (postsTranslated) {
+        const postSlugs = posts.reduce((slug, post, index) => {
+          slug[post.slug] = index
+          return slug
+        }, Object.create(null))
+
+        postsTranslated.forEach((post) => {
+          const defaultPost = posts.find(x => x.slug === post.slug)
+          Object.assign(posts[postSlugs[post.slug]], { ...defaultPost, ...post })
         })
-
-      const postDirs = posts.reduce((dir, post, index) => {
-        dir[post.dir] = index
-        return dir
-      }, Object.create(null))
-
-      for (const post of postsTranslated) {
-        Object.assign(posts[postDirs[post.dir]], post)
       }
     }
 
