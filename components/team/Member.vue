@@ -12,26 +12,32 @@
         <p class="teamMember__name">
           {{ member.name }}
         </p>
-        <ul v-if="member.socials" class="teamMember__socials">
+        <ul v-if="member.socials || member.country" class="teamMember__socials">
           <li
-            v-for="(link, social) in member.socials[0]"
-            :key="social"
+            v-if="member.country"
             class="teamMember__socialIcon"
           >
             <CountryFlag
-              v-if="social === 'flag' && link"
-              :country="link"
+              :country="member.country"
               size="small"
               class="teamMember__socialIcon__flag"
             />
-            <a v-else :href="link">
-              <GithubIcon v-if="social === 'github'" />
-              <TwitterIcon v-else-if="social === 'twitter'" />
-              <RedditIcon v-else-if="social === 'reddit'" />
-              <WebIcon v-else-if="social === 'website'" />
-              <OtherIcon v-else />
-            </a>
           </li>
+          <template v-if="member.socials">
+            <li
+              v-for="social in member.socials"
+              :key="social.service"
+              class="teamMember__socialIcon"
+            >
+              <a :href="social.link">
+                <GithubIcon v-if="social.service === 'github'" />
+                <TwitterIcon v-else-if="social.service === 'twitter'" />
+                <RedditIcon v-else-if="social.service === 'reddit'" />
+                <WebIcon v-else-if="social.service === 'website'" />
+                <OtherIcon v-else />
+              </a>
+            </li>
+          </template>
         </ul>
       </div>
       <ul class="teamMember__projects">
@@ -94,11 +100,12 @@ export default {
   methods: {
     getProfileImage () {
       if (this.member.profileImage && this.member.profileImage !== this.defaultProfileImage) {
+        const profileImg = this.member.profileImage.substring(1)
         try {
           return new Promise((resolve) => {
             resolve({
-              src: require(`~/content/${this.member.dir.substring(1)}/${this.member.profileImage}`),
-              loading: require(`~/content/${this.member.dir.substring(1)}/${this.member.profileImage}?lqip`)
+              src: require(`~/static/${profileImg}`),
+              loading: require(`~/static/${profileImg}?lqip`)
             })
           })
         } catch (err) {

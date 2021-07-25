@@ -20,47 +20,37 @@ export default {
         error({ statusCode: 404, message: 'Page not found' })
       })
 
-    let [latestPost] = await $content('blog', { deep: true })
+    let [latestPost] = await $content(`blog/${defaultLocale}`)
       .only([
         'title',
         'description',
         'thumbnailImage',
         'category',
         'createdAt',
-        'dir'
+        'dir',
+        'slug'
       ])
-      .where({
-        slug: defaultLocale
-      })
       .sortBy('createdAt', 'desc')
       .limit(1)
       .fetch()
-      .catch(() => {
-        error({ statusCode: 404, message: 'Page not found' })
-      })
+      .catch(() => {})
 
     if (currentLocale !== defaultLocale) {
-      const slug = currentLocale
-
-      const [latestPostTranslated] = await $content('blog', { deep: true })
+      const latestPostTranslated = await $content(`blog/${currentLocale}/${latestPost.slug}`)
         .only([
           'title',
           'description',
           'thumbnailImage',
           'category',
           'createdAt',
-          'dir'
+          'dir',
+          'slug'
         ])
-        .where({
-          slug
-        })
-        .sortBy('createdAt', 'desc')
-        .limit(1)
         .fetch()
         .catch(() => {})
 
-      if (latestPost.dir === latestPostTranslated.dir) {
-        latestPost = latestPostTranslated
+      if (latestPostTranslated) {
+        latestPost = { ...latestPost, ...latestPostTranslated }
       }
     }
 

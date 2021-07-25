@@ -38,7 +38,12 @@
           :title="member.name"
           class="projectItem__contributors__contributor"
         >
-          <img :data-src="member.profileImageObj.image" :data-loading="member.profileImageObj.placeholder" :alt="`${member.name}'s profile picture`">
+          <img
+            v-if="member.profileImageObj"
+            :data-src="member.profileImageObj.image"
+            :data-loading="member.profileImageObj.placeholder"
+            :alt="`${member.name}'s profile picture`"
+          >
         </div>
       </div>
     </div>
@@ -85,22 +90,13 @@ export default {
 
   methods: {
     getProjectImage () {
-      const projectRoot = this.project.dir.substring(1).substr(0, this.project.dir.lastIndexOf('/') - 1)
+      const projectImg = this.project.image.substring(1)
 
       if (this.project.image) {
         try {
           return {
-            image: require(`~/content/${projectRoot}/${this.project.image}`),
-            placeholder: require(`~/content/${projectRoot}/${this.project.image}?lqip`)
-          }
-        } catch (err) {
-          return null
-        }
-      } else {
-        try {
-          return {
-            image: require(`~/content/${projectRoot}.jpg`),
-            placeholder: require(`~/content/${projectRoot}.jpg?lqip`)
+            image: require(`~/static/${projectImg}`),
+            placeholder: require(`~/static/${projectImg}?lqip`)
           }
         } catch (err) {
           return null
@@ -109,19 +105,13 @@ export default {
     },
 
     getProfileImage (member) {
-      if (member.profileImage) {
-        try {
-          return {
-            image: require(`~/content/${member.dir.substring(1)}/${member.profileImage}`),
-            placeholder: require(`~/content/${member.dir.substring(1)}/${member.profileImage}?lqip`)
-          }
-        } catch (err) {
-          return {
-            image: null,
-            placeholder: null
-          }
+      try {
+        const profileImg = member.profileImage.substring(1)
+        return {
+          image: require(`~/static/${profileImg}`),
+          placeholder: require(`~/static/${profileImg}?lqip`)
         }
-      } else {
+      } catch (err) {
         return {
           image: null,
           placeholder: null
