@@ -146,7 +146,7 @@ export default {
 
       config.module.rules.push(
         {
-          test: /\.(md|yaml)$/i,
+          test: /\.(md|yaml|yml)$/i,
           loader: 'ignore-loader'
         },
         {
