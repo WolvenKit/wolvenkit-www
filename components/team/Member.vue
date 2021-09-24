@@ -115,15 +115,8 @@ export default {
         return this.getDefaultProfileImage()
       }
     },
-    async getDefaultProfileImage () {
-      try {
-        const picture = await fetch('https://aws.random.cat/meow?ref=apilist.fun').then(r => r.json())
-        return {
-          src: picture.file
-        }
-      } catch (err) {
-        return null
-      }
+    getDefaultProfileImage () {
+      return '/logo_temp.png'
     }
   }
 }
@@ -240,6 +233,10 @@ export default {
       filter: brightness(150%);
       color: var(--color-primary-light);
     }
+  }
+
+  &__description {
+    min-height: 25px;
   }
 }
 </style>

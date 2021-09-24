@@ -1,0 +1,9 @@
+name: Spookie
+description: Star Wars Nerd
+profileImage: /img/spookie.png
+projects:
+  - WolvenKit Website
+country: us
+socials:
+  - service: github
+    link: https://github.com/spookiecl
