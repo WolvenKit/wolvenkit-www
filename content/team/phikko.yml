@@ -1,9 +1,0 @@
-name: Phikko
-description: Chief of Wumpii and other Octocats
-profileImage: /img/phikko.png
-projects:
-  - WolvenKit Website
-country: pl
-socials:
-  - service: github
-    link: https://github.com/phikko

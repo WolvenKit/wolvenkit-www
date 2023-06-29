@@ -1,44 +1,22 @@
 {
-  "name": "wolvenkit-www",
-  "version": "1.0.0",
+  "name": "nuxt-app",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "analyze": "nuxt build -a",
-    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
-    "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",
-    "lint": "npm run lint:js && npm run lint:style"
-  },
-  "dependencies": {
-    "@nuxt/content": "^1.14.0",
-    "@nuxtjs/axios": "^5.13.1",
-    "core-js": "^3.9.1",
-    "nuxt": "^2.15.3",
-    "nuxt-i18n": "^6.21.0",
-    "rive-js": "^0.7.15",
-    "vue-country-flag": "^2.0.3",
-    "vue-lazyload": "^1.3.3",
-    "vue-material-design-icons": "^4.11.0"
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@aceforth/nuxt-optimized-images": "^1.4.0",
-    "@nuxtjs/eslint-config": "^5.0.0",
-    "@nuxtjs/eslint-module": "^3.0.2",
-    "@nuxtjs/stylelint-module": "^4.0.0",
-    "arraybuffer-loader": "^1.0.8",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.22.0",
-    "eslint-plugin-nuxt": "^2.0.0",
-    "eslint-plugin-vue": "^7.7.0",
-    "fibers": "^5.0.0",
-    "ignore-loader": "^0.1.2",
-    "lqip-loader": "^2.2.1",
-    "sass": "^1.32.8",
-    "sass-loader": "^10.1.1",
-    "stylelint": "^13.12.0",
-    "stylelint-config-standard": "^20.0.0"
+    "@nuxt/devtools": "latest",
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "@types/node": "^18",
+    "nuxt": "^3.6.1"
+  },
+  "dependencies": {
+    "@nuxt/content": "^2.7.0",
+    "@nuxt/image": "^1.0.0-rc.1",
+    "nuxt-headlessui": "^1.1.4"
   }
 }

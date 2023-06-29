@@ -4,6 +4,7 @@ on:
   push:
     branches:
     - master
+  workflow_dispatch:
 
 jobs:
   cd:
@@ -12,7 +13,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [14]
+        node: [16]
 
     steps:
       - name: Checkout 🛎
@@ -32,19 +33,13 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies 👨🏻‍💻
-        run: npm ci
-
-      - name: Run linter 👀
-        run: npm run lint
+        run: yarn install
 
       - name: Generate 🔨
-        run: npm run generate
-        env:
-          BASE_URL: https://redmodding.org/
-          DEFAULT_LOCALE: en
+        run: npx nuxi generate
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          github_token: ${{ secrets.TOKEN }}
+          publish_dir: .output/public

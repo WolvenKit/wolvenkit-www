@@ -1,9 +1,0 @@
-# Define immediate project order below, everything else will be sorted by created date
-# Sorting is checked against your name field on the project file - make sure it matches!
-projects:
-  - WolvenKit
-  - CP77 Tools
-  - CyberCAT
-communityProjects:
-  - Cyber Engine Tweaks
-  - CP77 Tools GUI

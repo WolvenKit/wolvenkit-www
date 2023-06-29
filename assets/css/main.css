@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	font-family: 'Roboto', sans-serif;
+	background: linear-gradient(
+			0deg,
+			rgba(33, 33, 33, 0.98),
+			rgba(33, 33, 33, 0.98)
+		),
+		url('/Cyberpunk2077_Love_this_town_RGB-en.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	color: #ffffff;
+}
