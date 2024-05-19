@@ -1,1 +1,0 @@
-import{_ as e,l as t,k as s}from"./entry.c581b3d9.js";const c={},r={class:"w-full text-4xl flex items-center justify-center mt-20 uppercase"};function o(n,_){return s(),t("div",r,"Work In Progress")}const l=e(c,[["render",o]]);export{l as default};
