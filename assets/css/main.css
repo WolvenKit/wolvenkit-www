@@ -17,3 +17,19 @@ body {
 	background-attachment: fixed;
 	color: #ffffff;
 }
+
+.revert-tailwind{
+	all: initial;
+  }
+  
+  .revert-tailwind > * {
+	all: revert;
+  }
+
+  .white {
+	color: #ffffff;
+  }
+
+  .font{
+	font-family: Roboto, Times, serif;
+  }
